@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<premis xmlns="http://www.loc.gov/premis/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.loc.gov/premis/v3 ../../schemas/premis.xsd">
+	<!-- Since the current AIP specification and earkweb relies solely on version 2.2 this PREMIS DIP example only describes relevant elements that the EARK DIP specification (MS10) requires  -->
+	<object xsi:type="representation">
+		<!-- The following is the description of the file that can be rendered: here it is the zipped Northwind file (SIARD 2.0). -->
+		<objectIdentifier>
+			<objectIdentifierType>filepath</objectIdentifierType><!-- According to the EARK AIP specification "filepath" is an IP the scope value -->
+			<objectIdentifierValue>xlink:href="representations\AVID.SA.180006_rep0\northwind.siard</objectIdentifierValue>
+		</objectIdentifier>
+		<significantProperties>
+			<significantPropertiesType>DIP representation format</significantPropertiesType>
+			<significantPropertiesValue>SIARD2</significantPropertiesValue>
+		</significantProperties>
+		<!-- The following is the relation between the software and the file -->
+		<relationship>
+			<relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType.html" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/dep.html">dependency</relationshipType>
+			<!-- Definition of dependency: "A relationship where one object is dependent on another object. This exists when an object requires another object to support its function, delivery, rendering, execution, or the coherence of its content. This may happen, for example, when	a content file requires specific software or hardware to be rendered; similarly, when an environment object depends on other environment objects; or when a content file, depends on another file, such as its font definition or stylesheet." -->
+			<relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType.html" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/req.html">requires</relationshipSubType>
+			<!-- Definition of requires: "The relationship of an object to another object, where it requires a particular environment or non-environment object to be rendered or to be run. For instance, a file of format Word 97, requires MS Word 1997 to render it. Has a reciprocal relationship of isRequiredBy". -->
+			<relatedObjectIdentifier>
+				<relatedObjectIdentifierType>local</relatedObjectIdentifierType>
+				<relatedObjectIdentifierValue>DBVTK</relatedObjectIdentifierValue>
+			</relatedObjectIdentifier>
+			<relatedEnvironmentPurpose authority="environmentPurpose" authorityURI="http://id.loc.gov/vocabulary/preservation/environmentPurpose.html" valueURI="http://id.loc.gov/vocabulary/preservation/environmentPurpose/ren.html">render</relatedEnvironmentPurpose>
+			<!-- Definition of render: "To generate an image or presentation by means of computer programs" -->
+		</relationship>
+	</object>
+	
+	<!-- The following is the description of the software that can render the file.  -->
+	<object xsi:type="intellectualEntity">
+		<objectIdentifier>
+			<objectIdentifierType>local</objectIdentifierType>
+			<objectIdentifierValue>DBVTK</objectIdentifierValue>
+		</objectIdentifier>
+		<environmentFunction>
+			<environmentFunctionType>software</environmentFunctionType>
+			<environmentFunctionLevel>1</environmentFunctionLevel>
+		</environmentFunction>
+		<environmentFunction>
+			<environmentFunctionType>software application</environmentFunctionType>
+			<environmentFunctionLevel>2</environmentFunctionLevel>
+		</environmentFunction>
+		<environmentDesignation>
+			<environmentName>Database Visualization Toolkit</environmentName>
+			<environmentVersion>2.4.1</environmentVersion>
+			<environmentDesignationNote>Lightweight web viewer for relational databases, specially if preserved in SIARD 2, that uses SOLR as a backend, and allows browsing, search, and export. Documentation at github.com/eark-project/software/DBVTK</environmentDesignationNote>
+		</environmentDesignation>
+	</object>
+</premis>

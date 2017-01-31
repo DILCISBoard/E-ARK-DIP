@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ead xmlns:ead="http://ead3.archivists.org/schema/" xmlns="http://ead3.archivists.org/schema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://ead3.archivists.org/schema/ ../../schemas/ead3.xsd http://www.w3.org/1999/xlink ../../schemas/xlink.xsd">
+	<control>
+		<recordid>ID.AVID.SA.18006.ead</recordid> <!--  Note that the ID can be replaced with any ID scheme. In this example IDs carring information are used to ease understanding-->
+		<filedesc>
+			<titlestmt>
+				<titleproper>Northwind database</titleproper>
+			</titlestmt>
+		</filedesc>
+		<maintenancestatus value="new"/> <!--  p. 245 in TAG library, paraphrased: "use the mandatory maintenancestatus to indicate the current drafting status of an EAD instance. The current version status should always be updated whenever an EAD instance is 
+modified (as recorded in maintenancehistory). -->
+		<maintenanceagency>
+			<agencycode >DNA</agencycode>
+			<agencyname>Danish National Archives</agencyname>
+		</maintenanceagency>
+		<maintenancehistory> <!--  p. 239 in TAG library, paraphrased: "use the mandatory maintenancehistory to record an activity in the creation and ongoing maintenance of an EAD instance, including revisions, updates, deletions, etc. There will always be at least one maintenance event for each instance, which will typically be its creation."  -->
+			<maintenanceevent>
+				<eventtype value="created"></eventtype>
+				<eventdatetime>23022016</eventdatetime>
+				<agenttype value="human"></agenttype>
+				<agent>Phillip Tømmerholt</agent>
+			</maintenanceevent>
+		</maintenancehistory>
+	</control>
+	<archdesc level="otherlevel" otherlevel="database" lang="eng"> <!--  p. 53 in TAG library, paraphrased: "use the mandatory archdesc for binding together the bulk of an EAD document instance, which typically should include elements describing the content, context, and extent of a body of archival materials, as well as containing administrative and supplemental information that facilitates use of the materials. The elements are organized in hierarchical levels that provide a descriptive overview of the whole, optionally followed by more specific description of the component parts. Descriptive information is inherited downward, from one hierarchical level to the next."  -->
+<!--  p. 54 in TAG Library, paraphrased: "level values limited to: class, collection, file, fonds, item, otherlevel, recordgrp, series, subfonds, subgrp, subseries." -  It is not explained in the TAG Library what these values represent. EAD is created to be ISAD(G) compliant, and some of the level values can be associated with the definitions in ISAD(G). But there are no direct link. E-ARK MS10 Final Dip Specification suggests use of the value "database" as otherlevel in the case of describing relational databases. -->
+				<did>
+					<unittitle>Northwind database</unittitle>
+					<dao daotype="borndigital" href="/representations/AVID.SA.18006_rep0/data/northwind.siard"></dao>
+					<!--  this dao link is a reference to the siard-file in "representation 0"  -->
+					<unitdatestructured calendar="gregorian" era="ce">
+						<daterange>
+						  <fromdate standarddate="2000-01-01">2000</fromdate>
+						  <todate standarddate="2008-12-31">2008</todate>
+						</daterange>
+					</unitdatestructured>
+					<abstract lang="eng">Northwind Traders Access database is a sample database from Microsoft Office suite. The Northwind database contains the sales data for a fictitious company called Northwind Traders, which imports and exports specialty foods from around the world. The database contains 13 tables and also includes pictures of foods and employees. </abstract>			
+				</did>
+				<accessrestrict>
+						<p>Unrestricted</p>
+				</accessrestrict>
+				
+		<dsc dsctype="combined">
+<!--	p. 154 in TAG Library, paraphrased: "Use "dsc" to wrap subordinate components in the archival hierarchy of the materials being described..."combined" is used when the narrative description of a series is followed immediately by a listing of the contents of that series within a single <dsc>.--> 
+<!-- I present the following tables so a user or archivist is able to see what kind of tables are stored in the database and what they contain. -->
+		    <c level="otherlevel" otherlevel="table">
+              <did>
+               <unittitle>Orders</unittitle>
+               <abstract>Table0. This table contains information about the orders that Northwind Traders had</abstract>						  
+			  </did>
+		    </c>
+			<c level="otherlevel" otherlevel="table">
+			 <did>
+               <unittitle>Products</unittitle>
+               <abstract>Table1. This table contains information about the products that Northwind Traders had</abstract>			
+			 </did>
+			</c>
+			<c level="otherlevel" otherlevel="table">
+             <did>
+               <unittitle>Categories</unittitle>
+               <abstract>Table2. - containing food categories</abstract>			
+			 </did>
+			</c>			
+			<c level="otherlevel" otherlevel="table">
+             <did>
+               <unittitle>Shippers</unittitle>
+               <abstract>Table3. - containing information about the Shippers tha Northwind traders had information about</abstract>			
+			 </did>
+			</c>
+			<c level="otherlevel" otherlevel="table">
+              <did>
+               <unittitle>Employees</unittitle>
+               <abstract>Table4. This table contains information about the employments of Northwind Traders</abstract>			
+			 </did>
+			</c>			
+			<c level="otherlevel" otherlevel="table">
+             <did>
+               <unittitle>Territories</unittitle>
+               <abstract>Table5. This table contains information about the Territories that Northwind Traders worked in</abstract>			
+			 </did>
+			</c>
+			<c level="otherlevel" otherlevel="table">
+             <did>
+               <unittitle>CustomerDemographics</unittitle>
+               <abstract>Table6. Empty table, no data</abstract>			
+			 </did>
+			</c>
+			<c level="otherlevel" otherlevel="table">
+             <did>
+               <unittitle>CustomerCustomerDemo</unittitle>
+               <abstract>Table7. Empty table, no data</abstract>			
+			 </did>
+			</c>
+			<c level="otherlevel" otherlevel="table">
+             <did>
+               <unittitle>Suppliers</unittitle>
+               <abstract>Table8. This table contains information about the suppliers that Northwind Traders had</abstract>			
+			 </did>
+			</c>
+			<c level="otherlevel" otherlevel="table">
+             <did>
+               <unittitle>EmployeeTerritories</unittitle>
+               <abstract>Table9. - empty table</abstract>			
+			 </did>
+			</c>
+			<c level="otherlevel" otherlevel="table">
+             <did>
+               <unittitle>Customers</unittitle>
+               <abstract>Table10. This table contains information about the customers of Northwind Traders</abstract>			
+			 </did>
+			</c>
+			<c level="otherlevel" otherlevel="table">
+             <did>
+               <unittitle>Region</unittitle>
+               <abstract>Table11. This table contains information about the Regions that Northwind Traders worked in</abstract>			
+			 </did>
+			</c>
+			<c level="otherlevel" otherlevel="table">
+             <did>
+               <unittitle>Order Details</unittitle>
+               <abstract>Table12. This table contains information about the orders details that Northwind Traders had</abstract>			
+			 </did>
+			</c>
+		</dsc>
+	</archdesc>
+</ead>
