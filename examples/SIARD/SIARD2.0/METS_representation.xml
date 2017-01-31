@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mets xmlns:ext="ExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.loc.gov/METS/" PROFILE="http://www.ra.ee/METS/v01/IP.xml" TYPE="SIP" OBJID="urn:uuid:36cd9dbd-0b34-4975-96f3-100f5cb6b0c2" LABEL="METS file describing the SIP matching the OBJID." xsi:schemaLocation="http://www.loc.gov/METS/ ../../schemas/mets_1_11.xsd http://www.w3.org/1999/xlink ../../schemas/xlink.xsd">
+  <metsHdr RECORDSTATUS="NEW" CREATEDATE="2017-01-23T11:45:15">
+    <agent TYPE="OTHER" ROLE="CREATOR" OTHERTYPE="SOFTWARE">
+      <name>E-ARK earkweb</name>
+      <note>VERSION=0.0.1</note>
+    </agent>
+    <metsDocumentID>METS.xml</metsDocumentID>
+  </metsHdr>
+  <amdSec ID="ID5767b7fa-667c-46cc-ae4c-6c2719f6745e">
+    <digiprovMD ID="ID9fc8fe0c-92b1-46b7-835f-250adcab3370">
+      <mdRef MIMETYPE="application/xml" xlink:href="file://./metadata/preservation/premis.xml" LOCTYPE="URL" CREATED="2017-01-23T11:45:15" CHECKSUM="19602e63740e503356fc8cd685175f6ace0810cf020ece6e3c4db1748160d384" xlink:type="simple" ID="ID0cce9464-fbe7-4bd9-b4cf-e93bac1357b1" MDTYPE="PREMIS" CHECKSUMTYPE="SHA-256"/>
+    </digiprovMD>
+  </amdSec>
+  <fileSec>
+    <fileGrp USE="general filegroup" ID="IDc30934bc-b381-4e53-9d3c-4445d31840b1">
+      <file MIMETYPE="None" USE="Datafile" CHECKSUMTYPE="SHA-256" CREATED="2017-01-23T11:44:55" CHECKSUM="5b560395bb3119e0daf57a5198ae8e57cd90c1373df1f4cfb84958933799d018" ID="IDa5803deb-78c5-4e78-8c2b-9ddf699fe5b0" SIZE="1134912">
+        <FLocat xlink:href="file://./data/northwind.siard" xlink:type="simple" LOCTYPE="URL"/>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap TYPE="physical" LABEL="E-ARK structural map">
+    <div LABEL="36cd9dbd-0b34-4975-96f3-100f5cb6b0c2">
+      <div LABEL="schemas"/>
+      <div LABEL="data">
+        <fptr FILEID="IDa5803deb-78c5-4e78-8c2b-9ddf699fe5b0"/>
+      </div>
+      <div LABEL="metadata">
+        <fptr FILEID="ID0cce9464-fbe7-4bd9-b4cf-e93bac1357b1"/>
+      </div>
+      <div LABEL="documentation"/>
+    </div>
+  </structMap>
+  <structMap TYPE="logical" LABEL="Simple SIP structuring">
+    <div LABEL="Package structure">
+      <div LABEL="metadata files">
+        <fptr FILEID="ID0cce9464-fbe7-4bd9-b4cf-e93bac1357b1"/>
+      </div>
+      <div LABEL="schema files"/>
+      <div LABEL="content files">
+        <fptr FILEID="IDa5803deb-78c5-4e78-8c2b-9ddf699fe5b0"/>
+      </div>
+    </div>
+  </structMap>
+</mets>
