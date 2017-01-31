@@ -1,45 +1,91 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<mets xmlns:ext="ExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.loc.gov/METS/" PROFILE="http://www.ra.ee/METS/v01/IP.xml" TYPE="SIP" OBJID="urn:uuid:36cd9dbd-0b34-4975-96f3-100f5cb6b0c2" LABEL="METS file describing the SIP matching the OBJID." xsi:schemaLocation="http://www.loc.gov/METS/ ../../schemas/mets_1_11.xsd http://www.w3.org/1999/xlink ../../schemas/xlink.xsd">
-  <metsHdr RECORDSTATUS="NEW" CREATEDATE="2017-01-23T11:45:15">
-    <agent TYPE="OTHER" ROLE="CREATOR" OTHERTYPE="SOFTWARE">
-      <name>E-ARK earkweb</name>
-      <note>VERSION=0.0.1</note>
-    </agent>
+<?xml version="1.0" encoding="UTF-8"?>
+<mets xmlns:ext="ExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.loc.gov/METS/" PROFILE="http://www.ra.ee/METS/v01/IP.xml" TYPE="Database" OBJID="urn:uuid:345kkj34-054b-4f4a-be24-e03f47c9c752" LABEL="METS file describing the DIP matching the OBJID." xsi:schemaLocation="http://www.loc.gov/METS/ schemas/mets_1_11.xsd http://www.w3.org/1999/xlink schemas/xlink.xsd">
+	<metsHdr RECORDSTATUS="NEW" CREATEDATE="2017-01-27T13:47:38" PACKAGETYPE="DIP">
+		<agent TYPE="OTHER" ROLE="CREATOR" OTHERTYPE="SOFTWARE">
+			<name>E-ARK earkweb</name>
+			<note>VERSION=0.0.1</note>
+			<note>The software created the IP structure</note>
+		</agent>
+		<agent TYPE="INDIVIDUAL" ROLE="EDITOR">
+			<name>Phillip Tømmerholt, Danish National Archives</name>
+			<note>I copied an AIP and revised it, so that this IP is a DIP that is compliant with the E-ARK Common Specification and DIP specification.</note>
+			<note>I have changed the value in mets/@TYPE from "SIP" to "Database" since the EARK Common Specification has changed after E-ARK web version 0.0.1</note>
+			<note>I have change the value in mets/@OBJID, since this is a new IP and according to DIP specification</note>
+			<note>I have edited the mets_1_11.xsd so that metsHdr/@PACKAGETYPE is allowed and I added the value "DIP"</note>
+			<note>I have added a dmdSec/@CREATED and set a date, since the attribute is required according to the CS</note>
+			<note>I have changed the MDTYPE value from "OTHER" to "EAD" for the EAD file, since EAD is the correct value</note>
+		</agent>
     <metsDocumentID>METS.xml</metsDocumentID>
   </metsHdr>
-  <amdSec ID="ID5767b7fa-667c-46cc-ae4c-6c2719f6745e">
-    <digiprovMD ID="ID9fc8fe0c-92b1-46b7-835f-250adcab3370">
-      <mdRef MIMETYPE="application/xml" xlink:href="file://./metadata/preservation/premis.xml" LOCTYPE="URL" CREATED="2017-01-23T11:45:15" CHECKSUM="19602e63740e503356fc8cd685175f6ace0810cf020ece6e3c4db1748160d384" xlink:type="simple" ID="ID0cce9464-fbe7-4bd9-b4cf-e93bac1357b1" MDTYPE="PREMIS" CHECKSUMTYPE="SHA-256"/>
+  <dmdSec ID="ID5510c6bd-9566-4876-9ff5-a365c16d7c18" CREATED="2017-01-25T13:04:00">
+    <mdRef MIMETYPE="application/xml" xlink:href="file://./metadata/descriptive/EAD.xml" LOCTYPE="URL" CREATED="2017-01-23T11:45:15"  CHECKSUM="6772b1e6467fbbaa582730d3d31114617744d7fe75e13770b5b1107f9133d56b" xlink:type="simple" ID="ID7f3c441b-25f3-46f2-91a8-53cb38093b2a" MDTYPE="EAD"  CHECKSUMTYPE="SHA-256"/>
+  </dmdSec> 
+  <amdSec ID="IDe868e782-bbb7-4a2b-9a2b-e4bcab94f1db">
+    <digiprovMD ID="ID62ac46d8-b350-4989-82c9-7a8252495c7d">
+      <mdRef MIMETYPE="text/plain" xlink:href="file://./metadata/earkweb.log" LOCTYPE="URL" CREATED="2017-01-23T11:45:15" CHECKSUM="854d2a25248f5adbd3f9a7a43f56aabab35f9860f23d64b0174981deacc1d724" xlink:type="simple" ID="IDd637937f-ce67-4427-88bf-720ef6d84f8b" MDTYPE="OTHER" CHECKSUMTYPE="SHA-256"/>
+    </digiprovMD>
+    <digiprovMD ID="IDb771a1e4-131c-4371-b05c-adb4419375e1">
+      <mdRef MIMETYPE="application/xml" xlink:href="file://./metadata/preservation/premis.xml" LOCTYPE="URL" CREATED="2017-01-23T11:45:15" CHECKSUM="1c2d1817c746d883c3547247c2df5c283a59b302e1f788b2b10510a94e82f54b" xlink:type="simple" ID="ID2039a5d5-442c-42f5-9929-a9ff371abf60" MDTYPE="PREMIS" CHECKSUMTYPE="SHA-256"/>
     </digiprovMD>
   </amdSec>
   <fileSec>
-    <fileGrp USE="general filegroup" ID="IDc30934bc-b381-4e53-9d3c-4445d31840b1">
-      <file MIMETYPE="None" USE="Datafile" CHECKSUMTYPE="SHA-256" CREATED="2017-01-23T11:44:55" CHECKSUM="5b560395bb3119e0daf57a5198ae8e57cd90c1373df1f4cfb84958933799d018" ID="IDa5803deb-78c5-4e78-8c2b-9ddf699fe5b0" SIZE="1134912">
-        <FLocat xlink:href="file://./data/northwind.siard" xlink:type="simple" LOCTYPE="URL"/>
+    <fileGrp USE="general filegroup" ID="ID194ab21b-46a4-4a37-87df-0015559fbf96">
+      <file MIMETYPE="application/xml" USE="Datafile" CHECKSUMTYPE="SHA-256" CREATED="2017-01-23T11:45:15" CHECKSUM="8b081557dfb24011e258683d13fd14bf81c43b995512ec3519567f317abd1135" ID="ID0c9a3ba1-745c-43ed-98b4-d08d6172ec17" SIZE="2485">
+        <FLocat xlink:href="file://./representations/AVID.SA.18006_rep0/METS.xml" xlink:type="simple" LOCTYPE="URL"/>
+      </file>
+      <file MIMETYPE="application/xml" USE="Datafile" CHECKSUMTYPE="SHA-256" CREATED="2017-01-23T11:43:40" CHECKSUM="0d47e53f21e2e44f48794287afae759bace86a0622a1dfb1fa44a1a982abddd7" ID="ID1debfbe6-2527-4df1-a1f6-01726d9f3c3a" SIZE="65126">
+        <FLocat xlink:href="file://./schemas/premis-v2-2.xsd" xlink:type="simple" LOCTYPE="URL"/>
+      </file>
+      <file MIMETYPE="application/xml" USE="Datafile" CHECKSUMTYPE="SHA-256" CREATED="2017-01-23T11:44:23" CHECKSUM="efec5739924b05e357f80f34c1bdd643ba795b04b65e413f81adb424ad851f42" ID="IDc758f6b9-fe8b-47d2-b0aa-8be7b34e1697" SIZE="92510">
+        <FLocat xlink:href="file://./schemas/ead3.xsd" xlink:type="simple" LOCTYPE="URL"/>
+      </file>
+      <file MIMETYPE="application/xml" USE="Datafile" CHECKSUMTYPE="SHA-256" CREATED="2017-01-23T11:43:40" CHECKSUM="dc8133202b61715fa2e52229bda041aed4e586f4b3b21109a40222391ac614f8" ID="ID926b173f-334d-4fef-bb0d-414ea8f397c3" SIZE="145430">
+        <FLocat xlink:href="file://./schemas/IP.xsd" xlink:type="simple" LOCTYPE="URL"/>
+      </file>
+      <file MIMETYPE="application/xml" USE="Datafile" CHECKSUMTYPE="SHA-256" CREATED="2017-01-23T11:43:40" CHECKSUM="f1f5bb6003165cdd8f6c1fcc32f8fd1f965e1681010f3b9806d9460bcffa8a3c" ID="IDc0be0fd8-8995-43e4-880e-a859e90f6a51" SIZE="3180">
+        <FLocat xlink:href="file://./schemas/xlink.xsd" xlink:type="simple" LOCTYPE="URL"/>
+      </file>
+      <file MIMETYPE="application/xml" USE="Datafile" CHECKSUMTYPE="SHA-256" CREATED="2017-01-23T11:43:40" CHECKSUM="a20b879caff4e304ee8900aa9652a8a532c54c450e89381ba034d1f7cf1ab1c9" ID="IDc870a0ca-4c73-4395-9600-d0c57ce38d35" SIZE="133018">
+        <FLocat xlink:href="file://./schemas/mets_1_11.xsd" xlink:type="simple" LOCTYPE="URL"/>
       </file>
     </fileGrp>
   </fileSec>
   <structMap TYPE="physical" LABEL="E-ARK structural map">
     <div LABEL="36cd9dbd-0b34-4975-96f3-100f5cb6b0c2">
-      <div LABEL="schemas"/>
-      <div LABEL="data">
-        <fptr FILEID="IDa5803deb-78c5-4e78-8c2b-9ddf699fe5b0"/>
+      <div LABEL="representations"/>
+      <div LABEL="representations/AVID.SA.18006_rep0">
+        <mptr xlink:href="file://./representations/AVID.SA.18006_rep0/METS.xml" xlink:title="Mets file describing representation: default of SIP: urn:uuid:36cd9dbd-0b34-4975-96f3-100f5cb6b0c2." LOCTYPE="URL" ID="IDb7d7a936-0dfe-4171-b64d-b0ec55ba123e"/>
+        <fptr FILEID="ID0c9a3ba1-745c-43ed-98b4-d08d6172ec17"/>
+      </div>
+      <div LABEL="schemas">
+        <fptr FILEID="ID1debfbe6-2527-4df1-a1f6-01726d9f3c3a"/>
+        <fptr FILEID="IDc758f6b9-fe8b-47d2-b0aa-8be7b34e1697"/>
+        <fptr FILEID="ID926b173f-334d-4fef-bb0d-414ea8f397c3"/>
+        <fptr FILEID="IDc0be0fd8-8995-43e4-880e-a859e90f6a51"/>
+        <fptr FILEID="IDc870a0ca-4c73-4395-9600-d0c57ce38d35"/>
       </div>
       <div LABEL="metadata">
-        <fptr FILEID="ID0cce9464-fbe7-4bd9-b4cf-e93bac1357b1"/>
+        <fptr FILEID="IDd637937f-ce67-4427-88bf-720ef6d84f8b"/>
+        <fptr FILEID="ID7f3c441b-25f3-46f2-91a8-53cb38093b2a"/>
+        <fptr FILEID="ID2039a5d5-442c-42f5-9929-a9ff371abf60"/>
       </div>
-      <div LABEL="documentation"/>
     </div>
   </structMap>
   <structMap TYPE="logical" LABEL="Simple SIP structuring">
     <div LABEL="Package structure">
       <div LABEL="metadata files">
-        <fptr FILEID="ID0cce9464-fbe7-4bd9-b4cf-e93bac1357b1"/>
+        <fptr FILEID="IDd637937f-ce67-4427-88bf-720ef6d84f8b"/>
+        <fptr FILEID="ID7f3c441b-25f3-46f2-91a8-53cb38093b2a"/>
+        <fptr FILEID="ID2039a5d5-442c-42f5-9929-a9ff371abf60"/>
       </div>
-      <div LABEL="schema files"/>
-      <div LABEL="content files">
-        <fptr FILEID="IDa5803deb-78c5-4e78-8c2b-9ddf699fe5b0"/>
+      <div LABEL="schema files">
+        <fptr FILEID="ID1debfbe6-2527-4df1-a1f6-01726d9f3c3a"/>
+        <fptr FILEID="IDc758f6b9-fe8b-47d2-b0aa-8be7b34e1697"/>
+        <fptr FILEID="ID926b173f-334d-4fef-bb0d-414ea8f397c3"/>
+        <fptr FILEID="IDc0be0fd8-8995-43e4-880e-a859e90f6a51"/>
+        <fptr FILEID="IDc870a0ca-4c73-4395-9600-d0c57ce38d35"/>
       </div>
+      <div LABEL="content files"/>
     </div>
   </structMap>
 </mets>
