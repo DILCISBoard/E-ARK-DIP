@@ -6,7 +6,7 @@ This repository holds information about the Dissemination Information Package (A
 
 Key objectives of this specification are:
 
-- 	To define a generic structure of the DIP format in a way that it is suitable for a wide variety of data types, such as document and image collections, archival records, databases or geographical data.
+- 	To define a generic structure of the DIP format in a way that it is suitable for a wide variety of archival records, such as document and image collections, databases or geographical data.
 -	To recommend a set of metadata related to the structural and the access aspects of the DIP as implemented by the reference implementation.
 
 ## Target audience
@@ -15,6 +15,6 @@ The target audiences for this specification are archival institutions and softwa
 
 ## Structure of this repository
 
-In this repository you may find an "examples" folder that holds examples of DIPs, and a "specs" folder containing the source files of the specification document.
+In this repository you will find a "specs" folder containing the source files of the specification document and later on an "examples" folder that holds examples of DIPs. 
 
 You may also find issues found on the documentation submitted by implementers  of the specification. This issues will be reviewed by the DAS Board and will be taken into account during the review process of this specification.
