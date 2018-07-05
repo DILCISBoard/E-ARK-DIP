@@ -1,6 +1,6 @@
 # E-ARK DIP Specification
 
-This repository holds information about the Dissemination Information Package (AIP)  format specification maintained by the DLM Archival Standards Board (http://www.dasboard.eu).
+This repository holds information about the Dissemination Information Package (DIP) format specification maintained by the Digital Information LifeCycle Interoperability Standards Board (http://www.dilcis.eu/).
 
 ## Objectives
 
@@ -15,6 +15,8 @@ The target audiences for this specification are archival institutions and softwa
 
 ## Structure of this repository
 
-In this repository you will find a "specs" folder containing the source files of the specification document and later on an "examples" folder that holds examples of DIPs. 
+In this repository you will find:
 
-You may also find issues found on the documentation submitted by implementers  of the specification. This issues will be reviewed by the DAS Board and will be taken into account during the review process of this specification.
+- a "specs" folder containing the source files of the specification document
+- an "examples" folder that holds examples of DIPs. 
+- Issues via the "Issues"-functionality https://help.github.com/articles/about-issues/ which is used to track ideas, enhancements, tasks, or bugs regarding the specification or the examples. Feel free to scroll through these and feel free to create new issues. The issues will be reviewed by the DILCIS Board and will be taken into account during the review process of this specification.
