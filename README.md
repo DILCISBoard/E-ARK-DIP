@@ -19,4 +19,4 @@ In this repository you will find:
 
 - a "specs" folder containing the source files of the specification document
 - an "examples" folder that holds examples of DIPs. 
-- Issues via the "Issues"-functionality https://help.github.com/articles/about-issues/ which is used to track ideas, enhancements, tasks, or bugs regarding the specification or the examples. Feel free to scroll through these and feel free to create new issues. The issues will be reviewed by the DILCIS Board and will be taken into account during the review process of this specification.
+- Issues via the "Issues"-functionality https://help.github.com/articles/about-issues/ which is used to track ideas, enhancements, tasks, or bugs regarding the specification or the examples. Feel free to scroll through these and feel free to create new issues or take part in discussions. The issues will be reviewed by the DILCIS Board and the DIP TEAM, and all documentation from this repository will be taken into account during the review process of this specification.
