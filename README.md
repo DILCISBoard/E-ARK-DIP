@@ -6,7 +6,7 @@ This repository holds information about the Dissemination Information Package (D
 
 ### Final versions
 
-Final versions of the specification are conveniently published at the [DILCIS Board web site](http://dilcis.eu/specifications/sip) on PDF format.
+Final versions of the specification are conveniently published at the [DILCIS Board web site](http://dilcis.eu/specifications/dip) on PDF format.
 
 
 ### Draft versions
