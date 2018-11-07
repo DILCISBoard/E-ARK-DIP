@@ -187,22 +187,20 @@ The following attributes are available for use with each of the four specific me
 | /fileGrp/ file/ FLocat | | The location of each external file must be defined by the <FLocat> element using the same rules as for referencing metadata files. All references to files should be made using the XLink href attribute and the file protocol using the relative location of the file. Example: xlink:href="file:schemas/mets.xsd" | Add/Update |
 | /fileGrp/ file/ FLocat/ @ID | 0..1 | An ID for the <FLocat> element | Add/Update |
 | /fileGrp/ file/ FLocat/ @LOCTYPE | 1..1 | Mandatory locator pointing to the external file. | Add/Update |
-| /fileGrp/ file/ FLocat/@OTHERLOCTYPE | 0..1 | Description of the type of locator used | No change |
-
+| /fileGrp/ file/ FLocat/ @OTHERLOCTYPE | 0..1 | Description of the type of locator used | No change |
 | /fileGrp/ file/ FContent/ @ID | 0..1 | An ID for the <FContent> element | No change - not recommended |
-|---------------------------------- |-------- |-----------------------------------------------------|------------------------------- |
 | /fileGrp/ file/ FContent/ @USE | 0..1 | Statement about intended use of the embedded file | No change - not recommended |
-| | | | |
 
 **Table 10 - Differences between the AIP METS and the DIP METS on node level: structmap**
 **Node level: structmap**
+
 |Element/ Attribute|Cardinality|Description and usage|Change for DIP|
-|-----------------|------------|---------------------|---------------|
+|-----------------|------------|---------------------|--------------|
 | structMap | 1..n | Each METS file needs to include exactly one structMap element used exactly as described in this table. Institutions can add their own additional custom structural maps as separate structMap sections. | No change |
 | @ID | 0..1 | Optional, but if used must be unique within the package | No change |
 | @TYPE | 1..1 | Mandatory in this specification. The value must be “physical” | No change |
 | @LABEL | 1..1 | Mandatory in this specification. The value must be “Common Specification structural map” | No change |
-| /div | 0..n | Each folder (and sub-folder) within the package must be represented by an occurrence of the <div> element. Please note that sub-folders must be represented as nested div elements. Example: <structMap TYPE="physical" LABEL="Common Specification structural map"> <div LABEL="Package123"> <div LABEL="metadata"> | No change |
+| /div | 0..n | Each folder (and sub-folder) within the package must be represented by an occurrence of the <div> element. Please note that sub-folders must be represented as nested div elements. Example: '<structMap TYPE="physical" LABEL="Common Specification structural map"> <div LABEL="Package123"> <div LABEL="metadata">' | No change |
 | /div/@ID | 1..1 | Mandatory, identifier must be unique within the package | No change |
 | /div/@TYPE | 0..1 | No specific requirements | No change |
 | /div/@LABEL | 1..1 | Mandatory, value must be the name of the folder (“metadata”, “descriptive”, “schemas”, “representations”, etc). The LABEL value of the first div element in the package is the ID of the package | No change |
