@@ -33,6 +33,7 @@ The differences between a METS instance for an E-ARK DIP vs an E-ARK AIP are sma
 The DIP specification is limited to include one and only one representation from an AIP (for which many may exist). The chosen representation is itself an E-ARK IP and therefore follows the same structure. This is reflected in the IP being migrated from an AIP to a DIP. Below is a broad overview of the METS file.
 
 **Table 3 - Broad overview of the METS file**
+
 &nbsp;  | Elements    |           |           | Values                     |Comments
 --------|-------------| ----------|-----------|----------------------------|---------------------
 **mets**|             |           |           |                            |
@@ -54,11 +55,10 @@ The DIP specification is limited to include one and only one representation from
 &nbsp;  |             | **div**   |           |*schemas*                   |  
 &nbsp;  |             | **div**   |           |*documentation*             |  
 
-
-
 In the following the major differences between an XML instance for METS for an E-ARK DIP vs an E-ARK AIP are listed.
 
-**Node level: mets** **Table 4 - Differences between the AIP METS and the DIP METS on node level: mets**
+**Table 4 - Differences between the AIP METS and the DIP METS on node level: mets**
+**Node level: mets**
 
 **Element / Attribute**|**Cardinality**|**Description and usage in Common specification**| **Change for DIP**
 ----------------------|---------------|-------------------------------------------------|-------------------
@@ -70,31 +70,68 @@ mets     | 1..1 | The root level element that is required in all METS documents|
 \@CONTENTTYPESPECIFICATION | 0..1 | An attribute added by this specification. It describes which content information type specification is used for the content. Values of the attribute are fixed in the following vocabulary: SMURFERMS * SMURFSFSB * SIARD1 * SIARD2  SIARDDK * GeoVectorGML * GeoRasterGeotiffNB The vocabulary is extensible as additional content information type specifications are developed. | Change to one of these: SMURFERMS, SMURFSFSB, SIARD1 SIARD2 SIARDDK, OLAPCube, GeoVectorGML GeoRasterGeotiff
 \@PROFILE | 1..1 | Mandatory in this specification. The PROFILE attribute has to have as its value the URL of the official Common Specification METS Profile. | No change        
 
+**Table 5 - Differences between the AIP METS and the DIP METS on node level: metsHDR**
+**Node level: metsHdr** 
 
-**Node level: metsHdr** **Table 5 - Differences between the AIP METS and the DIP METS on node level: metsHDR**
+|  Element/ Attribute | Cardinality | Description and usage |  Change for DIP 		        |
+|---------------------|-------------|-----------------------|-----------------------------|
+| metsHdr  |0..1|Element for describing the package itself  |  			  			 		        
+| @ID 		 |0..1|Optional, no further requirements | No change |
+| @ADMID 	 |0..1|Optional, referring to the appropriate administrative metadata section, if used for metadata about the package as a whole. |No	change|
+| @CREATEDATE |1..1|Mandatory, the date of creation of the package | Change	to creation date for DIP|
+| @LASTMODDATE|0..n|Mandatory if relevant (in case the package has been modified)|Change to date of modification, if DIP has been created in several steps.|
+| @RECORDSTATUS|0..1|Optional, no further requirements|No change|
+| @PACKAGETYPE|1..1|An attribute added by the Common Specification for describing the type of the IP. The vocabulary to be used contains values:SIP, AIP, DIP, AIU, AIC. The vocabulary is managed by the DAS Board and will be updated when required.| Change	to DIP |
+|agent|1..n|The metsHdr must include at least one agent describing the software which has been  to create the package (TYPE=”OTHER” ROLE=”CREATOR” OTHERTYPE=”SOFTWARE”).Description of all other agents is optional.|  			  			 	|
+| agent/@ID|0..1|An ID for the agent.|No change|
+| agent/@ROLE|1..1|The role of the agent. The Common Specification requires describing at least one agent with the agent/@ROLE value “CREATOR”. For other (optional) occurrences of agent this attribute shall use a value from the fixed list provided by METS.|No change|
+| agent/ @OTHERROLE|0..1|A textual description of the role of the agent in case the value of agent/@ROLE is “OTHER”.|No change|
+| agent/ @TYPE|0..1|The Common Specification requires that at least one instance of the agent element includes the agent/@TYPE attribute with the value “OTHER”. In other occurrences of the agent element the attribute is optional. If used, values defined in official METS documentation shall be followed (“individual”, “organisation”, “other").|No change|
+| agent/ @OTHERTYPE|0..1|The Common Specification requires that at least one instance of the agent element includes the agent/ @OTHERTYPE attribute with the value “SOFTWARE”. In other occurrences this attribute shall only be used in case the value of agent/@TYPE is “OTHER”.|No change|
+| agent/ name|1..1|The name of the agent. In the Common Specification occurrence of the agent element this element must provide the name of the software tool which was used to create the IP. |Change to name of the agent that created the DIP from the AIP|
+| agent/ note|0..1|Additional information about the agent. We recommend using this element toprovide version information for the tool which was used to create the IP. | Change to version no. for the DIP creation software.|
+| altRecordID|0..n|A container for an alternative ID for the package content.|No change|
+| altRecordID/ @ID|0..1|An ID for the altRecordID element within the METS document.|No change|
+| altRecordID/ @TYPE|0..1|Used to describe the type of ID assigned. It is recommended to use the Library of Congress vocabulary for this element when used.|No change|
+| metsDocumentID |0..1|A unique identifier for the METS document itself.|No change|
+| metsDocumentID/ @ID|0..1|The ID of the metsDocumentID element.|No change|
+| metsDocumentID/ @TYPE|0..1|The type of the identifier assigned to the element.|No change|
 
-|  			 			Element/ Attribute   |  			 			Cardinality  |  			 			Description and usage 	  |  			 			Change for DIP 		        |
-|------------------------------|----------------------|----------------------------------|----------------------------------|
-|  			metsHdr 		     |  			0..1 		     |  			Element 			for describing the package itself 		        |  			  			 		        |
-|  			@ID 		     |  			0..1 		     |  			Optional, 			no further requirements 		        |  			No 			change 		        |
-|  			@ADMID 		     |  			0..1 		     |  			Optional, 			referring to the appropriate administrative metadata section, if 			used for metadata about the package as a whole. 		           |  			No 			change 		        |
-|  			@CREATEDATE 		     |  			1..1 		     |  			Mandatory, 			the date of creation of the package 		        |  			Change 			to creation date for DIP 		        |
-|  			@LASTMODDATE 		     |  			0..n 		     |  			Mandatory 			if relevant (in case the package has been modified) 		        |  			Change 			to date of modification, if DIP has been created in several steps. 		        |
-|  			@RECORDSTATUS 		     |  			0..1 		     |  			Optional, 			no further requirements 		        |  			No 			change 		        |
-|  			@PACKAGETYPE 		     |  			1..1 		     |  			 			An attribute added by the 			Common Specification for describing the type of the IP. The 			vocabulary to be used contains values:SIP, AIP, DIP, AIU, AIC 			The 			vocabulary is managed by the DAS Board and will be updated when 			required. 		                       |  			Change 			to DIP 		        |
-|  			agent 		     |  			1..n 		     |  			 			The metsHdr 			must include at least one agent describing the software which has 			been used to create the package (TYPE=”OTHER” ROLE=”CREATOR” 			OTHERTYPE=”SOFTWARE”). 			Description 			of all other agents is optional. 		                       |  			  			 		        |
-|  			agent/ 			@ID 		        |  			0..1 		     |  			An 			ID for the agent. 		        |  			No 			change 		        |
-|  			agent/ 			@ROLE 		        |  			1..1 		     |  			 			The role of the agent. The 			Common Specification requires describing at least one agent with 			the agent/@ROLE 			value “CREATOR”.  			 			For 			other (optional) occurrences of agent 			this attribute shall use a value from the fixed list provided by 			METS. 		    |  			No 			change 		        |
-|  			agent/ 			@OTHERROLE 		        |  			0..1 		     |  			A 			textual description of the role of the agent in case the value of 			agent/@ROLE 			is “OTHER”.  			 		                 |  			No 			change 		        |
-|  			agent/ 			@TYPE 		        |  			0..1 		     |  			 			The Common Specification 			requires that at least one instance of the agent 			element includes 			the agent/@TYPE 			attribute with 			the value “OTHER”. 			In 			other occurrences of the agent 			element the attribute is optional. If used, values defined in 			official METS documentation shall be followed (“individual”, 			“organisation”, “other"). 		                                      |  			No 			change 		        |
-|  			agent/ 			@OTHERTYPE 		        |  			0..1 		     |  			 			The Common Specification 			requires that at least one instance of the agent 			element includes the agent/@OTHERTYPE 			attribute with the value “SOFTWARE”.  			 			In 			other occurrences this attribute shall only be used in case the 			value of agent/@TYPE is “OTHER”. 		                             |  			No 			change 		        |
-|  			agent/ 			name 		        |  			1..1 		     |  			The 			name of the agent. In the Common Specification occurrence of the 			agent element 			this element must provide the name of the software tool which was 			used to create the IP.  			 		                    |  			Change 			to name of the agent that created the DIP from the AIP 		        |
-|  			agent/ 			note 		        |  			0..1 		     |  			Additional 			information about the agent. We recommend using this element to 			provide version information for the tool which was used to create 			the IP.  			 		                 |  			Change 			to version no. for the DIP creation software. 		        |
-|  			altRecordID 		     |  			0..n 		     |  			A 			container for an alternative ID for the package content. 		        |  			No 			change 		        |
-|  			altRecordID/ 			@ID 		        |  			0..1 		     |  			An 			ID for the altRecordID 			element within the METS document. 		           |  			No 			change 		        |
-|  			altRecordID/ 			@TYPE 		        |  			0..1 		     |  			Used 			to describe the type of ID assigned. It is recommended to use the 			Library of Congress vocabulary for this element when used. 		           |  			No 			change 		        |
-|  			metsDocumentID 		     |  			0..1 		     |  			A 			unique identifier for the METS document itself. 		        |  			No 			change 		        |
-|  			metsDocumentID/ 			@ID 		        |  			0..1 		     |  			The 			ID of the metsDocumentID 			element. 		           |  			No 			change 		        |
-|  			metsDocumentID/ 			@TYPE 		        |  			0..1 		     |  			The 			type of the identifier assigned to the element. 		        |  			No 			change 		        |
+**Table 6 - Differences between the AIP METS and the DIP METS on node level: dmdsec**
+**Node level: dmdSec**
 
-
+| Element/ Attribute|Cardinality|Description and usage|Change for DIP|
+|-------------------|-----------|---------------------|--------------|
+|dmdSec|0..n|Must be used if descriptive metadata about the package content is available. NOTE: According to official METS documentation each metadata section must describe one and only one set of metadata. As such, if 	implementers want to include multiple occurrences of descriptive metadata into the package this must be done by repeating the whole dmdSec element for each individual metadata. | No change. The DIP spec. assumes the EAD is in the AIP. The EAD is needed to find the AIP with the desired content.|
+|@ID|1..1|Mandatory, identifier must be unique within the package|No change|
+|@GROUPID|0..1|Can be used to group together different metadata sections.|No change|
+|@ADMID|0..1|In case administrative (provenance) metadata is available and described within METS about changes to the descriptive metadata, this element must reference the appropriate ID of the administrative metadata section. |No change|
+|@CREATED|1..1|Required by the Common Specification. Creation date of the metadata in this section, needed to track changes to metadata files.|No change|
+|@STATUS|0..1|Status of the metadata. Recommended for use to indicate currency of package. If used it is recommended to use one of the two values “SUPERSEDED” or “CURRENT”. |No change|
+|/mdRef|0..1|Reference to the descriptive metadata file stored in the “metadata” folder of the IP. In each occurrence of the dmdSec exactly one of the elements mdRef or mdWrap must be present. The Common Specification recommends the use of mdRef over mdWrap |  			  			 		        |
+|@ID|0..1|Unique ID for the mdRef section within the METS document.|No change|
+|@MIMETYPE|0..1|The IANA media type for the external file.|No change|
+|@LABEL|0..1|A name for the referenced file.|No change|
+|@XPTR|0..1|Locates the point within a file to which the mdRef element refers, if applicable, using any valid XPointer scheme.|	No change|
+|@LOCTYPE|1..1|Specifies the locator type used in the xlink:href which points to the file.|No change|
+|@OTHERLOCTYPE|0..1|Required when mdRef/@LOCTYPE=“OTHER”.|No change|
+|@MDTYPE|1..1|Specifies the type of metadata in the linked file. Values should be taken from the METS list provided. |No change|
+|@MDTYPEVERSION|0..1|The version of the metadata type described in MDTYPE |No change|
+|@OTHERMDTYPE|0..1|The type of metadata when MDTYPE=”OTHER”|No change|
+|@SIZE|0..1|Size of linked file in bytes |No change|
+|@CREATED|0..1|Date the linked file was created|No change|
+|@CHECKSUM|0..1|The checksum of the linked file|No change|
+|@CHECKSUMTYPE|0..1|The type of checksum used for calculating the checksum of the linked file|No change|
+|/mdWrap|0..1|Wrapper for descriptive metadata embedded into the METS document. In each occurrence of the dmdSec exactly one of the elements mdRef or mdWrap must be present. The Common Specification recommends the use of mdRef over mdWrap|No change|
+|@ID|0..1|Unique ID for the mdWrap section within the METS document.|No change|
+|@MIMETYPE|0..1|The IANA mime type for the wrapped metadata.|No change|
+|@LABEL|0..1|A name for the associated metadata.|No	change|
+|@MDTYPE|1..1|Specifies the type of embedded metadata. Values should be taken from the METS list provided.|No change|
+|@MDTYPEVERSION|0..1|The version of the metadata type described in MDTYPE|No change|
+|@OTHERMDTYPE|0..1|The type of metadata when MDTYPE=”OTHER”|Nochange 		        |
+|@SIZE|0..1|Size 			of associated metadata in bytes 		        |  			No 			change 		        |
+|@CREATED 		     |  			0..1 		     |  			Date 			the embedded metadata was created 		        |  			No 			change 		        |
+|@CHECKSUM 		     |  			0..1 		     |  			The 			checksum of the wrapped content 		        |  			No 			change 		        |
+|@CHECKSUMTYPE|0..1|The type of checksum used for calculating the checksum of the embedded metadata|No change|
+|/binData|0..1|A wrapper element to contain Base64 encoded metadata|No change|
+|/xmldata|0..1|A wrapper element to contain XML encoded metadata|No change|
