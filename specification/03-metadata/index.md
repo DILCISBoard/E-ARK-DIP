@@ -36,23 +36,23 @@ The DIP specification is limited to include one and only one representation from
 .       | Elements    |           |           | Values                     |Comments
 --------|-------------| ----------|-----------|----------------------------|---------------------
 **mets**|             |           |           |                            |
-        |**metsHdr**  |           |           |                            | 
-        |             |**agent**  |           |                            |software or archivist creating the DIP
-        | **dmdSec**  |           |           |                            |
-        |             |**mdRef**  |           | *EAD*                      |information about the EAD file
-        | **amdSec**  |           |           |                            |
-        |             |**mdRef**  |           |*PREMIS*                    |information about the PREMIS file
-        | **fileSec** |           |           |                            |
-        |             |**fileGrp**|           |*Common Specification root* |
-        |             |           |**fileGrp**|*metadata*                  |
-        |             |           |**fileGrp**|*representations*           | normally only one repr. in the DIP
-        |             |           |**fileGrp**|*schemas*                   |
-        |             |           |**fileGrp**|*documentation*             |
-        |**structMap**|           |           |                            |
-        |             | **div**   |           |*metadata*                  |
-        |             | **div**   |           |*representations*           |mets pointer to mets file for the repr.
-        |             | **div**   |           |*schemas*                   |  
-        |             | **div**   |           |*documentation*             |  
+.       |**metsHdr**  |           |           |                            | 
+.       |             |**agent**  |           |                            |software or archivist creating the DIP
+.       | **dmdSec**  |           |           |                            |
+.       |             |**mdRef**  |           | *EAD*                      |information about the EAD file
+.       | **amdSec**  |           |           |                            |
+.       |             |**mdRef**  |           |*PREMIS*                    |information about the PREMIS file
+.       | **fileSec** |           |           |                            |
+.       |             |**fileGrp**|           |*Common Specification root* |
+.       |             |           |**fileGrp**|*metadata*                  |
+.       |             |           |**fileGrp**|*representations*           | normally only one repr. in the DIP
+.       |             |           |**fileGrp**|*schemas*                   |
+.       |             |           |**fileGrp**|*documentation*             |
+.       |**structMap**|           |           |                            |
+.       |             | **div**   |           |*metadata*                  |
+.       |             | **div**   |           |*representations*           |mets pointer to mets file for the repr.
+.       |             | **div**   |           |*schemas*                   |  
+.       |             | **div**   |           |*documentation*             |  
 
 **Table 3 - Broad overview of the METS file**
 
