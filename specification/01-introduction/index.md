@@ -11,7 +11,7 @@ This document is a DIP specification which is guided by the following model (see
 _Common Specification for Information Packages_
 
 Common Specification for Information Packages (CSIP) identifies and standardises the common aspects of information packages (SIP/AIP/DIP) which are equally relevant and implemented by any of the functional entities of the overall digital preservation process (i.e. pre-ingest, ingest, long-term preservation and access). 
-CSIP is a separate document. Therefore, the current specification does not aim largely repeating the information presented there – only the information that is absolutely necessary to understand the SIP specification will be mentioned here. 
+CSIP is a separate document. Therefore, the current specification does not aim largely repeating the information presented there – only the information that is absolutely necessary to understand the DIP specification will be mentioned here. 
 
 _SIP, AIP, and DIP Specification_
 
@@ -21,15 +21,11 @@ This is the current document which describes the DIP package structure and minim
 
 _Content Information Type Specifications_
 
-Content Information Type Specificationsare content-dependent specifications which include detailed information on how content, metadata, and documentation for specific content types (for example ERMS or relational databases) can to be handled within the SIP. At the moment, there are 3 such specifications:
-	- SIARD 2.0 for relational databases (The SIARD 2.0 specification for relational databases can be found at http://eark-project.com/resources/specificationdocs/32-specification-for-siard-format-v20)
+Content Information Type Specificationsare content-dependent specifications which include detailed information on how content, metadata, and documentation for specific content types (for example ERMS or relational databases) can to be handled within the SIP. At the moment, there are 2 such specifications:
 	- SMURF ERMS for electronic records management systems (The SMURF profile for ERMS can be found https://github.com/DLMArchivalStandardsBoard/SMURF/tree/master/spec.) 
 	- SMURF SFSB for simple file system based records (The SMURF profile for SFSB can be found at https://github.com/DLMArchivalStandardsBoard/SMURF/tree/master/spec.) 
 
 
-## 1.2.	Related work
-
-This document is based on or influenced by the following documents and best practices: 
 
 
 
