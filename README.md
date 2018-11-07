@@ -42,5 +42,5 @@ The target audiences for this specification are archival institutions and softwa
 If you are interested engage more with this specification and the people and organizations behind it - feel free to: 
 
 - use the [GitHuB Watch-function](https://help.github.com/articles/watching-and-unwatching-repositories/) 
-- ask questions or report your thoughts and findings via the[Issues function] (https://github.com/DILCISBoard/E-ARK-DIP/issues) 
+- ask questions or report your thoughts and findings via the[Issues function](https://github.com/DILCISBoard/E-ARK-DIP/issues) 
 - visit [DILCIS Board web site](http://dilcis.eu/) and contact members
