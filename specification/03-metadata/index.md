@@ -33,7 +33,7 @@ The differences between a METS instance for an E-ARK DIP vs an E-ARK AIP are sma
 The DIP specification is limited to include one and only one representation from an AIP (for which many may exist). The chosen representation is itself an E-ARK IP and therefore follows the same structure. This is reflected in the IP being migrated from an AIP to a DIP. Below is a broad overview of the METS file.
 
 
-.       | Elements    |           |           | Values                     |Comments
+&nbsp;  | Elements    |           |           | Values                     |Comments
 --------|-------------| ----------|-----------|----------------------------|---------------------
 **mets**|             |           |           |                            |
 .       |**metsHdr**  |           |           |                            | 
