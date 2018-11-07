@@ -139,89 +139,85 @@ mets     | 1..1 | The root level element that is required in all METS documents|
 **Table 7 - Differences between the AIP METS and the DIP METS on node level: amdsec** 
 **Node level: amdSec**
 
-|  			 			Element/ Attribute  			 		           |  			 			Cardinality 		        |  			 			Description and usage 		        |  			 			Change for DIP 		        |
-|-------------------------          |----------------       |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
-|  			amdSec 		     |  			0..n 		     |  			In 			case administrative / preservation metadata is available, it must 			be described using the amdSec 			element. 		              |  			Mandatory 			for DIP 		        |
-|  			@ID 		     |  			0..1 		     |  			Unique 			ID for the amdSec 			within the METS document 		           |  			No 			change 		        |
-|  			digiprovMD 		     |  			0..n 		     |  			The 			Common Specification recommends the use of PREMIS metadata for 			recording information about preservation events. If used, PREMIS 			metadata must appear in a digiprovMD 			element, either embedded or linked. It is mandatory to include one 			digiprovMD 			element for each external file in the “metadata/preservation” 			folder, or for each embedded set of PREMIS metadata. 		                          |  			The 			DIP spec. assumes that a PREMIS file is updated or created during 			the AIP to DIP migration 		           |
-|  			techMD 		     |  			0..n 		     |  			The 			use of techMD 			is not recommended. Instead, detailed technical metadata should be 			included into or referenced from appropriate PREMIS files 		              |  			No 			change 		        |
-|  			rightsMD 		     |  			0..n 		     |  			 			Optional. The Common 			Specification recommends including a simple rights statement which 			describes the overall access status of the package with the 			following values:  			 			  				Open, Closed, Partially 				closed, Not known. 			 			However, 			the exact schema and element is up to individual implementations 			to decide 		                                           |  			No 			change 		        |
-|  			sourceMD 		     |  			0..n 		     |  			Optional, 			no further requirements 		        |  			No 			change 		        |
-|  |  |  |  |
+|Element/ Attribute|Cardinality|Description and usage|Change for DIP|
+|-----------------|------------|---------------------|---------------|
+|amdSec|0..n|In case administrative / preservation metadata is available, it must be described using the amdSec element. 		          |Mandatory for DIP|
+|@ID|0..1|Unique ID for the amdSec within the METS document|No change|
+|digiprovMD|0..n|The Common Specification recommends the use of PREMIS metadata for recording information about preservation events. If used, PREMIS metadata must appear in a digiprovMD element, either embedded or linked. It is mandatory to include one 			digiprovMD element for each external file in the “metadata/preservation” folder, or for each embedded set of PREMIS metadata.|The DIP spec. assumes that a PREMIS file is updated or created during the AIP to DIP migration|
+|techMD|0..n|The use of techMD is not recommended. Instead, detailed technical metadata should be included into or referenced from appropriate PREMIS files|No change|
+|rightsMD|0..n|Optional. The Common Specification recommends including a simple rights statement which describes the overall access status of the package with the following values: Open, Closed, Partially closed, Not known. However, the exact schema and element is up to individual implementations to decide |No change|
+|sourceMD|0..n|Optional, no further requirements| No change|
 
-Table 8 - Available attributes
+**Table 8 - Available attributes**
 The following attributes are available for use with each of the four specific metadata areas listed above (xxx below stands for amdSec/digiprovMD, amdSec/techMD, amdSec/rightsMD and amdSec/sourceMD).
 
-|  			 			Element/ Attribute  			 		           |  			 			Cardinality 		        |  			 			Description and usage 		        |  			 			Change for DIP 		        |
-|-------------------------          |----------------       |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------       |
-|  			xxx/ 			@ID 		        |  			1..1 		     |  			Mandatory 			for each of the four elements amdSec/digiprovMD, 			amdSec/techMD, 			amdSec/rightsMD 			and amdSec/sourceMD. 			Identifier must be unique within the package 		                    |  			No 			change 		        |
-|  			xxx/ 			@GROUPID 		        |  			0..1 		     |  			Optional, 			no further requirements 		        |  			No 			change 		        |
-|  			xxx/ 			@ADMID 		        |  			0..1 		     |  			In 			case administrative (provenance) metadata is available and 			described within METS about changes to the metadata occurrence 			described here, this element must reference the appropriate ID of 			the administrative metadata section. 		                 |  			No 			change 		        |
-|  			xxx/ 			@CREATED 		        |  			0..1 		     |  			Optional, 			no further requirements 		        |  			No 			change 		        |
-|  			xxx/ 			@STATUS 		        |  			0..1 		     |  			Recommended 			for describing currency of metadata. If used, must include one of 			the two values “superseded” or “current” 		           |  			No 			change 		        |
-|  |  |  |  |
+|Element/ Attribute|Cardinality|Description and usage|Change for DIP|
+|-----------------|------------|---------------------|---------------|
+|xxx/ @ID|1..1|Mandatory for each of the four elements amdSec/digiprovMD, amdSec/techMD, amdSec/rightsMD and amdSec/sourceMD. Identifier must be unique within the package |No change|
+|xxx/@GROUPID | 0..1 | Optional, no further requirements | No change |
+|xxx/ @ADMID | 0..1 | In case administrative (provenance) metadata is available and described within METS about changes to the metadata occurrence described here, this element must reference the appropriate ID of the administrative metadata section. | No change |
+|xxx/ @CREATED | 0..1 | Optional, no further requirements | No change |
+|xxx/ @STATUS | 0..1 | Recommended for describing currency of metadata. If used, must include one of the two values “superseded” or “current” | No change |
 
-Table 9 - Differences between the AIP METS and the DIP METS on node level: filesec 
-Node level: filesec
+**Table 9 - Differences between the AIP METS and the DIP METS on node level: filesec** 
+**Node level: filesec**
 
-|  			 			Element/ Attribute  			 		           |  			 			Cardinality 		        |  			 			Description and usage 		        |  			 			Change for DIP 		        |
-|----------------------------------------|----------------       |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------|
-|  			fileSec 		     |  			0..1 		     |  			Recommended 			to include one fileSec 			element in each METS file 		           |  			No 			change 		        |
-|  			@ID 		     |  			0..1 		     |  			Recommended. 			The identifier must be unique within the METS file. 		        |  			No 			change 		        |
-|  			/fileGrp 		     |  			1..n 		     |  			 			This specification requires 			that one specific occurrence of the fileGrp 			element is included as described above.  			 			Implementers 			are welcome to define and add additional file groups necessary for 			internal purposes. The main fileGrp 			element includes additional nested fileGrp 			elements, one for each folder of the package (except metadata 			described in amdSec 			and dmdSec). 		                                      |  			No 			change 		        |
-|  			/fileGrp/@ID 		     |  			0..1 		     |  			Recommended, 			identifier must be unique within the package 		        |  			No 			change 		        |
-|  			/fileGrp/ 			@VERSDATE 		        |  			0..1 		     |  			Version 			date of the file grouping 		        |  			No 			change 		        |
-|  			/fileGrp/ 			@ADMID 		        |  			0..1 		     |  			In 			case administrative metadata is available and described within 			METS about the file group, this element must reference the 			appropriate ID of the administrative metadata section. 		              |  			No 			change 		        |
-|  			/fileGrp/ 			@USE 		        |  			1..1 		     |  			Recommended 			in Common Specification with one occurrence bearing the values 			“Common Specification root” (for the root fileGrp 			element and the 			names of appropriate folders for nested fileGrp 			occurrences. 		                    |  			No 			change 		        |
-|  			/fileGrp/file 		     |  			1..n 			 			 		           |  			The 			Common Specification requires that fileGrp 			must contain at least one file 			element either pointing to content files with FLocat 			or wrapping the content files using FContent 		                 |  			No 			change 		        |
-|  			/fileGrp/ 			file/@ID 		        |  			1..1 		     |  			Mandatory, 			must be unique across the package 		        |  			Add/update 			 			 		           |
-|  			/fileGrp/ 			file/ @MIMETYPE 		        |  			1..1 		     |  			The 			IANA mime type for the wrapped or linked file. Required by the 			Common Specification. 		           |  			Add/update 			(reflecting change of format) 		        |
-|  			/fileGrp/ 			file/ @SEQ 		        |  			0..1 		     |  			Used 			to describe the sequence of files listed within the fileGrp 			element 		           |  			No 			change  			 		           |
-|  			/fileGrp/ 			file/ @SIZE 		        |  			1..1 		     |  			Size 			of the linked or embedded file in bytes. Required by the Common 			Specification 		           |  			Add/update 			 			 		           |
-|  			/fileGrp/ 			file/ @CREATED 		        |  			1..1 		     |  			Date 			the embedded/linked file was created. Required by the Common 			Specification 		           |  			Add/update 			 			 		           |
-|  			/fileGrp/ 			file/ @CHECKSUM 		        |  			1..1 		     |  			The 			checksum of the embedded/linked file. Required by the Common 			Specification 		           |  			Add/update 		     |
-|  			/fileGrp/ 			file/ @CHECKSUMTYPE 		        |  			1..1 		     |  			The 			type of checksum used for the embedded/linked file. Required by 			the Common Specification 		           |  			No 			change (unless type is actually changed) 		        |
-|  			/fileGrp/ 			file/ @OWNERID 		        |  			0..1 		     |  			Unique 			ID of the file assigned by its owner 		        |  			No 			change  			 		           |
-|  			/fileGrp/ 			file/ @ADMID 		        |  			0..1 		     |  			In 			case administrative metadata is available and described within 			METS about the file, this element must reference the appropriate 			ID of the administrative metadata section. 		              |  			No 			change (e.g. link to EAD)   			 		           |
-|  			/fileGrp/ 			file/ @DMDID 		        |  			0..1 		     |  			Value 			for the ID attribute of the dmdSec 			containing metadata describing the content files listed in the 			file element. 		              |  			Add/Update 			(e.g. link to PREMIS)  			 		           |
-|  			/fileGrp/ 			file/ @GROUPID 		        |  			0..1 		     |  			Provides 			an ID for a fileGrp 			containing related files. 		           |  			No 			change  			 		           |
-|  			/fileGrp/ 			file/ @USE 		        |  			0..1 		     |  			Statement 			about intended use of the files 		        |  			No 			change 		        |
-|  			/fileGrp/ 			file/ FLocat 		        |  			  			 		        |  			 			The location of each 			external file must be defined by the <FLocat> element using 			the same rules as for referencing metadata files. 			 			All references to files 			should be made using the XLink href attribute and the file 			protocol using the relative location of the file. 			Example: 			xlink:href="file:schemas/mets.xsd" 		                                |  			Add/Update 			 			 		           |
-|  			/fileGrp/ 			file/ FLocat/ @ID 		        |  			0..1 		     |  			An 			ID for the <FLocat> element 		        |  			Add/Update 			 			 		           |
-|  			/fileGrp/ 			file/ FLocat/ @LOCTYPE 		        |  			1..1 		     |  			Mandatory 			locator pointing to the external file. 		        |  			Add/Update 			 			 		           |
-|  			/fileGrp/ 			file/ FLocat/@OTHERLOCTYPE 		        |  			0..1 		     |  			Description 			of the type of locator used 		        |  			No 			change 		        |
+|Element/ Attribute|Cardinality|Description and usage|Change for DIP|
+|-----------------|------------|---------------------|---------------|
+| fileSec | 0..1 | Recommended to include one fileSec element in each METS file | No change |
+| @ID | 0..1 | Recommended. The identifier must be unique within the METS file. | No change |
+| /fileGrp | 1..n | This specification requires that one specific occurrence of the fileGrp element is included as described above. Implementers are welcome to define and add additional file groups necessary for internal purposes. The main fileGrp element includes additional nested fileGrp elements, one for each folder of the package (except metadata described in amdSec and dmdSec). | No change |
+| /fileGrp/@ID | 0..1 | Recommended, identifier must be unique within the package | No change |
+| /fileGrp/ @VERSDATE | 0..1 | Version date of the file grouping | No change |
+| /fileGrp/ @ADMID | 0..1 | In case administrative metadata is available and described within METS about the file group, this element must reference the appropriate ID of the administrative metadata section. | No change |
+| /fileGrp/ @USE | 1..1 | Recommended in Common Specification with one occurrence bearing the values “Common Specification root” (for the root fileGrp element and the names of appropriate folders for nested fileGrp occurrences. | No change |
+| /fileGrp/file | 1..n | The Common Specification requires that fileGrp must contain at least one file element either pointing to content files with FLocat or wrapping the content files using FContent | No change |
+| /fileGrp/ file/@ID | 1..1 | Mandatory, must be unique across the package | Add/update |
+| /fileGrp/ file/ @MIMETYPE | 1..1 | The IANA mime type for the wrapped or linked file. Required by the Common Specification. | Add/update (reflecting change of format) |
+| /fileGrp/ file/ @SEQ | 0..1 | Used to describe the sequence of files listed within the fileGrp element | No change |
+| /fileGrp/ file/ @SIZE | 1..1 | Size of the linked or embedded file in bytes. Required by the Common Specification | Add/update |
+| /fileGrp/ file/ @CREATED | 1..1 | Date the embedded/linked file was created. Required by the Common Specification | Add/update |
+| /fileGrp/ file/ @CHECKSUM | 1..1 | The checksum of the embedded/linked file. Required by the Common Specification | Add/update |
+| /fileGrp/ file/ @CHECKSUMTYPE | 1..1 | The type of checksum used for the embedded/linked file. Required by the Common Specification | No change (unless type is actually changed) |
+| /fileGrp/ file/ @OWNERID | 0..1 | Unique ID of the file assigned by its owner | No change |
+| /fileGrp/ file/ @ADMID | 0..1 | In case administrative metadata is available and described within METS about the file, this element must reference the appropriate ID of the administrative metadata section. | No change (e.g. link to EAD) |
+| /fileGrp/ file/ @DMDID | 0..1 | Value for the ID attribute of the dmdSec containing metadata describing the content files listed in the file element. | Add/Update (e.g. link to PREMIS) |
+| /fileGrp/ file/ @GROUPID | 0..1 | Provides an ID for a fileGrp containing related files. | No change |
+| /fileGrp/ file/ @USE | 0..1 | Statement about intended use of the files | No change |
+| /fileGrp/ file/ FLocat | | The location of each external file must be defined by the <FLocat> element using the same rules as for referencing metadata files. All references to files should be made using the XLink href attribute and the file protocol using the relative location of the file. Example: xlink:href="file:schemas/mets.xsd" | Add/Update |
+| /fileGrp/ file/ FLocat/ @ID | 0..1 | An ID for the <FLocat> element | Add/Update |
+| /fileGrp/ file/ FLocat/ @LOCTYPE | 1..1 | Mandatory locator pointing to the external file. | Add/Update |
+| /fileGrp/ file/ FLocat/@OTHERLOCTYPE | 0..1 | Description of the type of locator used | No change |
 
-|  			/fileGrp/ 			file/ FContent/ @ID 		        |  			0..1 		     |  			An 			ID for the <FContent> element 		        |  			No 			change - not recommended 		        |
-|----------------------------------      |--------    |-----------------------------------------------------|-------------------------------       |
-|  			/fileGrp/ 			file/ FContent/ @USE 		        |  			0..1 		     |  			Statement 			about intended use of the embedded file 		        |  			No 			change - not recommended 		        |
-|  |  |  |  |
+| /fileGrp/ file/ FContent/ @ID | 0..1 | An ID for the <FContent> element | No change - not recommended |
+|---------------------------------- |-------- |-----------------------------------------------------|------------------------------- |
+| /fileGrp/ file/ FContent/ @USE | 0..1 | Statement about intended use of the embedded file | No change - not recommended |
+| | | | |
 
-Node level: structmap
-Table 10 - Differences between the AIP METS and the DIP METS on node level: structmap
+**Table 10 - Differences between the AIP METS and the DIP METS on node level: structmap**
+**Node level: structmap**
+|Element/ Attribute|Cardinality|Description and usage|Change for DIP|
+|-----------------|------------|---------------------|---------------|
+| structMap | 1..n | Each METS file needs to include exactly one structMap element used exactly as described in this table. Institutions can add their own additional custom structural maps as separate structMap sections. | No change |
+| @ID | 0..1 | Optional, but if used must be unique within the package | No change |
+| @TYPE | 1..1 | Mandatory in this specification. The value must be “physical” | No change |
+| @LABEL | 1..1 | Mandatory in this specification. The value must be “Common Specification structural map” | No change |
+| /div | 0..n | Each folder (and sub-folder) within the package must be represented by an occurrence of the <div> element. Please note that sub-folders must be represented as nested div elements. Example: <structMap TYPE="physical" LABEL="Common Specification structural map"> <div LABEL="Package123"> <div LABEL="metadata"> | No change |
+| /div/@ID | 1..1 | Mandatory, identifier must be unique within the package | No change |
+| /div/@TYPE | 0..1 | No specific requirements | No change |
+| /div/@LABEL | 1..1 | Mandatory, value must be the name of the folder (“metadata”, “descriptive”, “schemas”, “representations”, etc). The LABEL value of the first div element in the package is the ID of the package | No change |
+| /div/@DMDID | 0..1 | ID attribute values identifying the dmdSec, elements in the METS document that contain or link to descriptive metadata pertaining to the structural division represented by the current div element | Add/Update |
+| /div/@ADMID | 0..1 | No specific requirements | Add/Update |
+| /div/@ORDER | 0 | Not used in the specific Common Specification structMap occurrence | No change |
+| /div/ @ORDERLABEL | 0 | Not used in the specific Common Specification structMap occurrence | No change |
+| /div/ @CONTENTIDS | 0..1 | IDs for the content in this division. No specific use requirements. | No change |
+| /div/fptr | 0..n | If the folder which is described by the div element includes computer files these must be referenced by using the fptr element. The only exception is the description of representations (see below for the use of mptr). The fptr child elements par, seq and area must not be used. | Add/Update |
+| /div/fptr/@ID | 0..1 | No specific requirements | No change |
+| /div/ fptr/ @FILEID | 1..1 | Mandatory, must be the ID used in the appropriate file or mdRef element | Add/Update |
+| /div/ fptr/ @CONTENTIDS | 0..1 | IDs for the content referenced by this fptr element. No specific requirements | No change |
+| /div/div/mptr | 0..n | In the case of describing representations within the package (i.e. representations/representation1) the content of the representations must not be described. Instead the <div> of the specific representation should include one and only one occurrence of the <mptr> element, pointing to the appropriate representation METS file. The references to representation METS files must be made using the XLink href attribute and the file protocol using the relative location of the file. Example: xlink:href="file:representation/ representation1/mets.xml" The XLink type attribute is used with the fixed value “simple”. Example: xlink:type="simple" The LOCTYPE attribute is used with the fixed value ”URL” | No change |
+| /div/ div/ mptr/@ID | 0..1 | Unique ID for this element | No change |
+| /div/ div/ mptr/ @LOCTYPE | 0..1 | The locator type used in the xlink:href attribute | No change |
+| /div/ div/ mptr/ @OTHERLOCTYPE | 0..1 | Locator type in xlink:href when LOCTYPE=”OTHER” | No change |
+| /div/ div/ mptr/ @CONTENTIDS | 0..1 | The content ID for the content represented by the mptr element. | No change |
 
-|  			 			Element/ Attribute  			 		           |  			 			Cardinality 		        |  			 			Description and usage 		        |  			 			Change for DIP 		        |
-|---------------------------------- |----------------       |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------       |
-|  			structMap 		     |  			1..n 		     |  			Each 			METS file needs to include exactly one structMap 			element used exactly as described in this table. Institutions can 			add their own additional custom structural maps as separate 			structMap 			sections. 		                    |  			No 			change 		        |
-|  			@ID 		     |  			0..1 		     |  			Optional, 			but if used must be unique within the package 		        |  			No 			change 		        |
-|  			@TYPE 		     |  			1..1 		     |  			Mandatory 			in this specification. The value must be “physical” 		        |  			No 			change 		        |
-|  			@LABEL 		     |  			1..1 		     |  			Mandatory 			in this specification. The value must be “Common Specification 			structural map” 		           |  			No 			change 		        |
-|  			/div 		     |  			0..n 		     |  			 			Each folder (and sub-folder) 			within the package must be represented by an occurrence of the 			<div> element. Please note that sub-folders must be 			represented as nested div elements.  			 			 			Example:  			 			 			<structMap 			TYPE="physical" 			LABEL="Common 			Specification structural map"> 			 			  <div 			LABEL="Package123"> 			     <div 			LABEL="metadata"> 		                                                           |  			No 			change 		        |
-|  			/div/@ID 		     |  			1..1 		     |  			Mandatory, 			identifier must be unique within the package 		        |  			No 			change 		        |
-|  			/div/@TYPE 		     |  			0..1 		     |  			No 			specific requirements 		        |  			No 			change 		        |
-|  			/div/@LABEL 		     |  			1..1 		     |  			Mandatory, 			value must be the name of the folder (“metadata”, 			“descriptive”, 			“schemas”, 			“representations”, 			etc). The LABEL value of the first div 			element in the package is the ID of the package 		                       |  			No 			change 		        |
-|  			/div/@DMDID 		     |  			0..1 		     |  			ID 			attribute values identifying the dmdSec, 			elements in the METS document that contain or link to descriptive 			metadata pertaining to the structural division represented by the 			current div 			element 		                    |  			Add/Update 		     |
-|  			/div/@ADMID 		     |  			0..1 		     |  			No 			specific requirements 		        |  			Add/Update 		     |
-|  			/div/@ORDER 		     |  			0 		     |  			Not 			used in the specific Common Specification structMap 			occurrence 		           |  			No 			change 		        |
-|  			/div/ 			@ORDERLABEL 		        |  			0 		     |  			Not 			used in the specific Common Specification structMap 			occurrence 		           |  			No 			change 		        |
-|  			/div/ 			@CONTENTIDS 		        |  			0..1 		     |  			IDs 			for the content in this division. No specific use requirements. 		        |  			No 			change 		        |
-|  			/div/fptr 		     |  			0..n 		     |  			 			If the folder which is 			described by the div 			element includes computer files these must be referenced by using 			the fptr 			element.  			 			 			The only exception is the 			description of representations (see below for the use of mptr). 			The 			fptr 			child elements par, 			seq 			and area 			must not be used. 		                                                  |  			Add/Update 		     |
-|  			/div/fptr/@ID 		     |  			0..1 		     |  			No 			specific requirements 		        |  			No 			change 		        |
-|  			/div/ 			fptr/ @FILEID 		        |  			1..1 		     |  			Mandatory, 			must be the ID used in the appropriate file 			or mdRef 			element 		              |  			Add/Update 		     |
-|  			/div/ 			fptr/ @CONTENTIDS 		        |  			0..1 		     |  			IDs 			for the content referenced by this fptr 			element. No specific requirements 		           |  			No 			change 		        |
-|  			/div/div/mptr 		     |  			0..n 		     |  			 			In the case of describing 			representations within the package (i.e. 			representations/representation1) the content of the 			representations must not be described. Instead the <div> of 			the specific representation should include one and only one 			occurrence of the <mptr> element, pointing to the 			appropriate representation METS file. 			 			The references to 			representation METS files must be made using the XLink href 			attribute and the file protocol using the relative location of the 			file. 			 			Example: 			xlink:href="file:representation/ 			representation1/mets.xml" 			 			The XLink type attribute is 			used with the fixed value “simple”. 			 			Example: xlink:type="simple" 			The 			LOCTYPE attribute is used with the fixed value ”URL” 		                                                                          |  			No 			change 		        |
-|  			/div/ 			div/ mptr/@ID 		        |  			0..1 		     |  			Unique 			ID for this element 		        |  			No 			change 		        |
-|  			/div/ 			div/ mptr/ @LOCTYPE 		        |  			0..1 		     |  			The 			locator type used in the xlink:href attribute 		        |  			No 			change 		        |
-|  			/div/ 			div/ mptr/ @OTHERLOCTYPE 		        |  			0..1 		     |  			Locator 			type in xlink:href when LOCTYPE=”OTHER” 		        |  			No 			change 		        |
-|  			/div/ 			div/ mptr/ @CONTENTIDS 		        |  			0..1 		     |  			The 			content ID for the content represented by the mptr 			element. 		           |  			No 			change 		        |
-|  |  |  |  |
-|  |  |  |  |
