@@ -3,6 +3,12 @@
 
 ## 1.1. Scope and purpose
 
+Key objectives of this specification are:
+
+- To define a generic structure of the DIP format in a way that it is suitable for a wide variety of archival records, such as document and image collections, databases or geographical data.
+- To recommend a set of metadata related to the structural and the access aspects of the DIP as implemented by the reference implementation.
+
+
 This document is a DIP specification which is guided by the following model (see Figure 1):
 
 ![Figure 1](image1.png)
@@ -25,7 +31,16 @@ Content Information Type Specificationsare content-dependent specifications whic
 	- SMURF ERMS for electronic records management systems (The SMURF profile for ERMS can be found https://github.com/DLMArchivalStandardsBoard/SMURF/tree/master/spec.) 
 	- SMURF SFSB for simple file system based records (The SMURF profile for SFSB can be found at https://github.com/DLMArchivalStandardsBoard/SMURF/tree/master/spec.) 
 
+## 1.2 Definition of a DIP
+The definition of an E-ARK DIP is that it corresponds to an IP which is ready to be processed by its designated Access Software; if it is not suited for processing and rendering by its designated Access Software, it is not (yet) a DIP. 
+This is a very generic, but handy, definition. To be more specific, the CS DIP is: 
 
+- an IP which is sent (or is ready to be sent) to the user in an Access environment; 
+- supported by E-ARK tools, i.e. can be rendered by bespoke Access Software.
 
+The DIP is to a very large extent similar to the AIP from which it is created. However, there are also significant differences.
+
+First of all, the DIP looks like the AIP: It replicates the structure of the AIP from which it is derived. It also inherits all the metadata as well as the intellectual entities of the AIP, regardless of any format migrations that may have occurred during the AIP-DIP conversion process.
+Secondly, the DIP is different from the AIP: The DIP allows for example for the inclusion of new DIP representation formats, which are more user-friendly than the AIP formats that are intended for long-term preservation purposes. It also allows for the updating of the metadata as well as for the addition of new metadata elements. Representation Information, which is required for rendering and understanding the intellectual content, is also added, and as a direct consequence, there may be a need for new folders and files, for example within the ‘Documentation’ folder.
 
 
