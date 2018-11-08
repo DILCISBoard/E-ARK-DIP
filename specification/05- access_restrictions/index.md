@@ -1,1 +1,1 @@
-# **​5 Action restrictions**
+# **​5 Access restrictions**
