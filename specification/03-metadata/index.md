@@ -336,13 +336,12 @@ Descriptive metadata are used to describe the intellectual contents of archival 
 
 [^54]: For E-ARK pilots, most of the Access Software used the EAD3 standard. They can however be tweaked to use other descriptive metadata.
 
-![](media/image2.png){width="5.168051181102363in" height="3.5364588801399823in"}
+![](media/EAD_figure3.png)
 
 **Figure 3 - E-ARK IP descriptive metadata**
 
 The METS descriptive metadata element \<dmdSec\> references descriptive metadata as seen in Figure 4 below and as such descriptive metadata are not to be included into the METS file.
-
-![](media/image8.png){width="3.475281058617673in" height="1.073957786526684in"}
+![](media/EAD_figure4.png)
 
 **Figure 4 - METS descriptive metadata**
 
@@ -354,7 +353,7 @@ The EAD file has three main inputs (Figure 5 below):
 
 -   Additional metadata. Specific information that does not fit into the EAD3 standard elements can be saved as \<odd\> elements or localtype attributes in EAD3 elements (see localtype example below in section 'Search').
 
-![](media/image9.png){width="3.4703083989501313in" height="2.11366469816273in"}
+![](media/EAD_figure5.png)
 
 **Figure 5 - Inputs to the EAD file**
 
