@@ -565,8 +565,7 @@ The \<accessrestrict\> tag is "An element for information about conditions that 
 
 The \<p\> tag in \<accessrestrict\> is repeatable and can be used in the following way:
 
-**Table 23 - EAD example of \<accessrestrict\> **
-
+**Table 23 - EAD example of \<accessrestrict\>**
 ```xml
 <accessrestrict>
  <p>Restricted</p>
