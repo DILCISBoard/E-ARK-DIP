@@ -32,7 +32,7 @@ Content Information Type Specificationsare content-dependent specifications whic
 	- SMURF SFSB for simple file system based records (The SMURF profile for SFSB can be found at https://github.com/DLMArchivalStandardsBoard/SMURF/tree/master/spec.) 
 
 ## 1.2 Definition of a DIP
-The definition of an E-ARK DIP is that it corresponds to an IP which is ready to be processed by its designated Access Software; if it is not suited for processing and rendering by its designated Access Software, it is not (yet) a DIP. 
+The definition of an CS DIP is that it corresponds to an CS IP which is ready to be processed by its designated Access Software; if it is not suited for processing and rendering by its designated Access Software, it is not (yet) a DIP. 
 This is a very generic, but handy, definition. To be more specific, the CS DIP is: 
 
 - an IP which is sent (or is ready to be sent) to the user in an Access environment; 
