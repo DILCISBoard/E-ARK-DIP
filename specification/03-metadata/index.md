@@ -327,8 +327,78 @@ Software to render it, it is necessary to use the semantic unit "1.13 relationsh
 
 As can be seen in Table 13 (above) the nature of the relationship, \<relationshipType\> is used (value, e.g. 'dependency'); intimately linked to this is also the indication of a \<relationshipSubType\>, e.g. 'requires'.
 
-In order to identify the Access Software, which is used to render the representation, the
-
-\<relatedObjectIdentifier\> is employed; and the \<relatedEnvironmentPurpose\> gives us a hint about what the purpose is (here: to 'render').
+In order to identify the Access Software, which is used to render the representation, the \<relatedObjectIdentifier\> is employed; and the \<relatedEnvironmentPurpose\> gives us a hint about what the purpose is (here: to 'render').
 
 Since it is not always possible to render the DIP representation formats with one piece of Access Software, it can be necessary to model software dependencies and sequences between several pieces of software in PREMIS.
+
+#### ​3.1.2.3​ EAD
+Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The E-ARK project allows for the inclusion of any kind of descriptive metadata in the E-ARK IP[^54]. These go into the 'descriptive/' folder as seen in the example below, Figure 3 (cf. EAD.xml).
+
+[^54]: For E-ARK pilots, most of the Access Software used the EAD3 standard. They can however be tweaked to use other descriptive metadata.
+
+![](media/image2.png){width="5.168051181102363in" height="3.5364588801399823in"}
+
+**Figure 3 - E-ARK IP descriptive metadata**
+
+The METS descriptive metadata element \<dmdSec\> references descriptive metadata as seen in Figure 4 below and as such descriptive metadata are not to be included into the METS file.
+
+![](media/image8.png){width="3.475281058617673in" height="1.073957786526684in"}
+
+**Figure 4 - METS descriptive metadata**
+
+The EAD file has three main inputs (Figure 5 below):
+
+-   Archival descriptions. Contains main archival descriptions (including metadata about aggregations and classification).
+
+-   Content. Contains links to computer files and folders as \<dao\> elements and \@base attributes respectively.
+
+-   Additional metadata. Specific information that does not fit into the EAD3 standard elements can be saved as \<odd\> elements or localtype attributes in EAD3 elements (see localtype example below in section 'Search').
+
+![](media/image9.png){width="3.4703083989501313in" height="2.11366469816273in"}
+
+**Figure 5 - Inputs to the EAD file**
+
+##### ​3.1.2.3.1​ Tools
+
+The tools that the E-ARK project is building will by default only be able to cope with EAD3, because EAD3 is the descriptive metadata standard that E-ARK has chosen. This does not mean that the tools cannot be configured so they can also cope with other descriptive metadata standards. For example, in E-ARK web there is a generic task for descriptive metadata. It would be easy to adapt this task to Dublin Core, for example, if required. The only thing that is required to do so is a convention which defines how to determine the metadata that belong to a file item in the context of a metadata format.
+
+The tools in E-ARK that use EAD are:
+
+-   ERMS Export Module (EEM)
+-   EAD Editor
+-   RODA
+-   ESS tools
+-   E-ARK Web including Apache Hadoop, Lily and Solr.
+-   Access Software
+    -   Search GUI
+    -   Order Management Tool
+    -   DIP Viewer
+
+##### ​3.1.2.3.2​ Search
+
+To support the development of a search interface, it is required to make certain metadata elements available in the Solr index[^55], either by using the Lily indexer[^56] or via the AIP indexing task, which adds content to the Solr index by creating one document[^57] per contained file in the IP. These Solr documents include basic properties such as \"path\", \"package\", \"contentType\", \"size\", and can be further enriched by running a subsequent job which parses EAD metadata files to search for \<dao\> tags. If such a tag is found, the metadata fields of the first c-level tag in the ancestry path of the \"data\" element (e.g. the \"title\" field) are added to the Solr document. If no \<dao\> element is found, the entire EAD/c (component) is indexed and associated with all files in a given IP. This aims to support scenarios where no \<dao\> elements are provided as part of the description.
+
+[^55]: Apache Solr Reference Guide Solr Indexing https://cwiki.apache.org/confluence/display/solr/Introduction+to+Solr+Indexing
+
+[^56]: The dm-file-ingest component: https://github.com/eark-project/dm-file-ingest
+
+[^57]: A document in Solr terminology is Solr\'s basic unit of information, which is a set of data that describes something. A document about a person, for example, might contain the person\'s name, biography, favorite color, and shoe size. A document about a book could contain the title, author, year of publication, number of pages, and so on. Cf. Apache Solr Reference Guide Overview of Documents, Fields, and Schema Design https://cwiki.apache.org/confluence/display/solr/Overview+of+Documents,+Fields,+and+Schema+Design
+
+The following fields have been mapped to Solr and created in Lily\_Solr and are thus indexed and searchable from the E-ARK Search GUI:
+
+**Table 14 - EAD to Solr mapping**
+
+  **EAD element**                 |**Value access path**        |**SolR field**
+  ------------------------------- |----------------------------| ----------------------------------
+  ead:unitid                      |.                            |eadid\_s (String)
+  ead:unittitle                   |.                            |eadtitle\_s (String)
+  ead:unitdate                    |.                            |eaddate\_s (String)
+  ead:unitdatestructured          |ead:datesingle               |eaddatestructuredfrom\_dt (Date)
+  ead:unitdatestructured,         |ead:datesingle               |eaddatestructuredto\_dt (Date)
+  ead:unitdatestructured          |ead:daterange/ead:fromdate   |eaddatestructuredfrom\_dt (Date)
+  ead:unitdatestructured          |ead:daterange/ead:todate     |eaddatestructuredto\_dt (Date)
+  ead:origination                 |ead:\*/ead:part              |eadorigination\_s (String)
+  ead:abstract                    |.                            |eadabstract\_t (Text)
+  ead:accessrestrict              |ead:head                     |eadaccessrestrict\_s (String),
+  ead:(\[Cc\]\[0,1\]\[0-9\]\|C)   |\@level (attribute)          |eadclevel\_s (String)
+
