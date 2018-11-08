@@ -60,20 +60,20 @@ In the following the major differences between an XML instance for METS for an E
 **Table 4 - Differences between the AIP METS and the DIP METS on node level: mets**
 **Node level: mets**
 
-**Element / Attribute**|**Cardinality**|**Description and usage in Common specification**| **Change for DIP**
+**Element / Attribute**|**Cardi&shy;nality**|**Description and usage in Common specification**| **Change for DIP**
 ----------------------|---------------|-------------------------------------------------|-------------------
 mets     | 1..1 | The root level element that is required in all METS documents| No change  
 \@ID     | 0..1 | Optional, no further requirements | No change
 \@OBJID  | 1..1 | Mandatory in this specification. It is recommended that it be the same as the name or ID of the package (the name of the root folder). The OBJID must meet the Common Specification requirement of being unique at least across the repository | Change the value of the attribute OBJID is changed to a new value reflecting the change in the IP from an AIP to a DIP.
 \@LABEL  | 0..1 | Optional, if used should be filled with a human-readable description of the package | Change - Recommended to be "METS file describing the DIP matching the OBJID"                                              |
 \@TYPE   | 1..1 | Mandatory in this specification. The TYPE attribute must be used for identifying the type of the package (genre), for example ERMS, RDBMS, digitised construction plans. However, there is no fixed vocabulary and as such implementers are welcome to use values most suitable for their needs. | No change    
-\@CONTENTTYPESPECIFICATION | 0..1 | An attribute added by this specification. It describes which content information type specification is used for the content. Values of the attribute are fixed in the following vocabulary: SMURFERMS * SMURFSFSB * SIARD1 * SIARD2  SIARDDK * GeoVectorGML * GeoRasterGeotiffNB The vocabulary is extensible as additional content information type specifications are developed. | Change to one of these: SMURFERMS, SMURFSFSB, SIARD1 SIARD2 SIARDDK, OLAPCube, GeoVectorGML GeoRasterGeotiff
+\@CONTENTTYPE&shy;SPECIFICATION | 0..1 | An attribute added by this specification. It describes which content information type specification is used for the content. Values of the attribute are fixed in the following vocabulary: SMURFERMS * SMURFSFSB * SIARD1 * SIARD2  SIARDDK * GeoVectorGML * GeoRasterGeotiffNB The vocabulary is extensible as additional content information type specifications are developed. | Change to one of these: SMURFERMS, SMURFSFSB, SIARD1 SIARD2 SIARDDK, OLAPCube, GeoVectorGML GeoRasterGeotiff
 \@PROFILE | 1..1 | Mandatory in this specification. The PROFILE attribute has to have as its value the URL of the official Common Specification METS Profile. | No change        
 
 **Table 5 - Differences between the AIP METS and the DIP METS on node level: metsHDR**
 **Node level: metsHdr** 
 
-|  Element/ Attribute | Cardinality | Description and usage |  Change for DIP 		        |
+|  Element/ Attribute | Cardi&shy;nality | Description and usage |  Change for DIP 		        |
 |---------------------|-------------|-----------------------|-----------------------------|
 | metsHdr  |0..1|Element for describing the package itself  |  			  			 		        
 | @ID 		 |0..1|Optional, no further requirements | No change |
@@ -100,7 +100,7 @@ mets     | 1..1 | The root level element that is required in all METS documents|
 **Table 6 - Differences between the AIP METS and the DIP METS on node level: dmdsec**
 **Node level: dmdSec**
 
-| Element/ Attribute|Cardinality|Description and usage|Change for DIP|
+| Element/ Attribute|Cardi&shy;nality|Description and usage|Change for DIP|
 |-------------------|-----------|---------------------|--------------|
 |dmdSec|0..n|Must be used if descriptive metadata about the package content is available. NOTE: According to official METS documentation each metadata section must describe one and only one set of metadata. As such, if 	implementers want to include multiple occurrences of descriptive metadata into the package this must be done by repeating the whole dmdSec element for each individual metadata. | No change. The DIP spec. assumes the EAD is in the AIP. The EAD is needed to find the AIP with the desired content.|
 |@ID|1..1|Mandatory, identifier must be unique within the package|No change|
@@ -139,7 +139,7 @@ mets     | 1..1 | The root level element that is required in all METS documents|
 **Table 7 - Differences between the AIP METS and the DIP METS on node level: amdsec** 
 **Node level: amdSec**
 
-|Element/ Attribute|Cardinality|Description and usage|Change for DIP|
+|Element/ Attribute|Cardi&shy;nality|Description and usage|Change for DIP|
 |-----------------|------------|---------------------|---------------|
 |amdSec|0..n|In case administrative / preservation metadata is available, it must be described using the amdSec element. 		          |Mandatory for DIP|
 |@ID|0..1|Unique ID for the amdSec within the METS document|No change|
@@ -151,7 +151,7 @@ mets     | 1..1 | The root level element that is required in all METS documents|
 **Table 8 - Available attributes**
 The following attributes are available for use with each of the four specific metadata areas listed above (xxx below stands for amdSec/digiprovMD, amdSec/techMD, amdSec/rightsMD and amdSec/sourceMD).
 
-|Element/ Attribute|Cardinality|Description and usage|Change for DIP|
+|Element/ Attribute|Cardi&shy;nality|Description and usage|Change for DIP|
 |-----------------|------------|---------------------|---------------|
 |xxx/ @ID|1..1|Mandatory for each of the four elements amdSec/digiprovMD, amdSec/techMD, amdSec/rightsMD and amdSec/sourceMD. Identifier must be unique within the package |No change|
 |xxx/@GROUPID | 0..1 | Optional, no further requirements | No change |
@@ -162,7 +162,7 @@ The following attributes are available for use with each of the four specific me
 **Table 9 - Differences between the AIP METS and the DIP METS on node level: filesec** 
 **Node level: filesec**
 
-|Element/ Attribute|Cardinality|Description and usage|Change for DIP|
+|Element/ Attribute|Cardi&shy;nality|Description and usage|Change for DIP|
 |-----------------|------------|---------------------|---------------|
 | fileSec | 0..1 | Recommended to include one fileSec element in each METS file | No change |
 | @ID | 0..1 | Recommended. The identifier must be unique within the METS file. | No change |
@@ -194,7 +194,7 @@ The following attributes are available for use with each of the four specific me
 **Table 10 - Differences between the AIP METS and the DIP METS on node level: structmap**
 **Node level: structmap**
 
-|Element/ Attribute|Cardinality|Description and usage|Change for DIP|
+|Element/ Attribute|Cardi&shy;nality|Description and usage|Change for DIP|
 |-----------------|------------|---------------------|--------------|
 | structMap | 1..n | Each METS file needs to include exactly one structMap element used exactly as described in this table. Institutions can add their own additional custom structural maps as separate structMap sections. | No change |
 | @ID | 0..1 | Optional, but if used must be unique within the package | No change |
@@ -218,4 +218,49 @@ The following attributes are available for use with each of the four specific me
 | /div/ div/ mptr/ @LOCTYPE | 0..1 | The locator type used in the xlink:href attribute | No change |
 | /div/ div/ mptr/ @OTHERLOCTYPE | 0..1 | Locator type in xlink:href when LOCTYPE=”OTHER” | No change |
 | /div/ div/ mptr/ @CONTENTIDS | 0..1 | The content ID for the content represented by the mptr element. | No change |
+
+#### ​3.1.2.2​ PREMIS
+PREMIS is a standard that mainly caters for long-term preservation and technical usability, which for example is used to facilitate a range of preservation strategies including migration and emulation.
+From an Access perspective, PREMIS especially satisfies the requirements pertaining to the recording of Representation Information. It is practical to state in a formalised and consistent way how the Access Software should behave and where it should look when dealing with different pieces of information, such as which representation formats are included in the DIP. Therefore all E-ARK Access Software assumes the availability of PREMIS metadata according to the specification below.
+
+##### ​3.1.2.2.1​ Metadata regarding Representations and Access Software
+In PREMIS, a representation is a "set of files, including structural metadata, needed for a complete and reasonable rendition of an Intellectual Entity."[^50].
+
+[^50]: PREMIS Editorial Committee (2015). "PREMIS Data Dictionary for Preservation Metadata", p.8.
+
+One of the core concepts in PREMIS is the above formulated definition of a representation, but it is also important to note that the E-ARK Common Specification Information Package structure also incorporates physical management of different representations. When implementing PREMIS in E-ARK packages one must therefore choose if there must exist PREMIS files at representation level or at root level only (see Common Specification) and one must also choose how fine-grained each description should be.
+
+In PREMIS, a representation is indicated using the semantic unit "1.1 objectIdentifier". In E-ARK Access, as already mentioned, the DIP representation formats are SMURF ERMS, SMURF SFSB, SIARD1.0, SIARD2.0, SIARDDK, OLAP, GML, and GeoTIFF. It is important to emphasise that the E-ARK project has neither created specifications nor tools for specific file formats[^51] (fine-grained descriptions), but only for the aforementioned DIP *representation formats*.
+
+[^51]: For example PDF or JPG.
+
+Hence, the Access Software developed by the E-ARK project does guarantee the rendering of the E-ARK 
+representations, but not of specific file formats contained *inside* an E-ARK representation. As an example, the SMURF ERMS could contain several file formats unknown to the E-ARK IP Viewer[^52] (note: even though this is unlikely, because archives generally make sure that the number of file formats that they preserve is limited and their use widespread. As such for example PDF or TIFF files would be rendered).
+
+[^52]: The generic Access tool that allows for the rendering of the DIP reference format, ie. the folder structure, descriptive metadata,and the most common file formats, cf. D5.4 Search, Access and Display Interfaces. http://www.eark-project.com/resources/project-deliverables/92-d54
+
+To enable rendition, three pieces of information are needed in PREMIS: One identifying the representation to be rendered; one identifying the software to enable this; and one establishing a
+To enable rendition, three pieces of information are needed in PREMIS: One identifying the representation to be rendered; one identifying the software to enable this; and one establishing a relationship between the two.
+
+The descriptions below therefore show how to:
+1.  Describe which DIP representation format is contained in the DIP (description 1 below);
+2.  Describe which piece(s) of Access Software is/are needed to render a specific DIP representation format. Several pieces of software may indeed be needed (description 2 below);
+3.  Describe the relationship between the DIP representation format and its Access Software (description 3 below).
+
+###### ​3.1.2.2.1.1​ Description 1 - The recording of DIP representation formats
+In order to describe the specific DIP representation format the semantic component "1.4 significantProperties" is used. An example is:
+
+**Table 11 - Recording of DIP representation formats**
+ ```xml
+ \<object xsi:type=\"representation\"\>\                                                               
+ \<objectIdentifier\>\                                                                                 
+ \<objectIdentifierType\>filepath\</objectIdentifierType\>                                                                                                                                                    
+ \<objectIdentifierValue\>xlink:href=\"representations\\AVID.SA.18006.rep0\"\</objectIdentifierValue\>                                                                                                        
+ \</objectIdentifier\>\                                                                                
+ \<significantProperties\>\                                                                            
+ \<significantPropertiesType\>DIP representation format\</significantPropertiesType\>\                 
+ \<significantPropertiesValue\>SIARD2\</significantPropertiesValue\>\                                  
+ \</significantProperties\>\                                                                           
+ *\<!\-- PREMIS file continues but further elements left out in this example\--\>*                     
+```
 
