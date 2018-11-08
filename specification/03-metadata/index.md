@@ -377,6 +377,7 @@ To support the development of a search interface, it is required to make certain
 The following fields have been mapped to Solr and created in Lily\_Solr and are thus indexed and searchable from the E-ARK Search GUI:
 
 **Table 14 - EAD to Solr mapping**
+
   **EAD element**                 |**Value access path**        |**SolR field**
   ------------------------------- |----------------------------| ----------------------------------
   ead:unitid                      |.                            |eadid\_s (String)
@@ -523,6 +524,7 @@ The \<dao\> element is a linking element that uses href to connect to born digit
 <dao id="dad603af-037b-44d5-8993-5754a42b3962" daotype="borndigital" linktitle="Report" href=file:../../representations/rep1/data/Example1.docx" />
 ```
 The ID attribute represents a machine-processable unique identifier for the file. The daotype specifies if a file is born digital (borndigital), digitized from physical holdings (derived) or other (otherdaotype). For example, for scanned files we can point out that the files are not "original".
+
 **Table 20 - EAD example of the \<daotype\> attribute**
 ```xml
 <dao id="baa703af-037b-44d5-8993-5754a42b3962" daotype="derived" linktitle="Page10" href="file:../../representations/rep1/data/Page10.tif" />
@@ -563,7 +565,8 @@ The \<accessrestrict\> tag is "An element for information about conditions that 
 
 The \<p\> tag in \<accessrestrict\> is repeatable and can be used in the following way:
 
-**Table 23 - EAD example of \<accessrestrict\>\
+**Table 23 - EAD example of \<accessrestrict\> **
+
 ```xml
 <accessrestrict>
  <p>Restricted</p>
