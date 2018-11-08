@@ -251,16 +251,84 @@ The descriptions below therefore show how to:
 In order to describe the specific DIP representation format the semantic component "1.4 significantProperties" is used. An example is:
 
 **Table 11 - Recording of DIP representation formats**
- ```xml
- \<object xsi:type=\"representation\"\>\                                                               
- \<objectIdentifier\>\                                                                                 
- \<objectIdentifierType\>filepath\</objectIdentifierType\>                                                                                                                                                    
- \<objectIdentifierValue\>xlink:href=\"representations\\AVID.SA.18006.rep0\"\</objectIdentifierValue\>                                                                                                        
- \</objectIdentifier\>\                                                                                
- \<significantProperties\>\                                                                            
- \<significantPropertiesType\>DIP representation format\</significantPropertiesType\>\                 
- \<significantPropertiesValue\>SIARD2\</significantPropertiesValue\>\                                  
- \</significantProperties\>\                                                                           
- *\<!\-- PREMIS file continues but further elements left out in this example\--\>*                     
+```xml
+<object xsi:type=\"representation\"\>\                                                               
+ <objectIdentifier\>\                                                                                 
+  <objectIdentifierType\>filepath\</objectIdentifierType\>                                                                                                                                                    
+  <objectIdentifierValue\>xlink:href=\"representations\\AVID.SA.18006.rep0\"\</objectIdentifierValue\>                                                                                                        
+ </objectIdentifier\>\                                                                                
+ <significantProperties\>\                                                                            
+  <significantPropertiesType\>DIP representation format\</significantPropertiesType\>\                 
+  <significantPropertiesValue\>SIARD2\</significantPropertiesValue\>\                                  
+ </significantProperties\>\                                                                           
+<!-- PREMIS file continues but further elements left out in this example-->                     
+```
+Note that the object type is "representation" and that the objectIdentifierType value is "filepath", which according to the AIP specification is an IP scope value. The objectIdentifierValue is the filepath to the representation folder or could be a filepath to a file.
+
+###### ​3.1.2.2.1.2​ Description 2 - The recording of Access Software
+In PREMIS 3.0 a description of an environment has become an object itself, so that both non-environmental objects and environmental objects exist. Access Software is therefore an environmental object which per default is an intellectual entity. The semantic unit "1.9 environmentFunction" is conceived to describe the environment object(s) with different levels of granularity. It is suggested to use the vocabulary from Library of Congress[^53]. The semantic unit "1.10 environmentDesignation" is used for information identifying the environment by using human-readable language which can be expected to be understood outside of a digital repository.
+
+[^53]: Library of Congress. environmentFunctionType. Retrieved the 18th of January 2017 at: Environment Function Type [[http://id.loc.gov/vocabulary/preservation/environmentFunctionType.html]{.underline}](http://id.loc.gov/vocabulary/preservation/environmentFunctionType.html)
+
+See the example which follows this vocabulary:
+
+**Table 12 - Recording of Access Software**
+```xml
+<object xsi:type="intellectualEntity">
+     <objectIdentifier>
+         <objectIdentifierType>local</objectIdentifierType>
+         <objectIdentifierValue>DBVTK</objectIdentifierValue>
+     </objectIdentifier>
+     <environmentFunction>
+         <environmentFunctionType>software</environmentFunctionType>
+         <environmentFunctionLevel>1</environmentFunctionLevel>
+     </environmentFunction>
+     <environmentFunction>
+         <environmentFunctionType>software application</environmentFunctionType>
+         <environmentFunctionLevel>2</environmentFunctionLevel>
+     </environmentFunction>
+    <environmentDesignation>
+	<environmentName>Database Visualization Toolkit</environmentName>
+	<environmentVersion>2.4.1</environmentVersion>
+	<environmentDesignationNote>Lightweight web viewer for relational databases, specially if preserved in SIARD 2, that uses SOLR as a backend, and allows browsing, search, and export. Documentation at github.com/eark-project/software/DBVTK</environmentDesignationNote>
+	</environmentDesignation>
+</object>
 ```
 
+###### ​3.1.2.2.1.3​ Description 3 - The recording of the relation between the representations and the Access Software
+
+In order to establish a connection between the DIP representation format to be rendered and the Access
+
+Software to render it, it is necessary to use the semantic unit "1.13 relationship". The relationship element can bind both non-environmental objects together with environmental objects and it can bind environmental objects together with other environmental objects. The following example shows how the DIP representation format from Table 11 can be related to the Access Software from Table 12:
+
+**Table 13 - Recording of Access Software**
+```xml
+<object xsi:type="representation">   
+   <objectIdentifier> 
+      <objectIdentifierType>filepath</objectIdentifierType>
+      <objectIdentifierValue>xlink:href="representations\AVID.SA.18006.rep0"</objectIdentifierValue>         
+   </objectIdentifier>
+   <significantProperties>
+      <significantPropertiesType>DIP representation format</significantPropertiesType>
+      <significantPropertiesValue>SIARD2</significantPropertiesValue>
+   </significantProperties>
+   <!-- The following is the relation between the software and the DIP representation --> 
+   <relationship>
+       <relationshipType>dependency</relationshipType> 
+       <relationshipSubType>requires</relationshipSubType>
+       <relatedObjectIdentifier>
+           <relatedObjectIdentifierType>local</relatedObjectIdentifierType>
+           <relatedObjectIdentifierValue>DBVTK</relatedObjectIdentifierValue>
+         </relatedObjectIdentifier>
+       <relatedEnvironmentPurpose>render</relatedEnvironmentPurpose> 
+   </relationship>
+</object>
+```
+
+As can be seen in Table 13 (above) the nature of the relationship, \<relationshipType\> is used (value, e.g. 'dependency'); intimately linked to this is also the indication of a \<relationshipSubType\>, e.g. 'requires'.
+
+In order to identify the Access Software, which is used to render the representation, the
+
+\<relatedObjectIdentifier\> is employed; and the \<relatedEnvironmentPurpose\> gives us a hint about what the purpose is (here: to 'render').
+
+Since it is not always possible to render the DIP representation formats with one piece of Access Software, it can be necessary to model software dependencies and sequences between several pieces of software in PREMIS.
