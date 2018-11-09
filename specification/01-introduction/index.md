@@ -27,9 +27,8 @@ This is the current document which describes the DIP package structure and minim
 
 _Content Information Type Specifications_
 
-Content Information Type Specificationsare content-dependent specifications which include detailed information on how content, metadata, and documentation for specific content types (for example ERMS or relational databases) can to be handled within the SIP. At the moment, there are 2 such specifications:
-	- SMURF ERMS for electronic records management systems (The SMURF profile for ERMS can be found https://github.com/DLMArchivalStandardsBoard/SMURF/tree/master/spec.) 
-	- SMURF SFSB for simple file system based records (The SMURF profile for SFSB can be found at https://github.com/DLMArchivalStandardsBoard/SMURF/tree/master/spec.) 
+Content Information Type Specifications are content-dependent specifications which include detailed information on how content, metadata, and documentation for specific Content Information Types 
+(for example ERMS or relational databases) is to be handled within the SIP, AIP and DIP. 
 
 ## 1.2 Definition of a DIP
 The definition of an CS DIP is that it corresponds to an CS IP which is ready to be processed by its designated Access Software; if it is not suited for processing and rendering by its designated Access Software, it is not (yet) a DIP. 
