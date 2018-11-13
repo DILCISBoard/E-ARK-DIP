@@ -48,7 +48,7 @@ First of all, the DIP looks like the AIP: It replicates the structure of the AIP
 however in most cases it is necessary to convert from an AIP to a DIP.  The DIP allows for example for the inclusion of new DIP representation formats, which are more user-friendly than the AIP formats that are intended for long-term preservation purposes. 
 It also allows for the updating of the metadata as well as for the addition of new metadata elements.  Representation Information, which is required for rendering and understanding the intellectual content, might also be added, and as a direct consequence, there may be a need for new folders and files, for example within the ‘Documentation’ folder.
 
-## 1.3 Structure of a DIP
+## 1.4 Structure of a DIP
 The folder structure of a CS DIP must comply with the requirements for the folder structure for a CS IP, see [Folder structure of the CS IP](https://dilcisboard.github.io/E-ARK-CSIP/specification/implementation/structure/folders/).
 
 The CS IP folder structure and its requirements is visualised in the figure below:
