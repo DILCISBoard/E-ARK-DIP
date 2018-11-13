@@ -8,7 +8,4 @@ A Content Information Type can therefore be understood as a category of Content 
 relational databases, scientific data, electronic records management systems, digitised maps, etc..
 
 According to the Common Specification for Information Package it is possible to create specifications for
-Content Cnformation Cypes
-And finally a Content Information Type Specification defines in technical terms how data 
-and metadata (mainly in regard to the Information Object) must be formatted and placed within a CS IP Information Package in order to achieve 
-interoperability in exchanging specific Content Information.
+Content Information Types. 
