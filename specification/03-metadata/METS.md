@@ -1,22 +1,21 @@
 # ​3.1.2​ Metadata in the DIP
 
 The DIP metadata is based upon the existing common, SIP and AIP specifications. The metadata descriptions provided in this document cover the three core metadata categories: structural[^43] (METS[^44]); preservation[^45] (PREMIS[^46]); and descriptive[^47] (EAD[^48])).
+The DIP is based on the AIP, and structural and preservation metadata are thus always - slightly modified - present in the DIP. The METS file is in the root folder, and its schema file (mets.xsd) is in the /schemas folder. The greater part of the Access Software assumes the existence of an EAD and a PREMIS file in the root /metadata/descriptive folder and in the root /metadata/preservation/ folder respectively. Consequently it is also assumed that pertaining schema files (ead3.xsd; premis.xsd) are present in the /schemas folder.
 
 [^43]: Structural metadata describes the physical and/or logical structure of digital resources. The standard that E-ARK recommends for structural metadata is METS.
 
 [^44]: Metadata Encoding and Transmission Standard. The METS schema is a standard for encoding descriptive, administrative, and structural metadata regarding objects within a digital library, expressed using the XML schema language of the World Wide Web Consortium. The standard is maintained in the Network Development and MARC Standards Office of the Library of Congress, and is being developed as an initiative of the Digital Library Federation - <http://www.loc.gov/standards/mets/>
 
-[^45]: Preservation metadata is an essential component of most digital preservation strategies. Preservation metadata is information that supports and documents the digital preservation process - https://en.wikipedia.org/wiki/Preservation\_metadata
+[^45]: Preservation metadata is an essential component of digital preservation. Preservation metadata is information that supports and documents the digital preservation process - https://en.wikipedia.org/wiki/Preservation\_metadata
 The standard that E-ARK recommends for preservation metadata is PREMIS.
 
-[^46]: The Preservation Metadata: Implementation Strategies. The PREMIS Data Dictionary for Preservation Metadata is the international standard for metadata to support the preservation of Digital Objects and ensure their long-term usability - http://www.loc.gov/standards/premis/
+[^46]: The PREMIS Data Dictionary for Preservation Metadata is the international standard for metadata to support the preservation of Digital Objects and ensure their long-term usability - http://www.loc.gov/standards/premis/
 
 [^47]: Also named Descriptive Information in OAIS: The set of information, consisting primarily of Package Descriptions, which is provided to Data Management to support the finding, ordering, and retrieving of OAIS information holdings by Consumers - <http://public.ccsds.org/publications/archive/650x0m2.pdf>.
 The standard that E-ARK recommends for descriptive metadata is EAD.
 
 [^48]: Encoded Archival Description. A non-proprietary de facto standard for the encoding of Finding Aids for use in a networked (online) environment. EAD allows the standardization of collection information in Finding Aids within and across repositories. EAD3 About [[http://www.loc.gov/ead/eadabout.html]{.underline}](http://www.loc.gov/ead/eadabout.html).
-
-The DIP is based on the AIP, and structural and preservation metadata are thus always - slightly modified - present in the DIP. The METS file is in the root folder, and its schema file (mets.xsd) is in the /schemas folder. The greater part of the Access Software assumes the existence of an EAD and a PREMIS file in the root /metadata/descriptive folder and in the root /metadata/preservation/ folder respectively. Consequently it is also assumed that pertaining schema files (ead3.xsd; premis.xsd) are present in the /schemas folder.
 
 ## ​3.1.2.1​ METS
 
@@ -60,15 +59,17 @@ In the following the major differences between an XML instance for METS for an E
 **Table 4 - Differences between the AIP METS and the DIP METS on node level: mets**
 **Node level: mets**
 
-**Element / Attribute**|**Cardi&shy;nality**|**Description and usage in Common specification**| **Change for DIP**
+**Element / Attribute**|**Cardi&shy;nality and level**|**Description and usage in Common specification**| **Change for DIP**
 ----------------------|---------------|-------------------------------------------------|-------------------
-mets     | 1..1 | The root level element that is required in all METS documents| No change  
+mets     | 1..1 MUST | The root level element that is required in all METS documents| No change  
 \@ID     | 0..1 | Optional, no further requirements | No change
-\@OBJID  | 1..1 | Mandatory in this specification. It is recommended that it be the same as the name or ID of the package (the name of the root folder). The OBJID must meet the Common Specification requirement of being unique at least across the repository | Change the value of the attribute OBJID is changed to a new value reflecting the change in the IP from an AIP to a DIP.
+\@OBJID  | 1..1 MUST| It is mandatory to use a content ID which is expressed with @OBJID. The value should be the same as the name or ID of the package (the name of the root folder) for the root METS document or the name and folder name for the representation. The OBJID must meet the principle of being unique at least across the repository. | Change - the value of the attribute OBJID is changed to a new value reflecting the change in the IP from an AIP to a DIP.
 \@LABEL  | 0..1 | Optional, if used should be filled with a human-readable description of the package | Change - Recommended to be "METS file describing the DIP matching the OBJID"                                              |
-\@TYPE   | 1..1 | Mandatory in this specification. The TYPE attribute must be used for identifying the type of the package (genre), for example ERMS, RDBMS, digitised construction plans. However, there is no fixed vocabulary and as such implementers are welcome to use values most suitable for their needs. | No change    
-\@CONTENTTYPE&shy;SPECIFICATION | 0..1 | An attribute added by this specification. It describes which content information type specification is used for the content. Values of the attribute are fixed in the following vocabulary: SMURFERMS * SMURFSFSB * SIARD1 * SIARD2  SIARDDK * GeoVectorGML * GeoRasterGeotiffNB The vocabulary is extensible as additional content information type specifications are developed. | Change to one of these: SMURFERMS, SMURFSFSB, SIARD1 SIARD2 SIARDDK, OLAPCube, GeoVectorGML GeoRasterGeotiff
-\@PROFILE | 1..1 | Mandatory in this specification. The PROFILE attribute has to have as its value the URL of the official Common Specification METS Profile. | No change        
+\@TYPE   | 1..1 | The @TYPE attribute must be used for identifying the general type of the package (genre). A vocabulary is used. The vocabulary is going to evolve under the care of the DILCIS Board as additional content information type specifications are developed. | No change    
+\@csip:OTHERTYPE | 0..1 SHOULD | The \@csip:OTHERTYPE attribute must be used for stating the general type of the package (genre) when \@TYPE has the value “OTHER” | No change
+\@csip:CONTENTINFORMATIONTYPE |	1..1 SHOULD | An added attribute which describes the specific content information type specification used for the transferred content. The attribute is mandatory to use when the METS document describes a representation. The vocabulary is going to evolve under the care of the DILCIS Board as additional content information type specifications are developed. | No change
+\@csip:OTHERCONTENTINFORMATIONTYPE| 0..1 MAY | When the \@csip:CONTENTINFORMATIONTYPE uses the value “OTHER” the \@csip:OTHERCONTENTINFORMATIONTYPE must describe the content.| No change 	
+\@PROFILE|1..1 MUST|The PROFILE attribute has to have as its value the URL of the profile used for describing the package. | No change
 
 **Table 5 - Differences between the AIP METS and the DIP METS on node level: metsHDR**
 **Node level: metsHdr** 
