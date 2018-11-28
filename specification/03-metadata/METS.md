@@ -40,7 +40,7 @@ The DIP specification is limited to include one and only one representation from
 &nbsp;  |**metsHdr**  |           |           |                            | 
 &nbsp;  |             |**agent**  |           |                            |software or archivist creating the DIP
 &nbsp;  | **dmdSec**  |           |           |                            |
-&nbsp;  |             |**mdRef**  |           | *EAD*                      |information about the EAD file
+&nbsp;  |             |**mdRef**  |           |*EAD*                       |information about the EAD file
 &nbsp;  | **amdSec**  |           |           |                            |
 &nbsp;  |             |**mdRef**  |           |*PREMIS*                    |information about the PREMIS file
 &nbsp;  | **fileSec** |           |           |                            |
@@ -67,7 +67,7 @@ mets     | 1..1 | The root level element that is required in all METS documents|
 \@OBJID  | 1..1 | Mandatory in this specification. It is recommended that it be the same as the name or ID of the package (the name of the root folder). The OBJID must meet the Common Specification requirement of being unique at least across the repository | Change the value of the attribute OBJID is changed to a new value reflecting the change in the IP from an AIP to a DIP.
 \@LABEL  | 0..1 | Optional, if used should be filled with a human-readable description of the package | Change - Recommended to be "METS file describing the DIP matching the OBJID"                                              |
 \@TYPE   | 1..1 | Mandatory in this specification. The TYPE attribute must be used for identifying the type of the package (genre), for example ERMS, RDBMS, digitised construction plans. However, there is no fixed vocabulary and as such implementers are welcome to use values most suitable for their needs. | No change    
-\@CONTENTTYPE&shy;SPECIFICATION | 0..1 | An attribute added by this specification. It describes which content information type specification is used for the content. Values of the attribute are fixed in the following vocabulary: SMURFERMS * SMURFSFSB * SIARD1 * SIARD2  SIARDDK * GeoVectorGML * GeoRasterGeotiffNB The vocabulary is extensible as additional content information type specifications are developed. | Change to one of these: SMURFERMS, SMURFSFSB, SIARD1 SIARD2 SIARDDK, OLAPCube, GeoVectorGML GeoRasterGeotiff
+\@CONTENTTYPE&shy;SPECIFICATION | 0..1 | An attribute added by this specification. It describes which content information type specification is used for the content. Values of the attribute are fixed in the following vocabulary: ERMS * SIARD1 * SIARD2  SIARDDK * GeoVectorGML * GeoRasterGeotiffNB The vocabulary is extensible as additional content information type specifications are developed. | Change to one of these: ERMS, SIARD1 SIARD2 SIARDDK, OLAPCube, GeoVectorGML, GeoRasterGeotiff
 \@PROFILE | 1..1 | Mandatory in this specification. The PROFILE attribute has to have as its value the URL of the official Common Specification METS Profile. | No change        
 
 **Table 5 - Differences between the AIP METS and the DIP METS on node level: metsHDR**
