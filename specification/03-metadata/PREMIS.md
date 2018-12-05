@@ -76,9 +76,7 @@ See the example which follows this vocabulary:
 
 ###### ​3.1.2.2.1.3​ Description 3 - The recording of the relation between the representations and the Access Software
 
-In order to establish a connection between the DIP representation format to be rendered and the Access
-
-Software to render it, it is necessary to use the semantic unit "1.13 relationship". The relationship element can bind both non-environmental objects together with environmental objects and it can bind environmental objects together with other environmental objects. The following example shows how the DIP representation format from Table 11 can be related to the Access Software from Table 12:
+In order to establish a connection between the DIP representation format to be rendered and the Access Software to render it, it is necessary to use the semantic unit "1.13 relationship". The relationship element can bind both non-environmental objects together with environmental objects and it can bind environmental objects together with other environmental objects. The following example shows how the DIP representation format from Table 11 can be related to the Access Software from Table 12:
 
 **Table 13 - Recording of Access Software**
 ```xml
