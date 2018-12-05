@@ -1,5 +1,5 @@
 #### ​3.1.2.3​ EAD
-Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The E-ARK project allows for the inclusion of any kind of descriptive metadata in the E-ARK IP[^54]. These go into the 'descriptive/' folder as seen in the example below, Figure 3 (cf. EAD.xml).
+Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The E-ARK DIP allows for the inclusion of any kind of descriptive metadata in the E-ARK IP[^54]. These go into the 'descriptive/' folder as seen in the example below, Figure 3 (cf. EAD.xml).
 
 [^54]: For E-ARK pilots, most of the Access Software used the EAD3 standard. They can however be tweaked to use other descriptive metadata.
 
