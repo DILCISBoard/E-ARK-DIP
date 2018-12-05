@@ -154,7 +154,7 @@ The following attributes are available for use with each of the four specific me
 |Element/ Attribute|Cardi&shy;nality|Description and usage|Change for DIP|
 |-----------------|------------|---------------------|---------------|
 |xxx/ @ID|1..1|Mandatory for each of the four elements amdSec/digiprovMD, amdSec/techMD, amdSec/rightsMD and amdSec/sourceMD. Identifier must be unique within the package |No change|
-|xxx/@GROUPID | 0..1 | Optional, no further requirements | No change |
+|xxx/ @GROUPID | 0..1 | Optional, no further requirements | No change |
 |xxx/ @ADMID | 0..1 | In case administrative (provenance) metadata is available and described within METS about changes to the metadata occurrence described here, this element must reference the appropriate ID of the administrative metadata section. | No change |
 |xxx/ @CREATED | 0..1 | Optional, no further requirements | No change |
 |xxx/ @STATUS | 0..1 | Recommended for describing currency of metadata. If used, must include one of the two values “superseded” or “current” | No change |
@@ -200,7 +200,7 @@ The following attributes are available for use with each of the four specific me
 | @ID | 0..1 | Optional, but if used must be unique within the package | No change |
 | @TYPE | 1..1 | Mandatory in this specification. The value must be “physical” | No change |
 | @LABEL | 1..1 | Mandatory in this specification. The value must be “Common Specification structural map” | No change |
-| /div | 0..n | Each folder (and sub-folder) within the package must be represented by an occurrence of the <div> element. Please note that sub-folders must be represented as nested div elements. Example: ´´´xml <structMap TYPE="physical" LABEL="Common Specification structural map"> <div LABEL="Package123"> <div LABEL="metadata">´´´ | No change |
+| /div | 0..n | Each folder (and sub-folder) within the package must be represented by an occurrence of the <div> element. Please note that sub-folders must be represented as nested div elements. Example: ```xml <structMap TYPE="physical" LABEL="Common Specification structural map"> <div LABEL="Package123"> <div LABEL="metadata"> ``` | No change |
 | /div/@ID | 1..1 | Mandatory, identifier must be unique within the package | No change |
 | /div/@TYPE | 0..1 | No specific requirements | No change |
 | /div/@LABEL | 1..1 | Mandatory, value must be the name of the folder (“metadata”, “descriptive”, “schemas”, “representations”, etc). The LABEL value of the first div element in the package is the ID of the package | No change |
