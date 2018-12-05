@@ -200,7 +200,7 @@ The following attributes are available for use with each of the four specific me
 | @ID | 0..1 | Optional, but if used must be unique within the package | No change |
 | @TYPE | 1..1 | Mandatory in this specification. The value must be “physical” | No change |
 | @LABEL | 1..1 | Mandatory in this specification. The value must be “Common Specification structural map” | No change |
-| /div | 0..n | Each folder (and sub-folder) within the package must be represented by an occurrence of the <div> element. Please note that sub-folders must be represented as nested div elements. Example: '<structMap TYPE="physical" LABEL="Common Specification structural map"> <div LABEL="Package123"> <div LABEL="metadata">' | No change |
+| /div | 0..n | Each folder (and sub-folder) within the package must be represented by an occurrence of the <div> element. Please note that sub-folders must be represented as nested div elements. Example: ´´´xml <structMap TYPE="physical" LABEL="Common Specification structural map"> <div LABEL="Package123"> <div LABEL="metadata">´´´ | No change |
 | /div/@ID | 1..1 | Mandatory, identifier must be unique within the package | No change |
 | /div/@TYPE | 0..1 | No specific requirements | No change |
 | /div/@LABEL | 1..1 | Mandatory, value must be the name of the folder (“metadata”, “descriptive”, “schemas”, “representations”, etc). The LABEL value of the first div element in the package is the ID of the package | No change |
