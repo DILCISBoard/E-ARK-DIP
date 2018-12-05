@@ -1,7 +1,6 @@
 #### ​3.1.2.3​ EAD
-Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The E-ARK DIP allows for the inclusion of any kind of descriptive metadata in the E-ARK IP[^54]. These go into the 'descriptive/' folder as seen in the example below, Figure 3 (cf. EAD.xml).
-
-[^54]: For E-ARK pilots, most of the Access Software used the EAD3 standard. They can however be tweaked to use other descriptive metadata.
+Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The E-ARK DIP allows for the inclusion of any kind of descriptive metadata. These go into the 'descriptive/' folder as seen in the example below, Figure 3 (cf. EAD.xml).
+E-ARK has chosen EAD3 as the descriptive metadata standard.
 
 **Figure 3 - E-ARK IP descriptive metadata**
 ![](media/EAD_figure3.png)
@@ -19,18 +18,7 @@ The EAD file has three main inputs (Figure 5 below):
 ![](media/EAD_figure5.png)
 
 ##### ​3.1.2.3.1​ Tools
-The tools that the E-ARK project is building will by default only be able to cope with EAD3, because EAD3 is the descriptive metadata standard that E-ARK has chosen. This does not mean that the tools cannot be configured so they can also cope with other descriptive metadata standards. For example, in E-ARK web there is a generic task for descriptive metadata. It would be easy to adapt this task to Dublin Core, for example, if required. The only thing that is required to do so is a convention which defines how to determine the metadata that belong to a file item in the context of a metadata format.
-
-The tools in E-ARK that use EAD are:
--   ERMS Export Module (EEM)
--   EAD Editor
--   RODA
--   ESS tools
--   E-ARK Web including Apache Hadoop, Lily and Solr.
--   Access Software
-    -   Search GUI
-    -   Order Management Tool
-    -   DIP Viewer
+Tools will by default only be able to cope with EAD3, because EAD3 is the descriptive metadata standard that E-ARK has chosen. This does not mean that the tools cannot be configured so they can also cope with other descriptive metadata standards. 
 
 ##### ​3.1.2.3.2​ Search
 To support the development of a search interface, it is required to make certain metadata elements available in the Solr index[^55], either by using the Lily indexer[^56] or via the AIP indexing task, which adds content to the Solr index by creating one document[^57] per contained file in the IP. These Solr documents include basic properties such as \"path\", \"package\", \"contentType\", \"size\", and can be further enriched by running a subsequent job which parses EAD metadata files to search for \<dao\> tags. If such a tag is found, the metadata fields of the first c-level tag in the ancestry path of the \"data\" element (e.g. the \"title\" field) are added to the Solr document. If no \<dao\> element is found, the entire EAD/c (component) is indexed and associated with all files in a given IP. This aims to support scenarios where no \<dao\> elements are provided as part of the description.
@@ -61,9 +49,7 @@ The following fields have been mapped to Solr and created in Lily\_Solr and are 
 
 Note that the element selector can be a regular expression: (\[Cc\]\[0,1\]\[0-9\]\|C) matches either C01, C02, ..., C20 or the C-element without numeric suffix. The value access path "\@level (attribute)" means that the value of the attribute "level" of the selected C- or C{n}element is accessed. The expression ead:\*/ead:part allows accessing the element's value with any EAD child element of ead:origination which has the child element ead:part.
 
-Elements which are not part of the original EAD3 can be represented by \<odd\> elements, cf. the SMURF profile[^58].
-
-[^58]: D3.3 E-Ark SMURF http://www.eark-project.com/resources/project-deliverables/52-d33smurf
+Elements which are not part of the original EAD3 can be represented by \<odd\> elements.
 
 For example a new element for keywords:
 
@@ -294,5 +280,3 @@ On a long term, the E-ARK project proposes the use of relationship model that wo
 By following this strategy one could build an entire Representation Information network that follows the current specification so we could actually make use of the existing preservation action tools being developed in the project to preserve the RI. Moreover, exchanging RI in this standard way would greatly increase collaboration between institutions, enterprises and preservation experts while at the same time reducing the risk of an external registry going out of business.
 
 The current AIP specification already includes a specific relationship between AIPs, namely a succession relationship, where an AIP point to its parent AIP (or AIC). We suggest using the same mechanism to refer to RI AIPs. The implementation would entail adding a new struct-map where the relationships with RI AIPs could be defined, and possibly also other links to external information (e.g. to the PRONOM registry). Also, we suggest adding a new AIP type called "Representation Information" which would clearly identify the AIP as not being part of the content of the repository *per se*, but extra information needed for the preservation of said content.
-
-Since it has not been a part of the E-ARK project to implement such a proposition, we leave it at the conceptual level for the community to pick up whenever it reaches the right maturity level to do so.
