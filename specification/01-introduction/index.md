@@ -6,7 +6,7 @@
 Key objectives of this E-ARK DIP specification are:
 
 - To define a generic structure of the DIP format in a way that it is suitable for a wide variety of archival records, such as document and image collections, databases or geographical data.
-- To recommend a set of metadata related to the structural and the access aspects of the DIP as implemented by the reference implementation.
+- To recommend a set of metadata related to the structural and the access aspects of the DIP.
 
 ## 1.2 Relations to other E-ARK specifications
 The E-ARK DIP specification can be found in the following model (see Figure 1):
