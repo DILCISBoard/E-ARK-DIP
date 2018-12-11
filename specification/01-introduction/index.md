@@ -49,7 +49,7 @@ however in most cases it is necessary to convert from an AIP to a DIP.  The DIP 
 It also allows for the updating of the metadata as well as for the addition of new metadata elements.  Representation Information, which is required for rendering and understanding the intellectual content, might also be added, and as a direct consequence, there may be a need for new folders and files, for example within the ‘Documentation’ folder.
 
 ## 1.4 Structure of a DIP
-The folder structure of a CS DIP must comply with the requirements for the folder structure for a CS IP, see [Folder structure of the CS IP](https://dilcisboard.github.io/E-ARK-CSIP/specification/implementation/structure/folders/).
+The folder structure of a CS DIP must comply with the requirements for the folder structure for a CS IP, see [Folder structure of the CS IP](http://earkcsip.dilcis.eu/#41-folder-structure-of-the-csip).
 
 The CS IP folder structure and its requirements is visualised in the figure below:
 
