@@ -49,9 +49,9 @@ however in most cases it is necessary to convert from an AIP to a DIP.  The DIP 
 It also allows for the updating of the metadata as well as for the addition of new metadata elements.  Representation Information, which is required for rendering and understanding the intellectual content, might also be added, and as a direct consequence, there may be a need for new folders and files, for example within the ‘Documentation’ folder.
 
 ## 1.4 Structure of a DIP
-The folder structure of a CS DIP must comply with the requirements for the folder structure for a CS IP, see [Folder structure of the CS IP](http://earkcsip.dilcis.eu/#41-folder-structure-of-the-csip).
+The folder structure of a CS DIP must comply with the requirements for the folder structure for a CSIP, see [Folder structure of the CSIP](http://earkcsip.dilcis.eu/#41-folder-structure-of-the-csip).
 
-The CS IP folder structure and its requirements is visualised in the figure below:
+The CSIP folder structure and its requirements is visualised in the figure below:
 
 ![IP Folder Structure](fig_8_cs_ip_struct.png)
 
@@ -60,10 +60,10 @@ The CS IP folder structure and its requirements is visualised in the figure belo
 - Boxes with full lines represent mandatory files/folders
 - Boxes with dotted lines represent optional files/folders. 
 
-As can be seen from the figure - the requirements for the folder structure for a CS IP is at a bare minimum and makes it possible to have several extra optional folders and files in a CS IP (see boxes with dotted lines). 
-The first thing to be said about the E-ARK DIP structure in regard to CS IP structure is that an E-ARK DIP will always consist of some of those files and folders that are optional in the CS IP minimum structure. 
-There must be data to dissemenate. Since the definition of an E-ARK DIP is that it corresponds to a CS IP which is ready to be processed by its designated Access Software, this leaves the question as to which data 
-in the CS IP should be chosen to be encompassed in the E-ARK DIP. It is possible that an AIP in its current state and in its entirety can be delivered to a Consumer as is and still be considered an E-ARK DIP. 
+As can be seen from the figure - the requirements for the folder structure for a CSIP is at a bare minimum and makes it possible to have several extra optional folders and files in a CSIP (see boxes with dotted lines). 
+The first thing to be said about the E-ARK DIP structure in regard to CSIP structure is that an E-ARK DIP will always consist of some of those files and folders that are optional in the CSIP minimum structure. 
+There must be data to dissemenate. Since the definition of an E-ARK DIP is that it corresponds to a CSIP which is ready to be processed by its designated Access Software, this leaves the question as to which data 
+in the CSIP should be chosen to be encompassed in the E-ARK DIP. It is possible that an AIP in its current state and in its entirety can be delivered to a Consumer as is and still be considered an E-ARK DIP. 
 That E-ARK DIP can contain the submission representation, and one or more preservation representations. Often, however, the OAIS is interested in leaving out irrelevant data and metadata and only present the 
 Consumer with the data and metadata that the Consumer is interested in. This could be isolated to the content in one single representation in an E-ARK AIP, or maybe only a portion of a single representation in an E-ARK AIP.     
 Maybe down to only one specific file. The point here is that a plethora of different E-ARK DIPs can be created out of an E-ARK AIP or several E-ARK AIPs. 
