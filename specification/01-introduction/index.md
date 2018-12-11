@@ -34,7 +34,7 @@ Content Information Type Specifications are content-dependent specifications whi
 
 ## 1.3 Definition of a DIP
 
-The OAIS reference model defines an DIP as:
+The OAIS reference model defines a DIP as:
 
 *An Information Package, derived from one or more AIPs, and sent by Archives to the Consumer in response to a request to the OAIS.* 
 
