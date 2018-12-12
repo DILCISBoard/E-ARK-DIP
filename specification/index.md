@@ -10,7 +10,9 @@ The authors of this specification would like to thank all national archives, too
 
 
 # II. Contact & Feedback 
-The Common Specification for Information Packages is maintained by the Digital Information LifeCycle Interoperability Standard Board (DILCIS Board). For further information about the DILCIS Board or feedback on the current document please consult the website http://www.dilcis.eu/ or contact us at <dasboard@dlmforum.eu.>   III. Authors
+The Common Specification for Information Packages is maintained by the Digital Information LifeCycle Interoperability Standard Board (DILCIS Board). For further information about the DILCIS Board or feedback on the current document please consult the website http://www.dilcis.eu/ or contact us at <dasboard@dlmforum.eu.>   
+
+# III. Authors
 
 
 | Name                             | Organisation                                       |
@@ -119,27 +121,9 @@ Content Information Type specifications should handle DIP requirements
 - The DIP section should describe how to register access software  
 - The DIP section could mention and list relevant access software for the Content Information Type
 
+# **3 Metadata**
 
-# **3 Access Rights Information**
-
-OAIS states:
-
-> Access Rights Information: The information that identifies the access restrictions pertaining
-> to the Content Information, including the legal framework, licensing terms, and access
-> control. It contains the access and distribution conditions stated within the Submission
-> Agreement, related to both preservation (by the OAIS) and final usage (by the Consumer). It
-> also includes the specifications for the application of rights enforcement measures. 
-
-The E-ARK DIP specification does not require that access rights are stored in a specific way since different metadata standards
-can be applied differently to different Content Information Types. See Content Information Types. 
-Since it is possible to have different metadata information in the metadata folder it is recommended to systematically control where 
-acces rights metadata are stored. For example acces rights metadata can be stored in both EAD and in PREMIS.
-
-However, the E-ARK DIP specification recommends that access rights metadata is stored in PREMIS. See PREMIS access rights.
-
-# **4 Metadata**
-
-## ​4.1​ Metadata in the DIP
+## 3.1​ Metadata in the DIP
 
 The DIP metadata is based upon the existing common, SIP and AIP specifications. The metadata descriptions provided in this document cover the three core metadata categories: structural[^43] (METS[^44]); preservation[^45] (PREMIS[^46]); and descriptive[^47] (EAD[^48])).
 
@@ -160,7 +144,7 @@ The standard that E-ARK recommends for descriptive metadata is EAD.
 The DIP is based on the AIP, and structural and preservation metadata are thus always - slightly modified - present in the DIP. The METS file is in the root folder, and its schema file (mets.xsd) is in the /schemas folder. The greater part of the Access Software assumes the existence of an EAD and a PREMIS file in the root /metadata/descriptive folder and in the root /metadata/preservation/ folder respectively. Consequently it is also assumed that pertaining schema files (ead3.xsd; premis.xsd) are present in the /schemas folder.
 
 
-## ​4.2​ METS
+## ​3.2​ METS
 
 METS (Metadata Encoding and Transmission Standard) is a standard for encoding descriptive, administrative, and structural metadata expressed using the XML Schema Language.
 
@@ -174,7 +158,6 @@ The differences between a METS instance for an E-ARK DIP vs an E-ARK AIP are sma
 
 The DIP specification is limited to include one and only one representation from an AIP (for which many may exist). The chosen representation is itself an E-ARK IP and therefore follows the same structure. This is reflected in the IP being migrated from an AIP to a DIP. Below is a broad overview of the METS file.
 
-**Table 3 - Broad overview of the METS file**
 
 &nbsp;  | Elements    |           |           | Values                     |Comments
 --------|-------------| ----------|-----------|----------------------------|---------------------
@@ -199,7 +182,7 @@ The DIP specification is limited to include one and only one representation from
 
 In the following the major differences between an XML instance for METS for an E-ARK DIP vs an E-ARK AIP are listed.
 
-**Table 4 - Differences between the AIP METS and the DIP METS on node level: mets**
+
 **Node level: mets**
 
 **Element / Attribute**|**Cardi&shy;nality**|**Description and usage in Common specification**| **Change for DIP**
@@ -212,7 +195,7 @@ mets     | 1..1 | The root level element that is required in all METS documents|
 \@CONTENT&shy;TYPE&shy;SPECIFICATION | 0..1 | An attribute added by this specification. It describes which content information type specification is used for the content. Values of the attribute are fixed in the following vocabulary: ERMS * SIARD1 * SIARD2  SIARDDK * GeoVectorGML * GeoRasterGeotiffNB The vocabulary is extensible as additional content information type specifications are developed. | Change to one of these: ERMS, SIARD1 SIARD2 SIARDDK, OLAPCube, GeoVectorGML, GeoRasterGeotiff
 \@PROFILE | 1..1 | Mandatory in this specification. The PROFILE attribute has to have as its value the URL of the official Common Specification METS Profile. | No change        
 
-**Table 5 - Differences between the AIP METS and the DIP METS on node level: metsHDR**
+
 **Node level: metsHdr** 
 
 |  Element/ Attribute | Cardi&shy;nality | Description and usage |  Change for DIP 		        |
@@ -239,7 +222,7 @@ mets     | 1..1 | The root level element that is required in all METS documents|
 | metsDocumentID/ @ID|0..1|The ID of the metsDocumentID element.|No change|
 | metsDocumentID/ @TYPE|0..1|The type of the identifier assigned to the element.|No change|
 
-**Table 6 - Differences between the AIP METS and the DIP METS on node level: dmdsec**
+
 **Node level: dmdSec**
 
 | Element/ Attribute|Cardi&shy;nality|Description and usage|Change for DIP|
@@ -278,7 +261,6 @@ mets     | 1..1 | The root level element that is required in all METS documents|
 |/binData|0..1|A wrapper element to contain Base64 encoded metadata|No change|
 |/xmldata|0..1|A wrapper element to contain XML encoded metadata|No change|
 
-**Table 7 - Differences between the AIP METS and the DIP METS on node level: amdsec** 
 **Node level: amdSec**
 
 |Element/ Attribute|Cardi&shy;nality|Description and usage|Change for DIP|
@@ -290,7 +272,7 @@ mets     | 1..1 | The root level element that is required in all METS documents|
 |rightsMD|0..n|Optional. The Common Specification recommends including a simple rights statement which describes the overall access status of the package with the following values: Open, Closed, Partially closed, Not known. However, the exact schema and element is up to individual implementations to decide |No change|
 |sourceMD|0..n|Optional, no further requirements| No change|
 
-**Table 8 - Available attributes**
+**Available attributes**
 The following attributes are available for use with each of the four specific metadata areas listed above (xxx below stands for amdSec/digiprovMD, amdSec/techMD, amdSec/rightsMD and amdSec/sourceMD).
 
 |Element/ Attribute|Cardi&shy;nality|Description and usage|Change for DIP|
@@ -301,7 +283,6 @@ The following attributes are available for use with each of the four specific me
 |xxx/ @CREATED | 0..1 | Optional, no further requirements | No change |
 |xxx/ @STATUS | 0..1 | Recommended for describing currency of metadata. If used, must include one of the two values “superseded” or “current” | No change |
 
-**Table 9 - Differences between the AIP METS and the DIP METS on node level: filesec** 
 **Node level: filesec**
 
 |Element/ Attribute|Cardi&shy;nality|Description and usage|Change for DIP|
@@ -333,7 +314,7 @@ The following attributes are available for use with each of the four specific me
 | /fileGrp/ file/ FContent/ @ID | 0..1 | An ID for the <FContent> element | No change - not recommended |
 | /fileGrp/ file/ FContent/ @USE | 0..1 | Statement about intended use of the embedded file | No change - not recommended |
 
-**Table 10 - Differences between the AIP METS and the DIP METS on node level: structmap**
+
 **Node level: structmap**
 
 |Element/ Attribute|Cardi&shy;nality|Description and usage|Change for DIP|
@@ -361,11 +342,11 @@ The following attributes are available for use with each of the four specific me
 | /div/ div/ mptr/ @OTHERLOCTYPE | 0..1 | Locator type in xlink:href when LOCTYPE=”OTHER” | No change |
 | /div/ div/ mptr/ @CONTENTIDS | 0..1 | The content ID for the content represented by the mptr element. | No change |
 
-## ​4.3​ PREMIS
+## ​3.3​ PREMIS
 PREMIS is a standard that mainly caters for long-term preservation and technical usability, which for example is used to facilitate a range of preservation strategies including migration and emulation.
 From an Access perspective, PREMIS especially satisfies the requirements pertaining to the recording of Representation Information. It is practical to state in a formalised and consistent way how the Access Software should behave and where it should look when dealing with different pieces of information, such as which representation formats are included in the DIP. Therefore all E-ARK Access Software assumes the availability of PREMIS metadata according to the specification below.
 
-### ​4.3.1​ Metadata regarding Representations and Access Software
+### ​3.3.1​ Metadata regarding Representations and Access Software
 In PREMIS, a representation is a "set of files, including structural metadata, needed for a complete and reasonable rendition of an Intellectual Entity."[^50].
 
 [^50]: PREMIS Editorial Committee (2015). "PREMIS Data Dictionary for Preservation Metadata", p.8.
@@ -389,10 +370,10 @@ The descriptions below therefore show how to:
 2.  Describe which piece(s) of Access Software is/are needed to render a specific DIP representation format. Several pieces of software may indeed be needed (description 2 below);
 3.  Describe the relationship between the DIP representation format and its Access Software (description 3 below).
 
-#### ​4.3.1.1​ Description 1 - The recording of DIP representation formats
+#### ​3.3.1.1​ Description 1 - The recording of DIP representation formats
 In order to describe the specific DIP representation format the semantic component "1.4 significantProperties" is used. An example is:
 
-**Table 11 - Recording of DIP representation formats**
+
 ```xml
 <object xsi:type=\"representation\"\>\                                                               
  <objectIdentifier\>\                                                                                 
@@ -407,14 +388,14 @@ In order to describe the specific DIP representation format the semantic compone
 ```
 Note that the object type is "representation" and that the objectIdentifierType value is "filepath", which according to the AIP specification is an IP scope value. The objectIdentifierValue is the filepath to the representation folder or could be a filepath to a file.
 
-#### ​4.2.1.2​ Description 2 - The recording of Access Software
+#### ​3.3.1.2​ Description 2 - The recording of Access Software
 In PREMIS 3.0 a description of an environment has become an object itself, so that both non-environmental objects and environmental objects exist. Access Software is therefore an environmental object which per default is an intellectual entity. The semantic unit "1.9 environmentFunction" is conceived to describe the environment object(s) with different levels of granularity. It is suggested to use the vocabulary from Library of Congress[^53]. The semantic unit "1.10 environmentDesignation" is used for information identifying the environment by using human-readable language which can be expected to be understood outside of a digital repository.
 
 [^53]: Library of Congress. environmentFunctionType. Retrieved the 18th of January 2017 at: Environment Function Type [[http://id.loc.gov/vocabulary/preservation/environmentFunctionType.html]{.underline}](http://id.loc.gov/vocabulary/preservation/environmentFunctionType.html)
 
 See the example which follows this vocabulary:
 
-**Table 12 - Recording of Access Software**
+
 ```xml
 <object xsi:type="intellectualEntity">
      <objectIdentifier>
@@ -437,11 +418,11 @@ See the example which follows this vocabulary:
 </object>
 ```
 
-#### ​4.2.1.3​ Description 3 - The recording of the relation between the representations and the Access Software
+#### ​3.3.1.3​ Description 3 - The recording of the relation between the representations and the Access Software
 
 In order to establish a connection between the DIP representation format to be rendered and the Access Software to render it, it is necessary to use the semantic unit "1.13 relationship". The relationship element can bind both non-environmental objects together with environmental objects and it can bind environmental objects together with other environmental objects. The following example shows how the DIP representation format from Table 11 can be related to the Access Software from Table 12:
 
-**Table 13 - Recording of Access Software**
+
 ```xml
 <object xsi:type="representation">   
    <objectIdentifier> 
@@ -465,7 +446,7 @@ In order to establish a connection between the DIP representation format to be r
 </object>
 ```
 
-As can be seen in Table 13 (above) the nature of the relationship, \<relationshipType\> is used (value, e.g. 'dependency'); intimately linked to this is also the indication of a \<relationshipSubType\>, e.g. 'requires'.
+As can be seen above the nature of the relationship, \<relationshipType\> is used (value, e.g. 'dependency'); intimately linked to this is also the indication of a \<relationshipSubType\>, e.g. 'requires'.
 
 In order to identify the Access Software, which is used to render the representation, the \<relatedObjectIdentifier\> is employed; and the \<relatedEnvironmentPurpose\> gives us a hint about what the purpose is (here: to 'render').
 
