@@ -1,7 +1,6 @@
 #### ​3.1.2.3​ EAD
-Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The E-ARK project allows for the inclusion of any kind of descriptive metadata in the E-ARK IP[^54]. These go into the 'descriptive/' folder as seen in the example below, Figure 3 (cf. EAD.xml).
-
-[^54]: For E-ARK pilots, most of the Access Software used the EAD3 standard. They can however be tweaked to use other descriptive metadata.
+Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The E-ARK DIP allows for the inclusion of any kind of descriptive metadata. These go into the 'descriptive/' folder as seen in the example below, Figure 3 (cf. EAD.xml).
+E-ARK has chosen EAD3 as the descriptive metadata standard.
 
 **Figure 3 - E-ARK IP descriptive metadata**
 ![](media/EAD_figure3.png)
@@ -19,51 +18,30 @@ The EAD file has three main inputs (Figure 5 below):
 ![](media/EAD_figure5.png)
 
 ##### ​3.1.2.3.1​ Tools
-The tools that the E-ARK project is building will by default only be able to cope with EAD3, because EAD3 is the descriptive metadata standard that E-ARK has chosen. This does not mean that the tools cannot be configured so they can also cope with other descriptive metadata standards. For example, in E-ARK web there is a generic task for descriptive metadata. It would be easy to adapt this task to Dublin Core, for example, if required. The only thing that is required to do so is a convention which defines how to determine the metadata that belong to a file item in the context of a metadata format.
-
-The tools in E-ARK that use EAD are:
--   ERMS Export Module (EEM)
--   EAD Editor
--   RODA
--   ESS tools
--   E-ARK Web including Apache Hadoop, Lily and Solr.
--   Access Software
-    -   Search GUI
-    -   Order Management Tool
-    -   DIP Viewer
+Tools will by default only be able to cope with EAD3, because EAD3 is the descriptive metadata standard that E-ARK has chosen. 
 
 ##### ​3.1.2.3.2​ Search
-To support the development of a search interface, it is required to make certain metadata elements available in the Solr index[^55], either by using the Lily indexer[^56] or via the AIP indexing task, which adds content to the Solr index by creating one document[^57] per contained file in the IP. These Solr documents include basic properties such as \"path\", \"package\", \"contentType\", \"size\", and can be further enriched by running a subsequent job which parses EAD metadata files to search for \<dao\> tags. If such a tag is found, the metadata fields of the first c-level tag in the ancestry path of the \"data\" element (e.g. the \"title\" field) are added to the Solr document. If no \<dao\> element is found, the entire EAD/c (component) is indexed and associated with all files in a given IP. This aims to support scenarios where no \<dao\> elements are provided as part of the description.
+To support the development of a search interface, it is required to make certain metadata elements available to the search engine. It can be further enriched by parsing EAD metadata files searching for \<dao\> tags. If no \<dao\> element is found, the entire EAD/c (component) is associated with all files in a given IP. This aims to support scenarios where no \<dao\> elements are provided as part of the description.
 
-[^55]: Apache Solr Reference Guide Solr Indexing https://cwiki.apache.org/confluence/display/solr/Introduction+to+Solr+Indexing
+**Table 14 - EAD elements**
 
-[^56]: The dm-file-ingest component: https://github.com/eark-project/dm-file-ingest
-
-[^57]: A document in Solr terminology is Solr\'s basic unit of information, which is a set of data that describes something. A document about a person, for example, might contain the person\'s name, biography, favorite color, and shoe size. A document about a book could contain the title, author, year of publication, number of pages, and so on. Cf. Apache Solr Reference Guide Overview of Documents, Fields, and Schema Design https://cwiki.apache.org/confluence/display/solr/Overview+of+Documents,+Fields,+and+Schema+Design
-
-The following fields have been mapped to Solr and created in Lily\_Solr and are thus indexed and searchable from the E-ARK Search GUI:
-
-**Table 14 - EAD to Solr mapping**
-
-  **EAD element**                 |**Value access path**        |**SolR field**
-  ------------------------------- |----------------------------| ----------------------------------
-  ead:unitid                      |.                            |eadid\_s (String)
-  ead:unittitle                   |.                            |eadtitle\_s (String)
-  ead:unitdate                    |.                            |eaddate\_s (String)
-  ead:unitdatestructured          |ead:datesingle               |eaddatestructuredfrom\_dt (Date)
-  ead:unitdatestructured,         |ead:datesingle               |eaddatestructuredto\_dt (Date)
-  ead:unitdatestructured          |ead:daterange/ead:fromdate   |eaddatestructuredfrom\_dt (Date)
-  ead:unitdatestructured          |ead:daterange/ead:todate     |eaddatestructuredto\_dt (Date)
-  ead:origination                 |ead:\*/ead:part              |eadorigination\_s (String)
-  ead:abstract                    |.                            |eadabstract\_t (Text)
-  ead:accessrestrict              |ead:head                     |eadaccessrestrict\_s (String),
-  ead:(\[Cc\]\[0,1\]\[0-9\]\|C)   |\@level (attribute)          |eadclevel\_s (String)
+  **EAD element**                 |**Value access path**        |
+  ------------------------------- |---------------------------- |
+  ead:unitid                      |.                            |
+  ead:unittitle                   |.                            |
+  ead:unitdate                    |.                            |
+  ead:unitdatestructured          |ead:datesingle               |
+  ead:unitdatestructured,         |ead:datesingle               |
+  ead:unitdatestructured          |ead:daterange/ead:fromdate   |
+  ead:unitdatestructured          |ead:daterange/ead:todate     |
+  ead:origination                 |ead:\*/ead:part              |
+  ead:abstract                    |.                            |
+  ead:accessrestrict              |ead:head                     |
+  ead:(\[Cc\]\[0,1\]\[0-9\]\|C)   |\@level (attribute)          |
 
 Note that the element selector can be a regular expression: (\[Cc\]\[0,1\]\[0-9\]\|C) matches either C01, C02, ..., C20 or the C-element without numeric suffix. The value access path "\@level (attribute)" means that the value of the attribute "level" of the selected C- or C{n}element is accessed. The expression ead:\*/ead:part allows accessing the element's value with any EAD child element of ead:origination which has the child element ead:part.
 
-Elements which are not part of the original EAD3 can be represented by \<odd\> elements, cf. the SMURF profile[^58].
-
-[^58]: D3.3 E-Ark SMURF http://www.eark-project.com/resources/project-deliverables/52-d33smurf
+Elements which are not part of the original EAD3 can be represented by \<odd\> elements.
 
 For example a new element for keywords:
 
@@ -90,14 +68,14 @@ The component tag (\<c\>) is "An element that designates a subordinate part of t
 
 [^59]: EAD3 \<c\> http://www.loc.gov/ead/EAD3taglib/index.html\#elem-c
 
-The Access Software will be developed so that it can address all hierarchical levels in a description of the Archive\'s collections, thus providing user friendly information for all the levels of intellectual content, which have effectively been described in the descriptive metadata file.
+The Access Software must be able to address all hierarchical levels in a description of the Archive\'s collections, thus providing user friendly information for all the levels of intellectual content, which have effectively been described in the descriptive metadata file.
 
-The example below shows how the descriptions of the hierarchical levels can be displayed in the IP Viewer:
+The example below shows how the descriptions of the hierarchical levels can be displayed in an IP Viewer:
 
-**Figure 6 - Illustration of the E-ARK use of the EAD component tag \<c\>**
+**Figure 6 - Illustration of the use of the EAD component tag \<c\>**
 ![](media/EAD_figure6.png)
 
-The E-ARK project has chosen the unnumbered component tag (\<c\>) as opposed to the numbered one (\<cNN\>) because it is more generic, less resource demanding to implement, and because it provides more flexibility and more interoperability: First of all there is no upper limit to the number of levels when choosing \<c\> (whereas there are 12 in \<cNN\>). Also, a hierarchy is implicit from the archive\'s vocabulary (series, sub-series, etc.) and reflects each local archive's way of describing descriptive units; the \<c\> component is defined as an argument using the level (\@level) attribute[^60], e.g. \<c level=\"file\"\>. With \<cNN\> we would need to define the meaning for each number and it would probably be too naive to expect that a prescriptive E-ARK solution would be adopted by all. Furthermore, it is also complicated to introduce new levels between the existing ones when using the \<cNN\> tag. Lastly, the Archives Portal Europe (APE) also uses the unnumbered tag in apeEAD and it is assumed that any compliance with APE is welcomed by the archival community.
+The E-ARK DIP has chosen the unnumbered component tag (\<c\>) as opposed to the numbered one (\<cNN\>) because it is more generic, less resource demanding to implement, and because it provides more flexibility and more interoperability: First of all there is no upper limit to the number of levels when choosing \<c\> (whereas there are 12 in \<cNN\>). Also, a hierarchy is implicit from the archive\'s vocabulary (series, sub-series, etc.) and reflects each local archive's way of describing descriptive units; the \<c\> component is defined as an argument using the level (\@level) attribute[^60], e.g. \<c level=\"file\"\>. With \<cNN\> we would need to define the meaning for each number and it would probably be too naive to expect that a prescriptive E-ARK solution would be adopted by all. Furthermore, it is also complicated to introduce new levels between the existing ones when using the \<cNN\> tag. Lastly, the Archives Portal Europe (APE) also uses the unnumbered tag in apeEAD and it is assumed that any compliance with APE is welcomed by the archival community.
 
 [^60]: EAD3 \@level https://www.loc.gov/ead/EAD3taglib/index.html\#attr-level
 
@@ -294,5 +272,3 @@ On a long term, the E-ARK project proposes the use of relationship model that wo
 By following this strategy one could build an entire Representation Information network that follows the current specification so we could actually make use of the existing preservation action tools being developed in the project to preserve the RI. Moreover, exchanging RI in this standard way would greatly increase collaboration between institutions, enterprises and preservation experts while at the same time reducing the risk of an external registry going out of business.
 
 The current AIP specification already includes a specific relationship between AIPs, namely a succession relationship, where an AIP point to its parent AIP (or AIC). We suggest using the same mechanism to refer to RI AIPs. The implementation would entail adding a new struct-map where the relationships with RI AIPs could be defined, and possibly also other links to external information (e.g. to the PRONOM registry). Also, we suggest adding a new AIP type called "Representation Information" which would clearly identify the AIP as not being part of the content of the repository *per se*, but extra information needed for the preservation of said content.
-
-Since it has not been a part of the E-ARK project to implement such a proposition, we leave it at the conceptual level for the community to pick up whenever it reaches the right maturity level to do so.
