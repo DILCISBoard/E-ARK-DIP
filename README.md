@@ -31,7 +31,7 @@ Previous versions of the specification are available on the [archive](./archive/
 Key objectives of this specification are:
 
 - 	To define a generic structure of the DIP format in a way that it is suitable for a wide variety of archival records, such as document and image collections, databases or geographical data.
--	To recommend a set of metadata related to the structural and the access aspects of the DIP as implemented by the reference implementation.
+-	To recommend a set of metadata related to the structural and the access aspects of the DIP.
 
 ## Target audience
 
