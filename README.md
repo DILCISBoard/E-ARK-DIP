@@ -11,7 +11,7 @@ Final versions of the specification are conveniently published at the [DILCIS Bo
 
 ### Draft versions
 
-The most up-to-date version of the DIP specification is being managed in markdown format in this GitHub repository. 
+The most up-to-date version of the DIP specification is being managed in markdown format in this GitHub repository and can be found [here](./specification/index.md). 
 
 This is a draft version of the specification that is being collaboratively edited by multiple experts.
 
