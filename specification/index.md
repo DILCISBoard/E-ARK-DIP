@@ -117,8 +117,8 @@ that requirements and descriptions related to the specific Content Information T
 describe how each Content Information Type should be dissemenated and therefore the DIP specification sets out requirements on how 
 Content Information Type specifications should handle DIP requirements
 
-- A Content Information Type specification should have a section which sole focus is on describing DIP requirements
-- The DIP section should describe how to record access rights 
+- A Content Information Type specification should have a section which sole focus is on describing DIP requirements and/or recommendations
+- The DIP section should describe how to read/edit access rights 
 - The DIP section should describe how to register access software  
 - The DIP section could mention and list relevant access software for the Content Information Type
 
