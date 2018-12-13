@@ -76,7 +76,7 @@ The definition of an E-ARK DIP is that it corresponds to a CS IP which is ready 
 This is a very generic, but handy, definition. To be more specific, the E-ARK DIP is: 
 
 - an IP which is sent (or is ready to be sent) to the user in an Access environment; 
-- supported by E-ARK tools, i.e. can be rendered by Access Software.
+- supported by tools, i.e. can be rendered by Access Software.
 
 First of all, the DIP looks like the AIP: It replicates the structure of the AIP from which it is derived. It also inherits metadata as well as the intellectual entities of the AIP. An E-ARK AIP may therefore also be a E-ARK DIP, 
 however in most cases it is necessary to convert from an AIP to a DIP.  The DIP allows for example for the inclusion of new DIP representation formats, which are more user-friendly than the AIP formats that are intended for long-term preservation purposes. 
