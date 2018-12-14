@@ -104,6 +104,7 @@ That E-ARK DIP can contain the submission representation, and one or more preser
 Consumer with the data and metadata that the Consumer is interested in. This could be isolated to the content in one single representation in an E-ARK AIP, or maybe only a portion of a single representation in an E-ARK AIP.     
 Maybe down to only one specific file. The point here is that a plethora of different E-ARK DIPs can be created out of an E-ARK AIP or several E-ARK AIPs. 
 
+
 # **​2 Content Information Types**
 
 Content Information is *“A set of information that is the original target of preservation or 
@@ -141,9 +142,6 @@ One of the challenges when dividing metadata between preservation metadata and d
 operate with the same distinction. Access rights information can for example be stored in EAD (descriptive metadata) and in PREMIS (preservation metadata).
 This leaves the question on implementation level - where should this? This E-ARK DIP specification only describes two recommended ways to use
 EAD and PREMIS.
-
-
-The DIP is based on the AIP, and structural and preservation metadata are thus always - slightly modified - present in the DIP. The METS file is in the root folder, and its schema file (mets.xsd) is in the /schemas folder. The greater part of the Access Software assumes the existence of an EAD and a PREMIS file in the root /metadata/descriptive folder and in the root /metadata/preservation/ folder respectively. Consequently it is also assumed that pertaining schema files (ead3.xsd; premis.xsd) are present in the /schemas folder.
 
 
 ## ​3.1 METS
