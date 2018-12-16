@@ -104,8 +104,8 @@
 
 **Node level: structMap**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP requirement  |
-| -- | --------------- | ------------------- | ------------------- | ---------------------- |
+| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP requirement |
+| -- | --------------- | ------------------- | ------------------- | --------------------- |
 | <a name="CSIP80"></a>**CSIP80** | **Structural description of the package** <br/> `structMap` | Each METS file must include ONE structural map (structMap) element used exactly as described here. Institutions can add their own additional custom structural maps as separate structMap sections. | **1..n** <br/> MUST | No structural change from CSIP. |
 | <a name="CSIP81"></a>**CSIP81** | **Type of structural description** <br/> `structMap/@TYPE` | The type attribute of the structural map (structMap) is set to value “PHYSICAL” from the vocabualry. <br/> **See also:** <a href="#VocabularyStructMapType" >Structural map typing</a> | **1..1** <br/> MUST | No structural change from CSIP. <br/> No change in value from CSIP.|
 | <a name="CSIP82"></a>**CSIP82** | **Name of the structural description** <br/> `structMap/@LABEL` | The label attribute is set to value “CSIP StructMap” from the vocabulary. <br/> **See also:** <a href="#VocabularyStructMapLabel" >Structural map label</a> | **1..1** <br/> MUST | No structural change from CSIP.<br/> No value change from CSIP. |
