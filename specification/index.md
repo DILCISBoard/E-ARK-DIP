@@ -22,14 +22,12 @@ The E-ARK DIP specification is maintained by the Digital Information LifeCycle I
 | Phillip Tømmerholt               | Danish National Archives                           |
 
 
-
 # IV. Revision History
 ----------------
 
 | Revision No. | Date       | Authors(s)                       | Organisation           | Description                                                           |
 |--------------|------------|----------------------------------|------------------------|-----------------------------------------------------------------------|
-| 1.0          | 20.12.2018 | Phillip Tømmerholt               | DNA                    | First draft                                                          |
-|              |            | Anders Bo Nielsen                | DNA                    | First draft                                                    |
+| 1.0          | 20.12.2018 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA                    | First draft                                                          |
 
 
 # 1. Introduction
