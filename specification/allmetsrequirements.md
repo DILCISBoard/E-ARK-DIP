@@ -20,13 +20,13 @@
 | <a name="CSIP11"></a>**CSIP11** | **Agent role** <br/> `metsHdr/agent/@ROLE` | The role of the mandatory agent is “CREATOR”. | **1..1** <br/> MUST |  |
 | <a name="CSIP12"></a>**CSIP12** | **Agent type** <br/> `metsHdr/agent/@TYPE` | The type of the mandatory agent is “OTHER”. | **1..1** <br/> MUST |  |
 | <a name="CSIP13"></a>**CSIP13** | **Agent other type** <br/> `metsHdr/agent/@OTHERTYPE` | The other type of the mandatory agent is “SOFTWARE”. <br/> **See also:** <a href="#VocabularyAgentOtherType" >Other agent type</a> | **1..1** <br/> MUST | |
-| <a name="CSIP14"></a>**CSIP14** | **Agent name** <br/> `metsHdr/agent/name` | The name of the mandatory agent is the name of the software tool which was used to create the IP. | **1..1** <br/> MUST | DIP - The name of the agent(software) that created the DIP from the AIP |
+| <a name="CSIP14"></a>**CSIP14** | **Agent name** <br/> `metsHdr/agent/name` | The name of the mandatory agent is the name of the software tool which was used to create the IP. | **1..1** <br/> MUST | DIP - The name of the agent (software) that created the DIP from the AIP |
 | <a name="CSIP15"></a>**CSIP15** | **Agent additional information** <br/> `metsHdr/agent/note` | The mandatory agent has a note providing the version information for the tool which was used to create the IP. | **1..1** <br/> MUST | |
 | <a name="CSIP16"></a>**CSIP16** | **Classification of the agent additional information** <br/> `metsHdr/agent/note/@csip:NOTETYPE` | The mandatory agent note is typed with the fixed value of "SOFTWARE VERSION". <br/> **See also:** <a href="#VocabularyNoteType" >Note type</a> | **1..1** <br/> MUST | |
 
 **Node level: dmdSec**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment  |
+| ID | Name & Location | Description & usage | Cardi&shy;nality & Level | E-ARK DIP require&shy;ment  |
 | -- | --------------- | ------------------- | ------------------- | ---------------------- |
 | <a name="CSIP17"></a>**CSIP17** | **Descriptive metadata** <br/> `dmdSec` | Must be used if descriptive metadata for the package content is available. Each descriptive metadata section (dmdSec) contains one description and thus is repeated when more descriptions are available. <br/> It is possible to transfer metadata in a package using just the descriptive metadata sectiond/or adminstrative metadata section. | **0..n** <br/> SHOULD | |
 | <a name="CSIP18"></a>**CSIP18** | **Descriptive metadata identifier** <br/> `dmdSec/@ID` | An identifier for the descriptive metadata section (dmdSec) used for referencing inside the package. It must be unique within the package. <br/> The ID must follow the rules for xml:id described in the chapter of the textual description of CSIP named "General requirements for the use of metadata" | **1..1** <br/> MUST |  |
@@ -45,7 +45,7 @@
 
 **Node level: admSec**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment  |
+| ID | Name & Location | Description & usage | Cardi&shy;nality & Level | E-ARK DIP require&shy;ment  |
 | -- | --------------- | ------------------- | ------------------- | ---------------------- |
 | <a name="CSIP31"></a>**CSIP31** | **Administrative metadata** <br/> `amdSec` | If administrative / preservation metadata is available, it must be described using the administrative metadata section (amdSec) element. <br/> It is possible to transfer metadata in a package using just the descriptive metadata section/or adminstrative metadata section. | **0..n** <br/> SHOULD | |
 | <a name="CSIP32"></a>**CSIP32** | **Digital provenance metadata** <br/> `amdSec/digiprovMD` | For recording information about preservation events the standard PREMIS is used. The PREMIS metadata must be either embedded or linked in a digital provenance metadata (digiprovMD) element. It is mandatory to include one digiprovMD element for each external PREMIS file placed in the “metadata/preservation” section, or for each embedded set of PREMIS metadata. | **0..n** <br/> SHOULD | |
@@ -77,7 +77,7 @@
 
 **Node level: fileSec**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment  |
+| ID | Name & Location | Description & usage | Cardi&shy;nality & Level | E-ARK DIP require&shy;ment  |
 | -- | --------------- | ------------------- | ------------------- | ---------------------- |
 | <a name="CSIP58"></a>**CSIP58** | **File section** <br/> `fileSec` | When the section is used only one file section (fileSec) element is present. <br/> It is possible to transfer just descriptive metadata and/or adminsitrative metadata without files placed in this section. | **0..1** <br/> SHOULD | |
 | <a name="CSIP59"></a>**CSIP59** | **File section identifier** <br/> `fileSec/@ID` | An identifier for the file section used for referencing inside the package. It must be unique within the package. <br/> The ID must follow the rules for xml:id described in the chapter of the textual description of CSIP named "General requirements for the use of metadata" | **1..1** <br/> MUST |  |
@@ -104,7 +104,7 @@
 
 **Node level: structMap**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment |
+| ID | Name & Location | Description & usage | Cardi&shy;nality & Level | E-ARK DIP require&shy;ment |
 | -- | --------------- | ------------------- | ------------------- | --------------------- |
 | <a name="CSIP80"></a>**CSIP80** | **Structural description of the package** <br/> `structMap` | Each METS file must include ONE structural map (structMap) element used exactly as described here. Institutions can add their own additional custom structural maps as separate structMap sections. | **1..n** <br/> MUST | No structural change from CSIP. |
 | <a name="CSIP81"></a>**CSIP81** | **Type of structural description** <br/> `structMap/@TYPE` | The type attribute of the structural map (structMap) is set to value “PHYSICAL” from the vocabualry. <br/> **See also:** <a href="#VocabularyStructMapType" >Structural map typing</a> | **1..1** <br/> MUST | No structural change from CSIP. <br/> No change in value from CSIP.|
