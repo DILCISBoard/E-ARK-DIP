@@ -1,6 +1,6 @@
 **Node level: mets**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment |
+| ID | Name & Location | Description & usage | Cardi&shy;nality & Level | E-ARK DIP require&shy;ment |
 | -- | --------------- | ------------------- | ------------------- | --------------------- |
 | <a name="CSIP1"></a>**CSIP1** | **Content Identification** <br/> `mets/@OBJID` | It is mandatory to use a content ID which is expressed with @OBJID. The value should be the same as the name or ID of the package (the name of the root folder) for the root METS document or the name and folder name for the representation. The OBJID must meet the principle of being unique at least across the repository. | **1..1** <br/> MUST | DIP1 - The OBJID must change to reflect that the DIP is another information package |
 | <a name="CSIP2"></a>**CSIP2** | **General content type** <br/> `mets/@TYPE` | The @TYPE attribute must be used for identifying the general type of the package (genre). A vocabulary is used. The vocabulary is going to evolve under the care of the DILCIS Board as additional content information type specifications are developed. <br/> **See also:** <a href="#VocabularyType" >Content information type declaration</a> | **1..1** <br/> MUST |  |
@@ -11,7 +11,7 @@
 
 **Node level: metsHdr**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment  |
+| ID | Name & Location | Description & usage | Cardi&shy;nality & Level | E-ARK DIP require&shy;ment  |
 | -- | --------------- | ------------------- | ------------------- | ---------------------- |
 | <a name="CSIP7"></a>**CSIP7**   | **Package creation date** <br/> `metsHdr/@CREATEDATE` | @CREATEDATE describes the date of creation of the package. | **1..1** <br/> MUST | DIP2 - Change to creation date for DIP. The DIP is another and new information package |
 | <a name="CSIP8"></a>**CSIP8**   | **Package last modification date** <br/> `metsHdr/@LASTMODDATE` | @LASTMODDATE is mandatory if the package has been modified. | **0..1** <br/> SHOULD | DIP3 - only modifications to the DIP should be registered in this element. The DIP is another and new information package.|
