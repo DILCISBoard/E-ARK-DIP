@@ -1,7 +1,7 @@
 **Node level: mets**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP requirement  |
-| -- | --------------- | ------------------- | ------------------- | ---------------------- |
+| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment |
+| -- | --------------- | ------------------- | ------------------- | --------------------- |
 | <a name="CSIP1"></a>**CSIP1** | **Content Identification** <br/> `mets/@OBJID` | It is mandatory to use a content ID which is expressed with @OBJID. The value should be the same as the name or ID of the package (the name of the root folder) for the root METS document or the name and folder name for the representation. The OBJID must meet the principle of being unique at least across the repository. | **1..1** <br/> MUST | DIP1 - The OBJID must change to reflect that the DIP is another information package |
 | <a name="CSIP2"></a>**CSIP2** | **General content type** <br/> `mets/@TYPE` | The @TYPE attribute must be used for identifying the general type of the package (genre). A vocabulary is used. The vocabulary is going to evolve under the care of the DILCIS Board as additional content information type specifications are developed. <br/> **See also:** <a href="#VocabularyType" >Content information type declaration</a> | **1..1** <br/> MUST |  |
 | <a name="CSIP3"></a>**CSIP3** | **Other general content type** mets/@csip:OTHERTYPE | The @csip:OTHERTYPE attribute must be used for stating the general type of the package (genre) when @TYPE has the value "OTHER" <br/> **See also:** <a href="#VocabularyType" >Content information type declaration</a> | **0..1** <br/> SHOULD |  |
@@ -11,7 +11,7 @@
 
 **Node level: metsHdr**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP requirement  |
+| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment  |
 | -- | --------------- | ------------------- | ------------------- | ---------------------- |
 | <a name="CSIP7"></a>**CSIP7**   | **Package creation date** <br/> `metsHdr/@CREATEDATE` | @CREATEDATE describes the date of creation of the package. | **1..1** <br/> MUST | DIP2 - Change to creation date for DIP. The DIP is another and new information package |
 | <a name="CSIP8"></a>**CSIP8**   | **Package last modification date** <br/> `metsHdr/@LASTMODDATE` | @LASTMODDATE is mandatory if the package has been modified. | **0..1** <br/> SHOULD | DIP3 - only modifications to the DIP should be registered in this element. The DIP is another and new information package.|
@@ -26,7 +26,7 @@
 
 **Node level: dmdSec**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP requirement  |
+| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment  |
 | -- | --------------- | ------------------- | ------------------- | ---------------------- |
 | <a name="CSIP17"></a>**CSIP17** | **Descriptive metadata** <br/> `dmdSec` | Must be used if descriptive metadata for the package content is available. Each descriptive metadata section (dmdSec) contains one description and thus is repeated when more descriptions are available. <br/> It is possible to transfer metadata in a package using just the descriptive metadata sectiond/or adminstrative metadata section. | **0..n** <br/> SHOULD | |
 | <a name="CSIP18"></a>**CSIP18** | **Descriptive metadata identifier** <br/> `dmdSec/@ID` | An identifier for the descriptive metadata section (dmdSec) used for referencing inside the package. It must be unique within the package. <br/> The ID must follow the rules for xml:id described in the chapter of the textual description of CSIP named "General requirements for the use of metadata" | **1..1** <br/> MUST |  |
@@ -45,7 +45,7 @@
 
 **Node level: admSec**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP requirement  |
+| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment  |
 | -- | --------------- | ------------------- | ------------------- | ---------------------- |
 | <a name="CSIP31"></a>**CSIP31** | **Administrative metadata** <br/> `amdSec` | If administrative / preservation metadata is available, it must be described using the administrative metadata section (amdSec) element. <br/> It is possible to transfer metadata in a package using just the descriptive metadata section/or adminstrative metadata section. | **0..n** <br/> SHOULD | |
 | <a name="CSIP32"></a>**CSIP32** | **Digital provenance metadata** <br/> `amdSec/digiprovMD` | For recording information about preservation events the standard PREMIS is used. The PREMIS metadata must be either embedded or linked in a digital provenance metadata (digiprovMD) element. It is mandatory to include one digiprovMD element for each external PREMIS file placed in the “metadata/preservation” section, or for each embedded set of PREMIS metadata. | **0..n** <br/> SHOULD | |
@@ -77,7 +77,7 @@
 
 **Node level: fileSec**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP requirement  |
+| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment  |
 | -- | --------------- | ------------------- | ------------------- | ---------------------- |
 | <a name="CSIP58"></a>**CSIP58** | **File section** <br/> `fileSec` | When the section is used only one file section (fileSec) element is present. <br/> It is possible to transfer just descriptive metadata and/or adminsitrative metadata without files placed in this section. | **0..1** <br/> SHOULD | |
 | <a name="CSIP59"></a>**CSIP59** | **File section identifier** <br/> `fileSec/@ID` | An identifier for the file section used for referencing inside the package. It must be unique within the package. <br/> The ID must follow the rules for xml:id described in the chapter of the textual description of CSIP named "General requirements for the use of metadata" | **1..1** <br/> MUST |  |
@@ -104,7 +104,7 @@
 
 **Node level: structMap**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP requirement |
+| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP require&shy;ment |
 | -- | --------------- | ------------------- | ------------------- | --------------------- |
 | <a name="CSIP80"></a>**CSIP80** | **Structural description of the package** <br/> `structMap` | Each METS file must include ONE structural map (structMap) element used exactly as described here. Institutions can add their own additional custom structural maps as separate structMap sections. | **1..n** <br/> MUST | No structural change from CSIP. |
 | <a name="CSIP81"></a>**CSIP81** | **Type of structural description** <br/> `structMap/@TYPE` | The type attribute of the structural map (structMap) is set to value “PHYSICAL” from the vocabualry. <br/> **See also:** <a href="#VocabularyStructMapType" >Structural map typing</a> | **1..1** <br/> MUST | No structural change from CSIP. <br/> No change in value from CSIP.|
