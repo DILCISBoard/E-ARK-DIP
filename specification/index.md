@@ -20,7 +20,6 @@ The E-ARK DIP specification is maintained by the Digital Information LifeCycle I
 
 
 # IV. Revision History
-----------------
 
 | Revision No. | Date       | Authors(s)                       | Organisation           | Description                                                           |
 |--------------|------------|----------------------------------|------------------------|-----------------------------------------------------------------------|
@@ -45,7 +44,7 @@ The E-ARK DIP specification can be found in the following model (see Figure 1):
 
 _Common Specification for Information Packages_
 
-Common Specification for Information Packages (CS IP) identifies and standardises the common aspects of information packages (SIP/AIP/DIP) which are equally relevant and implemented by any of the functional entities of the overall digital preservation process (i.e. pre-ingest, ingest, long-term preservation and access). 
+Common Specification for Information Packages (CS IP) identifies and standardises the common aspects of information packages (SIP/AIP/DIP) which are equally relevant and implemented by any of the functional entities of the overall digital preservation process (i.e. Ingest, Data Management, Archival Storage, Preservation Planning, Access etc). 
 CS IP is a separate document as all the grey boxes are. Therefore, this E-ARK DIP specification does not aim at repeating the information presented there – only the information that is absolutely necessary to understand the DIP specification will be mentioned here. 
 
 _SIP, AIP, and DIP Specification_
