@@ -15,7 +15,7 @@
 | -- | --------------- | ------------------- | ------------------- | ---------------------- |
 | <a name="CSIP7"></a>**CSIP7**   | **Package creation date** <br/> `metsHdr/@CREATEDATE` | @CREATEDATE describes the date of creation of the package. | **1..1** <br/> MUST | DIP2 - Change to creation date for DIP. The DIP is another and new information package |
 | <a name="CSIP8"></a>**CSIP8**   | **Package last modification date** <br/> `metsHdr/@LASTMODDATE` | @LASTMODDATE is mandatory if the package has been modified. | **0..1** <br/> SHOULD | DIP3 - only modifications to the DIP should be registered in this element. The DIP is another and new information package.|
-| <a name="CSIP9"></a>**CSIP9**   | **OAIS Package type information** <br/> `metsHdr/@csip:OAISPACKAGETYPE` | @csip:OAISPACKAGETYPE is an attribute added by the CSIP for describing the type of the IP. <br/> **See also:** <a href="#VocabularyOAISPackageType" >OAIS Package type</a> | **1..1** <br/> MUST | DIP4 - the value must be "DIP"|
+| <a name="CSIP9"></a>**CSIP9**   | **OAIS Package type information** metsHdr/@csip:OAIS&shy;PACKAGETYPE | @csip:OAISPACKAGETYPE is an attribute added by the CSIP for describing the type of the IP. <br/> **See also:** <a href="#VocabularyOAISPackageType" >OAIS Package type</a> | **1..1** <br/> MUST | DIP4 - the value must be "DIP"|
 | <a name="CSIP10"></a>**CSIP10** | **Agent** <br/> `metsHdr/agent` | One mandatory agent is used to describe the software used for creating the package. Other uses of agents are described in the own implementations extending profile. | **1..n** <br/> MUST | |
 | <a name="CSIP11"></a>**CSIP11** | **Agent role** <br/> `metsHdr/agent/@ROLE` | The role of the mandatory agent is “CREATOR”. | **1..1** <br/> MUST |  |
 | <a name="CSIP12"></a>**CSIP12** | **Agent type** <br/> `metsHdr/agent/@TYPE` | The type of the mandatory agent is “OTHER”. | **1..1** <br/> MUST |  |
@@ -23,7 +23,6 @@
 | <a name="CSIP14"></a>**CSIP14** | **Agent name** <br/> `metsHdr/agent/name` | The name of the mandatory agent is the name of the software tool which was used to create the IP. | **1..1** <br/> MUST | DIP - The name of the agent(software) that created the DIP from the AIP |
 | <a name="CSIP15"></a>**CSIP15** | **Agent additional information** <br/> `metsHdr/agent/note` | The mandatory agent has a note providing the version information for the tool which was used to create the IP. | **1..1** <br/> MUST | |
 | <a name="CSIP16"></a>**CSIP16** | **Classification of the agent additional information** <br/> `metsHdr/agent/note/@csip:NOTETYPE` | The mandatory agent note is typed with the fixed value of "SOFTWARE VERSION". <br/> **See also:** <a href="#VocabularyNoteType" >Note type</a> | **1..1** <br/> MUST | |
-
 
 **Node level: dmdSec**
 
@@ -43,7 +42,6 @@
 | <a name="CSIP28"></a>**CSIP28** | **File creation date** <br/> `dmdSec/mdRef/@CREATED` | The date the linked file was created. | **1..1** <br/> MUST |  |
 | <a name="CSIP29"></a>**CSIP29** | **File checksum** <br/> `dmdSec/mdRef/@CHECKSUM` | The checksum of the linked file. | **1..1** <br/> MUST |  |
 | <a name="CSIP30"></a>**CSIP30** | **File checksum type** <br/> `dmdSec/mdRef/@CHECKSUMTYPE` | The type of checksum following the value list in the standard which used for the linked file. | **1..1** <br/> MUST | |
-
 
 **Node level: admSec**
 
@@ -141,4 +139,3 @@
 | <a name="CSIP110"></a>**CSIP110** | **Resource location** <br/> `structMap/div/div/mptr/@xlink:href` | The actual location of the resource. We  recommend recording a URL type filepath within this attribute. | **1..1** <br/> MUST | DIP change? |
 | <a name="CSIP111"></a>**CSIP111** | **Type of link** <br/> `structMap/div/div/mptr/@xlink:type` | Attribute used with the value “simple”. Value list is maintained by the xlink standard | **1..1** <br/> MUST | DIP change? |
 | <a name="CSIP112"></a>**CSIP112** | **Type of locator** <br/> `structMap/div/div/mptr/@LOCTYPE` | The locator type is always used with the value "URL" from the vocabulary in the attribute. | **1..1** <br/> MUST | DIP change? |
-
