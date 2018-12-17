@@ -122,7 +122,7 @@ The metadata descriptions provided in this document cover the three core metadat
 
 - structural   (see 3.1 METS)
 - preservation (see 3.2 PREMIS)
-- descriptive  (see 3.2 EAD)
+- descriptive  (see 3.3 EAD)
 
 It must be stated that the CS IP allows for several preservation metadata and descriptive metadata (or Descriptive Information according to OAIS), and therefore the E-ARK DIP specification only recommends ways of handling preservation metadata and descriptive metadata using PREMIS and EAD.
 METS however is mandatory according to CS IP and according to the E-ARK DIP specification. 
@@ -413,6 +413,12 @@ As can be seen above the nature of the relationship, \<relationshipType\> is use
 In order to identify the Access Software, which is used to render the representation, the \<relatedObjectIdentifier\> is employed; and the \<relatedEnvironmentPurpose\> gives us a hint about what the purpose is (here: to 'render').
 
 Since it is not always possible to render the DIP representation formats with one piece of Access Software, it can be necessary to model software dependencies and sequences between several pieces of software in PREMIS.
+
+## 3.3 Descriptive metadata - e.g. EAD
+
+Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The E-ARK DIP allows for the inclusion of any kind of descriptive metadata. 
+The E-ARK project reached the conclusion that EAD was one of the most used. See the full report
+[D3.1 E-ARK Report on Available Best Practices](http://www.eark-project.com/resources/project-deliverables/6-d31-e-ark-report-on-available-best-practices). A common EARK EAD guideline is yet to be developed. 
 
 ## Bibliography
 Bredenberg, Karin, Björn Skog, Anders Bo Nielsen, Kathrine Hougaard Edsen Johansen, Alex Thirifays,
