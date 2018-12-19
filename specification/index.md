@@ -112,12 +112,10 @@ According to the Common Specification for Information Package it is possible to 
 Content Information Types](http://earkcsip.dilcis.eu/#61-content-information-type-specifications). It is within these specifications that requirements and descriptions related to the specific Content Information Type is described. The DIP specification can not describe how each Content Information Type should be disseminated and therefore the DIP specification sets out requirements on how Content Information Type specifications should handle DIP requirements.
 
 - A Content Information Type specification should have a section which sole focus is on describing DIP requirements and/or recommendations
-- The DIP section should describe how to read/edit access rights
-- The DIP section should describe how to register access software
-- The DIP section could mention and list relevant access software for the Content Information Type
+  -  The DIP section should describe how to read/edit access rights
+  -  The DIP section should describe how to register access software
+  -  The DIP section could mention and list relevant access software for the Content Information Type
  
- 
-
 # **​ Metadata**
 
 The DIP metadata is based upon the existing CS IP, E-ARK SIP and E-ARK AIP specifications.
@@ -130,8 +128,8 @@ The metadata descriptions provided in this document cover the three core metadat
 It must be stated that the CS IP allows for several preservation metadata and descriptive metadata (or Descriptive Information according to OAIS), and therefore the E-ARK DIP specification only recommends ways of handling preservation metadata and descriptive metadata using PREMIS and EAD.
 METS however is mandatory according to CS IP and according to the E-ARK DIP specification. 
 
-One of the challenges when dividing metadata between preservation metadata and descriptive metadata is that the current metadata standards do not operate with the same distinction. Access rights information can for example be stored in EAD (descriptive metadata) and in PREMIS (preservation metadata).
-This leaves the question on implementation level - where should this go? This E-ARK DIP specification only describes two recommended ways to use EAD and PREMIS.
+One of the challenges when dividing metadata between preservation metadata and descriptive metadata is that the current metadata standards do not operate with the same distinction. Access rights information can for example be stored in EAD (descriptive metadata) and in PREMIS (preservation metadata) or in METS.
+This leaves the question on implementation level - where should this information be registered? This E-ARK DIP specification only describes two ways of using EAD and PREMIS for registering Access Rights and Access Software. These are possible ways and not yet recommendations. 
 
 
 ##  METS
