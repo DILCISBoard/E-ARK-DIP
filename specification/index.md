@@ -115,7 +115,8 @@ Content Information Types](http://earkcsip.dilcis.eu/#61-content-information-typ
   -  The DIP section should describe how to read/edit access rights
   -  The DIP section should describe how to register access software
   -  The DIP section could mention and list relevant access software for the Content Information Type
- 
+
+  
 # **​Metadata**
 
 The DIP metadata is based upon the existing CS IP, E-ARK SIP and E-ARK AIP specifications.
@@ -409,7 +410,59 @@ Since it is not always possible to render the DIP representation formats with on
 
 Descriptive metadata are used to describe the intellectual contents of archival holdings, and they support finding and understanding individual information packages. The E-ARK DIP allows for the inclusion of any kind of descriptive metadata. 
 The E-ARK project reached the conclusion that EAD was one of the most used. See the full report
-[D3.1 E-ARK Report on Available Best Practices](http://www.eark-project.com/resources/project-deliverables/6-d31-e-ark-report-on-available-best-practices). A common EARK EAD guideline is yet to be developed. 
+[D3.1 E-ARK Report on Available Best Practices](http://www.eark-project.com/resources/project-deliverables/6-d31-e-ark-report-on-available-best-practices). A common EARK EAD guideline is yet to be developed. But for information purposes and since the previous DIP specification described a way to register Access Rights Information the text is given here:
+
+### Access restrictions
+OAIS states:
+> Access Rights Information: The information that identifies the access restrictions pertaining
+> to the Content Information, including the legal framework, licensing terms, and access
+> control. It contains the access and distribution conditions stated within the Submission
+> Agreement, related to both preservation (by the OAIS) and final usage (by the Consumer). It
+> also includes the specifications for the application of rights enforcement measures. 
+
+The E-ARK DIP specification does not require that access rights are stored in a specific way since different metadata standards
+can be applied differently to different Content Information Types. See Content Information Types. 
+Since it is possible to have different metadata information in the metadata folder it is recommended to systematically control where 
+acces rights metadata are stored. For example acces rights metadata can be stored in both EAD and in PREMIS.
+
+The <accessrestrict> tag is "An element for information about conditions that affect the availability of the materials being described." See[EAD3](http://www.loc.gov/ead/EAD3taglib/index.html\#elem-accessrestrict).
+The Access Rights Information that concerns the end-user has to be available in EAD - not in PREMIS - and <accessrestrict> is used for this purpose. The reasons being:
+It should be possible to find the Access Rights Information in one place and one place only, namely in the descriptive metadata, which, per default, are the metadata displayed in the Access Software (Finding Aids and different viewers).EAD supports the description of potentially very complex hierarchical levels of an IP and can therefore if necessary differentiate access restrictions all the way down to the individual file level.Descriptive metadata are very often added upon Ingest and Finding Aids can thus immediately be populated with this kind of information.
+The <p> tag in <accessrestrict> is repeatable and can be used in the following way:
+
+**EAD example of <accessrestrict>**
+```xml
+<accessrestrict>
+ <p>Restricted</p>
+ <p>75</p>
+ <p>...</p>
+</accessrestrict>
+```
+If the value of the first <p> is "Restricted" or "" (empty - which also means that it is restricted) the tool will look for a second <p> which specifies the restriction period. "Unrestricted" means that the IP is immediately accessible. The second <p> can contain any text, for example <p>This IP is available 20 years from November 14 2002</p>.
+Note that the EAD3 schema validates even without the <head> tag inside <accessrestrict>.
+For more complex scenarios, it is possible to use <chronlist> as follows:
+
+EAD example of <chronlist>
+```xml
+<accessrestrict>
+ <chronlist>
+  <chronitem>
+   <daterange>
+    <fromdate>01.01.2016</fromdate>
+    <todate>01.01.2041</todate>
+   </daterange>
+   <event>
+    <list>
+     <item>type of the restriction (e.g. personal data)</item>
+     <item>duration of the restriction in years (e.g. 25 years)</item>
+     <item>source of the restriction (e.g. Public access law AvTS §7)</item>
+     <item>additional description of the access restriction (e.g. The content can be made public if personal data is removed from the DIP)</item>
+    </list>
+   </event>
+  </chronitem>
+ </chronlist>
+</accessrestrict>
+```
 
 ## Bibliography
 Bredenberg, Karin, Björn Skog, Anders Bo Nielsen, Kathrine Hougaard Edsen Johansen, Alex Thirifays,
