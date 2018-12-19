@@ -328,15 +328,15 @@ In order to describe the specific DIP representation format the semantic compone
 
 
 ```xml
-<object xsi:type=\"representation\"\>\                                                               
- <objectIdentifier\>\                                                                                 
-  <objectIdentifierType\>filepath\</objectIdentifierType\>                                                                                                                                                    
+<object xsi:type="representation"\>                                                               
+ <objectIdentifier\>                                                                          
+  <objectIdentifierType>filepath\</objectIdentifierType\>                                                                                                                                                    
   <objectIdentifierValue\>xlink:href=\"representations\\AVID.SA.18006.rep0\"\</objectIdentifierValue\>                                                                                                        
- </objectIdentifier\>\                                                                                
- <significantProperties\>\                                                                            
-  <significantPropertiesType\>DIP representation format\</significantPropertiesType\>\                 
-  <significantPropertiesValue\>SIARD2\</significantPropertiesValue\>\                                  
- </significantProperties\>\                                                                           
+ </objectIdentifier\>                                                                                
+ <significantProperties\>                                                                            
+  <significantPropertiesType\>DIP representation format\</significantPropertiesType\>                 
+  <significantPropertiesValue\>SIARD2\</significantPropertiesValue\>                                  
+ </significantProperties\>                                                                          
 <!-- PREMIS file continues but further elements left out in this example-->                     
 ```
 Note that the object type is "representation" and that the objectIdentifierType value is "filepath", which according to the AIP specification is an IP scope value. The objectIdentifierValue is the filepath to the representation folder or could be a filepath to a file.
