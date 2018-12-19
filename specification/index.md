@@ -412,7 +412,7 @@ Descriptive metadata are used to describe the intellectual contents of archival 
 The E-ARK project reached the conclusion that EAD was one of the most used. See the full report
 [D3.1 E-ARK Report on Available Best Practices](http://www.eark-project.com/resources/project-deliverables/6-d31-e-ark-report-on-available-best-practices). A common EARK EAD guideline is yet to be developed. But for information purposes and since the previous DIP specification described a way to register Access Rights Information the text is given here:
 
-### Access restrictions
+### Access restrictions
 OAIS states:
 > Access Rights Information: The information that identifies the access restrictions pertaining
 > to the Content Information, including the legal framework, licensing terms, and access
@@ -430,7 +430,7 @@ The Access Rights Information that concerns the end-user has to be available in 
 It should be possible to find the Access Rights Information in one place and one place only, namely in the descriptive metadata, which, per default, are the metadata displayed in the Access Software (Finding Aids and different viewers).EAD supports the description of potentially very complex hierarchical levels of an IP and can therefore if necessary differentiate access restrictions all the way down to the individual file level.Descriptive metadata are very often added upon Ingest and Finding Aids can thus immediately be populated with this kind of information.
 The <p> tag in <accessrestrict> is repeatable and can be used in the following way:
 
-**EAD example of <accessrestrict>**
+**EAD example of \<accessrestrict>**
 ```xml
 <accessrestrict>
  <p>Restricted</p>
@@ -438,11 +438,11 @@ The <p> tag in <accessrestrict> is repeatable and can be used in the following w
  <p>...</p>
 </accessrestrict>
 ```
-If the value of the first <p> is "Restricted" or "" (empty - which also means that it is restricted) the tool will look for a second <p> which specifies the restriction period. "Unrestricted" means that the IP is immediately accessible. The second <p> can contain any text, for example <p>This IP is available 20 years from November 14 2002</p>.
-Note that the EAD3 schema validates even without the <head> tag inside <accessrestrict>.
-For more complex scenarios, it is possible to use <chronlist> as follows:
+If the value of the first \<p> is "Restricted" or "" (empty - which also means that it is restricted) the tool will look for a second \<p> which specifies the restriction period. "Unrestricted" means that the IP is immediately accessible. The second \<p> can contain any text, for example \<p>This IP is available 20 years from November 14 2002\</p>.
+Note that the EAD3 schema validates even without the \<head> tag inside \<accessrestrict>.
+For more complex scenarios, it is possible to use \<chronlist> as follows:
 
-EAD example of <chronlist>
+EAD example of \<chronlist>
 ```xml
 <accessrestrict>
  <chronlist>
