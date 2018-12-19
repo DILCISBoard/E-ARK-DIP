@@ -324,7 +324,7 @@ The descriptions below therefore show how to:
 2.  Describe which piece(s) of Access Software is/are needed to render a specific DIP representation format. Several pieces of software may indeed be needed (description 2 below);
 3.  Describe the relationship between the DIP representation format and its Access Software (description 3 below).
 
-#### Description 1 - The recording of DIP representation formats
+#### Description 1 - The description of DIP representation formats
 In order to describe the specific DIP representation format the semantic component "1.4 significantProperties" is used. An example is:
 ```xml
 <object xsi:type="representation">
@@ -341,11 +341,10 @@ In order to describe the specific DIP representation format the semantic compone
 ```
 Note that the object type is "representation" and that the objectIdentifierType value is "filepath", which according to the AIP specification is an IP scope value. The objectIdentifierValue is the filepath to the representation folder or could be a filepath to a file.
 
-#### Description 2 - The recording of Access Software
+#### Description 2 - The description of Access Software
 In PREMIS 3.0 a description of an environment has become an object itself, so that both non-environmental objects and environmental objects exist. Access Software is therefore an environmental object which per default is an intellectual entity. 
-The semantic unit "1.9 environmentFunction" is conceived to describe the environment object(s) with different levels of granularity. It is suggested to use the vocabulary from Library of Congress[^53]. The semantic unit "1.10 environmentDesignation" is used for information identifying the environment by using human-readable language which can be expected to be understood outside of a digital repository.
-
-[^10]: Library of Congress. environmentFunctionType. Retrieved the 18th of January 2017 at: Environment Function Type [[http://id.loc.gov/vocabulary/preservation/environmentFunctionType.html]{.underline}](http://id.loc.gov/vocabulary/preservation/environmentFunctionType.html)
+The semantic unit "1.9 environmentFunction" is conceived to describe the environment object(s) with different levels of granularity. It is suggested to use [the vocabulary from Library of Congress](http://id.loc.gov/vocabulary/preservation/environmentFunctionType.html). 
+The semantic unit "1.10 environmentDesignation" is used for information identifying the environment by using human-readable language which can be expected to be understood outside of a digital repository.
 
 See the example which follows this vocabulary:
 
@@ -372,7 +371,7 @@ See the example which follows this vocabulary:
 </object>
 ```
 
-#### Description 3 - The recording of the relation between the representations and the Access Software
+#### Description 3 - The description of the relation between the representations and the Access Software
 
 In order to establish a connection between the DIP representation format to be rendered and the Access Software to render it, it is necessary to use the semantic unit "1.13 relationship". The relationship element can bind both non-environmental objects together with environmental objects and it can bind environmental objects together with other environmental objects. The following example shows how the DIP representation format can be related to the Access Software:
 
@@ -425,10 +424,10 @@ can be applied differently to different Content Information Types. See Content I
 Since it is possible to have different metadata information in the metadata folder it is recommended to systematically control where 
 acces rights metadata are stored. For example acces rights metadata can be stored in both EAD and in PREMIS.
 
-The <accessrestrict> tag is "An element for information about conditions that affect the availability of the materials being described." See[EAD3](http://www.loc.gov/ead/EAD3taglib/index.html\#elem-accessrestrict).
-The Access Rights Information that concerns the end-user has to be available in EAD - not in PREMIS - and <accessrestrict> is used for this purpose. The reasons being:
+The \<accessrestrict> tag is "An element for information about conditions that affect the availability of the materials being described." See [EAD3](http://www.loc.gov/ead/EAD3taglib/index.html\#elem-accessrestrict).
+The Access Rights Information that concerns the end-user has to be available in EAD - not in PREMIS - and \<accessrestrict> is used for this purpose. The reasons being:
 It should be possible to find the Access Rights Information in one place and one place only, namely in the descriptive metadata, which, per default, are the metadata displayed in the Access Software (Finding Aids and different viewers).EAD supports the description of potentially very complex hierarchical levels of an IP and can therefore if necessary differentiate access restrictions all the way down to the individual file level.Descriptive metadata are very often added upon Ingest and Finding Aids can thus immediately be populated with this kind of information.
-The <p> tag in <accessrestrict> is repeatable and can be used in the following way:
+The \<p> tag in \<accessrestrict> is repeatable and can be used in the following way:
 
 **EAD example of \<accessrestrict>**
 ```xml
