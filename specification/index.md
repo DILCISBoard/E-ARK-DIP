@@ -99,7 +99,7 @@ That E-ARK DIP can contain the submission representation, and one or more preser
 Consumer with the data and metadata that the Consumer is interested in. This could be isolated to the content in one single representation in an E-ARK AIP, or maybe only a portion of a single representation in an E-ARK AIP. Maybe even only one specific file. The point here is that a plethora of different E-ARK DIPs can be created out of an E-ARK AIP or several E-ARK AIPs.
 
 
-# **​ Content Information Types**
+# **​Content Information Types**
 
 Content Information is *“A set of information that is the original target of preservation or 
 that includes part or all of that information. It is an Information Object composed of its Content 
@@ -116,7 +116,7 @@ Content Information Types](http://earkcsip.dilcis.eu/#61-content-information-typ
   -  The DIP section should describe how to register access software
   -  The DIP section could mention and list relevant access software for the Content Information Type
  
-# **​ Metadata**
+# **​Metadata**
 
 The DIP metadata is based upon the existing CS IP, E-ARK SIP and E-ARK AIP specifications.
 The metadata descriptions provided in this document cover the three core metadata categories: 
@@ -125,14 +125,12 @@ The metadata descriptions provided in this document cover the three core metadat
 - preservation (see PREMIS)
 - descriptive  (see EAD)
 
-It must be stated that the CS IP allows for several preservation metadata and descriptive metadata (or Descriptive Information according to OAIS), and therefore the E-ARK DIP specification only recommends ways of handling preservation metadata and descriptive metadata using PREMIS and EAD.
-METS however is mandatory according to CS IP and according to the E-ARK DIP specification. 
-
-One of the challenges when dividing metadata between preservation metadata and descriptive metadata is that the current metadata standards do not operate with the same distinction. Access rights information can for example be stored in EAD (descriptive metadata) and in PREMIS (preservation metadata) or in METS.
-This leaves the question on implementation level - where should this information be registered? This E-ARK DIP specification only describes two ways of using EAD and PREMIS for registering Access Rights and Access Software. These are possible ways and not yet recommendations. 
+It must be stated that the CS IP allows for and makes a disctinction between preservation metadata and descriptive metadata (or Descriptive Information according to OAIS).
+One of the challenges when dividing metadata between preservation metadata and descriptive metadata is that the current metadata standards do not operate with the same distinction. Access rights information can for example both be stored in EAD (descriptive metadata) and in PREMIS (preservation metadata) or in METS.
+This leaves the question - where should this access and dissementation information be registered? This E-ARK DIP specification describes two ways of using EAD and PREMIS for registering Access Rights and Access Software. These are possible ways and not yet recommendations. 
 
 
-##  METS
+## METS
 
 METS (Metadata Encoding and Transmission Standard) is a standard for encoding descriptive, administrative, and structural metadata expressed using the XML Schema Language.
 The use of METS is mandatory if it must comply with CS IP. See CS IP for the general use of METS in information packages.
@@ -309,22 +307,15 @@ In the following the major differences between an XML instance for METS for an E
 | <a name="CSIP111"></a>**CSIP111** | **Type of link** <br/> `structMap/div/div/mptr/@xlink:type` | Attribute used with the value “simple”. Value list is maintained by the xlink standard | **1..1** <br/> MUST | No structural change from CS IP. <br/>No value change from CS IP.|
 | <a name="CSIP112"></a>**CSIP112** | **Type of locator** <br/> `structMap/div/div/mptr/@LOCTYPE` | The locator type is always used with the value "URL" from the vocabulary in the attribute. | **1..1** <br/> MUST | No structural change from CS IP. <br/>No value change from CS IP. |
 
-##  PREMIS
+## PREMIS
 PREMIS (Preservation Metadata: Implementation Strategies) is a standard that mainly caters for long-term preservation and technical usability, which for example is used to facilitate a range of preservation strategies including migration and emulation.
-From an Access perspective, PREMIS especially satisfies the requirements pertaining to the recording of Representation Information. It is practical to state in a formalised and consistent way how the Access Software should behave and where it should look when dealing with different pieces of information, such as which representation formats are included in the DIP. Therefore all E-ARK Access Software assumes the availability of PREMIS metadata according to the specification below.
+From an Access perspective, PREMIS especially satisfies the requirements pertaining to the recording of Representation Information. It is practical to state in a formalised and consistent way how the Access Software should behave and where it should look when dealing with different pieces of information, such as which representation formats are included in the DIP. 
 
-### ​ Metadata regarding Representations and Access Software
-In PREMIS, a representation is a "set of files, including structural metadata, needed for a complete and reasonable rendition of an Intellectual Entity." See  PREMIS Editorial Committee (2015). "PREMIS Data Dictionary for Preservation Metadata", p.8.
+### ​Metadata regarding Representations and Access Software
+In PREMIS, a representation is a "set of files, including structural metadata, needed for a complete and reasonable rendition of an Intellectual Entity." See  [PREMIS Editorial Committee (2015). "PREMIS Data Dictionary for Preservation Metadata", p.8](http://www.loc.gov/standards/premis/v3/premis-3-0-final.pdf).
 
-One of the core concepts in PREMIS is the above formulated definition of a representation, but it is also important to note that the E-ARK Common Specification Information Package structure also incorporates physical management of different representations. When implementing PREMIS in E-ARK packages one must therefore choose if there must exist PREMIS files at representation level or at root level only (see Common Specification) and one must also choose how fine-grained each description should be.
+One of the core concepts in PREMIS is the above formulated definition of a representation, but it is also important to note that the CS IP structure also incorporates physical management of different representations. When implementing PREMIS in CS IPs one must therefore choose if there must exist PREMIS files at representation level or at root level only (see CS IP) and one must also choose how fine-grained each description should be.
 
-In PREMIS, a representation is indicated using the semantic unit "1.1 objectIdentifier". In E-ARK Access, as already mentioned, the DIP representation formats are ERMS, SIARD1.0, SIARDDK, SIARD2.0, OLAP, GML, and GeoTIFF. It is important to emphasise that the E-ARK project has neither created specifications nor tools for specific file formats[^51] (fine-grained descriptions), but only for the aforementioned DIP *representation formats*.
-
-Hence, the Access Software developed by the E-ARK project does guarantee the rendering of the E-ARK representations, but not of specific file formats contained *inside* an E-ARK representation. As an example, ERMS or SIARD could contain several file formats unknown to the E-ARK IP Viewer[^52] (note: even though this is unlikely, because archives generally make sure that the number of file formats that they preserve is limited and their use widespread. As such for example PDF or TIFF files would be rendered).
-
-[^9]: The generic Access tool that allows for the rendering of the DIP reference format, ie. the folder structure, descriptive metadata,and the most common file formats, cf. D5.4 Search, Access and Display Interfaces. http://www.eark-project.com/resources/project-deliverables/92-d54
-
-To enable rendition, three pieces of information are needed in PREMIS: One identifying the representation to be rendered; one identifying the software to enable this; and one establishing a
 To enable rendition, three pieces of information are needed in PREMIS: One identifying the representation to be rendered; one identifying the software to enable this; and one establishing a relationship between the two.
 
 The descriptions below therefore show how to:
@@ -381,7 +372,7 @@ See the example which follows this vocabulary:
 </object>
 ```
 
-####  Description 3 - The recording of the relation between the representations and the Access Software
+#### Description 3 - The recording of the relation between the representations and the Access Software
 
 In order to establish a connection between the DIP representation format to be rendered and the Access Software to render it, it is necessary to use the semantic unit "1.13 relationship". The relationship element can bind both non-environmental objects together with environmental objects and it can bind environmental objects together with other environmental objects. The following example shows how the DIP representation format can be related to the Access Software:
 
