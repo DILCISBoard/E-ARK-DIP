@@ -64,7 +64,8 @@ Content Information Type Specifications are content-dependent specifications whi
 
 The OAIS reference model defines a DIP as:
 
-*An Information Package, derived from one or more AIPs, and sent by Archives to the Consumer in response to a request to the OAIS.* 
+> An Information Package, derived from one or more AIPs, and sent by Archives to the Consumer in response to a request to the OAIS. 
+
 
 The definition of an E-ARK DIP is that it corresponds to a CS IP which is ready to be processed by its designated Access Software; if it is not suited for processing and rendering by its designated Access Software, it is not (yet) a DIP. 
 This is a very generic, but handy, definition. To be more specific, an E-ARK DIP is: 
@@ -114,15 +115,17 @@ Content Information Types](http://earkcsip.dilcis.eu/#61-content-information-typ
 - The DIP section should describe how to read/edit access rights
 - The DIP section should describe how to register access software
 - The DIP section could mention and list relevant access software for the Content Information Type
+ 
+ 
 
-# ** Metadata**
+# **​ Metadata**
 
 The DIP metadata is based upon the existing CS IP, E-ARK SIP and E-ARK AIP specifications.
 The metadata descriptions provided in this document cover the three core metadata categories: 
 
-- structural   (see 3.1 METS)
-- preservation (see 3.2 PREMIS)
-- descriptive  (see 3.3 EAD)
+- structural   (see METS)
+- preservation (see PREMIS)
+- descriptive  (see EAD)
 
 It must be stated that the CS IP allows for several preservation metadata and descriptive metadata (or Descriptive Information according to OAIS), and therefore the E-ARK DIP specification only recommends ways of handling preservation metadata and descriptive metadata using PREMIS and EAD.
 METS however is mandatory according to CS IP and according to the E-ARK DIP specification. 
