@@ -21,9 +21,11 @@ The E-ARK DIP specification is maintained by the Digital Information LifeCycle I
 
 # IV. Revision History
 
-| Revision No. | Date       | Authors(s)                       | Organisation           | Description                                                           |
-|--------------|------------|----------------------------------|------------------------|-----------------------------------------------------------------------|
-| 1.0          | 20.12.2018 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA                    | First draft                                                          |
+| Revision No. | Date       | Authors(s)                       | Organisation | Description                                                           |
+|--------------|------------|----------------------------------|--------------|----------------------------------------------|
+| 1.0          | 20.12.2018 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Review version                               |
+| 1.0.1        | 20.03.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos                              |
+| 1.0.2        | 26.04.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos                              |
 
 
 # Introduction
@@ -414,19 +416,18 @@ The E-ARK project reached the conclusion that EAD was one of the most used. See 
 ### Access restrictions
 OAIS states:
 > Access Rights Information: The information that identifies the access restrictions pertaining
-> to the Content Information, including the legal framework, licensing terms, and access
-> control. It contains the access and distribution conditions stated within the Submission
-> Agreement, related to both preservation (by the OAIS) and final usage (by the Consumer). It
-> also includes the specifications for the application of rights enforcement measures. 
+> to the Content Information, including the legal framework, licensing terms, and access control.
+> It contains the access and distribution conditions stated within the Submission Agreement,
+> related to both preservation (by the OAIS) and final usage (by the Consumer).
+> It also includes the specifications for the application of rights enforcement measures. 
 
 The E-ARK DIP specification does not require that access rights are stored in a specific way since different metadata standards
 can be applied differently to different Content Information Types. See Content Information Types. 
-Since it is possible to have different metadata information in the metadata folder it is recommended to systematically control where 
-acces rights metadata are stored. For example acces rights metadata can be stored in both EAD and in PREMIS.
+Since it is possible to have different metadata information in the metadata folder it is recommended to systematically control where access rights metadata are stored. For example access rights metadata can be stored in both EAD and in PREMIS.
 
 The \<accessrestrict> tag is "An element for information about conditions that affect the availability of the materials being described." See [EAD3](http://www.loc.gov/ead/EAD3taglib/index.html\#elem-accessrestrict).
 The Access Rights Information that concerns the end-user has to be available in EAD - not in PREMIS - and \<accessrestrict> is used for this purpose. The reasons being:
-It should be possible to find the Access Rights Information in one place and one place only, namely in the descriptive metadata, which, per default, are the metadata displayed in the Access Software (Finding Aids and different viewers).EAD supports the description of potentially very complex hierarchical levels of an IP and can therefore if necessary differentiate access restrictions all the way down to the individual file level.Descriptive metadata are very often added upon Ingest and Finding Aids can thus immediately be populated with this kind of information.
+It should be possible to find the Access Rights Information in one place and one place only, namely in the descriptive metadata, which, per default, are the metadata displayed in the Access Software (Finding Aids and different viewers). EAD supports the description of potentially very complex hierarchical levels of an IP and can therefore if necessary differentiate access restrictions all the way down to the individual file level. Descriptive metadata are very often added upon Ingest and Finding Aids can thus immediately be populated with this kind of information.
 The \<p> tag in \<accessrestrict> is repeatable and can be used in the following way:
 
 **EAD example of \<accessrestrict>**
