@@ -41,7 +41,7 @@ Key objectives of this E-ARK DIP specification are:
 ## Relations to other E-ARK specifications
 The E-ARK DIP specification can be found in the following model (see Figure 1):
 
-![Figure 1](./media/image1.png)
+![Figure 1](./media/Fig 1 DIP.svg)
 
 
 _Common Specification for Information Packages_
@@ -84,7 +84,7 @@ The folder structure of an E-ARK DIP must comply with the requirements for the f
 
 The CSIP folder structure and its requirements is visualised in the figure below:
 
-![IP Folder Structure](./media/fig_8_cs_ip_struct.png)
+![IP Folder Structure](./media/Fig 2 DIP.svg)
 
 - Green boxes represent folders
 - Red boxes represent files. 
