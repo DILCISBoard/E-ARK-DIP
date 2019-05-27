@@ -171,7 +171,7 @@ In the following the major differences between an XML instance for METS for an E
 
 **Node level: mets root**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP requirement |
+| ID | Name & Location | Description & usage | Cardi&shy;nality & Level | E-ARK DIP requirement |
 | -- | --------------- | ------------------- | ------------------- | --------------------- |
 | <a name="CSIP1"></a>**CSIP1** | **Package Identifier** <br/> `mets/@OBJID` | The @OBJID attribute is mandatory, its value is a string identifier for the METS document. For the package METS document, this should be the name/ID of the package, i.e. the name of the package root folder. <br/> For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level representation folder. | **1..1** <br/> MUST | The OBJID must change to reflect that the DIP is another information package |
 | <a name="CSIP2"></a>**CSIP2** | **Content Category** <br/> `mets/@TYPE` | The @TYPE attribute MUST be used to declare the category of the content held in the package, e.g. book, journal, stereograph, video, etc.. Legal values are defined in a fixed vocabulary. When the content category used falls outside of the defined vocabulary the @TYPE value must be set to "OTHER" and the specific value declared in @csip:OTHERTYPE. The vocabulary will develop under the curation of the DILCIS Board as additional content information type specifications are produced. <br/> **See also:** <a href="#VocabularyContentCategory" >Content Category</a> | **1..1** <br/> MUST | No structural change from CSIP |
@@ -183,7 +183,7 @@ In the following the major differences between an XML instance for METS for an E
 
 **Node level: metsHdr**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP requirement  |
+| ID | Name & Location | Description & usage | Cardi&shy;nality & Level | E-ARK DIP requirement  |
 | -- | --------------- | ------------------- | ------------------- | ---------------------- |
 | <a name="CSIP117"></a>**CSIP117** | **Package header** <br/> `metsHdr` | General element for describing the package. | **1..1** <br/> MUST | No structural change from CSIP |
 | <a name="CSIP7"></a>**CSIP7** | **Package creation date** <br/> `metsHdr/@CREATEDATE` | @CREATEDATE describes the date of creation of the package. | **1..1** <br/> MUST |  DIP - The name of the agent (software) that created the DIP from the AIP |
