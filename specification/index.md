@@ -22,10 +22,11 @@ The E-ARK DIP specification is maintained by the Digital Information LifeCycle I
 # IV. Revision History
 
 | Revision No. | Date       | Authors(s)                       | Organisation | Description                                                           |
-|--------------|------------|----------------------------------|--------------|----------------------------------------------|
-| 1.0          | 20.12.2018 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Review version                               |
-| 1.0.1        | 20.03.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos                              |
-| 1.0.2        | 26.04.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos                              |
+|--------------|------------|----------------------------------|--------------|----------------------------|
+| 1.0          | 20.12.2018 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Review version             |
+| 1.0.1        | 20.03.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos            |
+| 1.0.2        | 26.04.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos            |
+| 1.1.0        | 27.05.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Align with CSIP            |
 
 
 # Introduction
@@ -175,8 +176,8 @@ In the following the major differences between an XML instance for METS for an E
 | <a name="CSIP1"></a>**CSIP1** | **Package Identifier** <br/> `mets/@OBJID` | The @OBJID attribute is mandatory, its value is a string identifier for the METS document. For the package METS document, this should be the name/ID of the package, i.e. the name of the package root folder. <br/> For a representation level METS document this value records the name/ID of the representation, i.e. the name of the top-level representation folder. | **1..1** <br/> MUST | The OBJID must change to reflect that the DIP is another information package |
 | <a name="CSIP2"></a>**CSIP2** | **Content Category** <br/> `mets/@TYPE` | The @TYPE attribute MUST be used to declare the category of the content held in the package, e.g. book, journal, stereograph, video, etc.. Legal values are defined in a fixed vocabulary. When the content category used falls outside of the defined vocabulary the @TYPE value must be set to "OTHER" and the specific value declared in @csip:OTHERTYPE. The vocabulary will develop under the curation of the DILCIS Board as additional content information type specifications are produced. <br/> **See also:** <a href="#VocabularyContentCategory" >Content Category</a> | **1..1** <br/> MUST | No structural change from CSIP |
 | <a name="CSIP3"></a>**CSIP3** | **Other Content Category** <br/> `mets/@csip:OTHERTYPE` | When the @TYPE attribute has the value "OTHER" the @csip:OTHERTYPE attribute MUST be used to declare the content category of the package/representation. <br/> **See also:** <a href="#VocabularyContentCategory" >Content Category</a> | **0..1** <br/> SHOULD | No structural change from CSIP |
-| <a name="CSIP4"></a>**CSIP4** | **Content Information Type Specification** <br/> `mets/@csip:CONTENTINFORMATIONTYPE` | Used to declare the Content Information Type Specification used when creating the package. Legal values are defined in a fixed vocabulary. The attribute is mandatory for representation level METS documents. The vocabulary will evolve under the care of the DILCIS Board as additional Content Information Type Specifications are developed. <br/> **See also:** <a href="#VocabularyContentInformationTypeSpecification" >Content information type specification</a> | **0..1** <br/> SHOULD |No structural change from CSIP |
-| <a name="CSIP5"></a>**CSIP5** | **Other Content Information Type Specification** <br/> `mets/@csip:OTHERCONTENTINFORMATIONTYPE` | When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must describe the content. | **0..1** <br/> MAY | No structural change from CSIP |
+| <a name="CSIP4"></a>**CSIP4** | **Content Information Type Specification** <br/> `mets/@csip: CONTENTINFORMATIONTYPE` | Used to declare the Content Information Type Specification used when creating the package. Legal values are defined in a fixed vocabulary. The attribute is mandatory for representation level METS documents. The vocabulary will evolve under the care of the DILCIS Board as additional Content Information Type Specifications are developed. <br/> **See also:** <a href="#VocabularyContentInformationTypeSpecification" >Content information type specification</a> | **0..1** <br/> SHOULD |No structural change from CSIP |
+| <a name="CSIP5"></a>**CSIP5** | **Other Content Information Type Specification** <br/> `mets/@csip: OTHERCONTENTINFORMATIONTYPE` | When the @csip:CONTENTINFORMATIONTYPE uses the value "OTHER" the @csip:OTHERCONTENTINFORMATIONTYPE must describe the content. | **0..1** <br/> MAY | No structural change from CSIP |
 | <a name="CSIP6"></a>**CSIP6** | **METS Profile** <br/> `mets/@PROFILE` | The URL of the METS profile that the information package conforms with. | **1..1** <br/> MUST |
 
 
@@ -200,7 +201,7 @@ In the following the major differences between an XML instance for METS for an E
 
 **Node level: dmdSec**
 
-| ID | Name & Location | Description & usage | Cardinality & Level | E-ARK DIP requirement  |
+| ID | Name & Location | Description & usage | Cardi&shy;nality & Level | E-ARK DIP require&shy;ment  |
 | -- | --------------- | ------------------- | ------------------- | ---------------------- |
 | <a name="CSIP17"></a>**CSIP17** | **Descriptive metadata** <br/> `dmdSec` | Must be used if descriptive metadata for the package content is available. Each descriptive metadata section (dmdSec) contains one description and thus is repeated when more descriptions are available. <br/> It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section. | **0..n** <br/> SHOULD | No structural change from CSIP |
 | <a name="CSIP18"></a>**CSIP18** | **Descriptive metadata identifier** <br/> `dmdSec/@ID` | An xml:id identifier for the descriptive metadata section (dmdSec) used for referencing inside the package. It must be unique within the package. | **1..1** <br/> MUST | No structural change from CSIP |
