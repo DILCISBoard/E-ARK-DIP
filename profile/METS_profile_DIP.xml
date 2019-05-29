@@ -1086,6 +1086,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap</dd>
                         <dt>Cardinality</dt><dd>1..n</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1096,6 +1097,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/@TYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. No change in value from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1106,6 +1108,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. No change in value from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1116,6 +1119,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1126,6 +1130,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1136,6 +1141,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1146,6 +1152,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Change in value from AIP ID to DIP ID</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1157,6 +1164,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP.</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1167,6 +1175,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from AIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1177,6 +1186,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1188,6 +1198,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ADMID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1199,6 +1210,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@DMDID</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1209,6 +1221,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1219,6 +1232,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from AIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1229,6 +1243,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. No change in value from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1239,6 +1254,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from AIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1250,6 +1266,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1260,6 +1277,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1270,6 +1288,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from AIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1280,6 +1299,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. No change in value from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1290,6 +1310,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from AIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1301,6 +1322,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1311,6 +1333,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
                         <dt>Cardinality</dt><dd>0..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1321,6 +1344,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from AIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1331,6 +1355,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. No change in value from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1341,6 +1366,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/fptr</dd>
                         <dt>Cardinality</dt><dd>0..n</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from AIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1352,6 +1378,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/fptr/@FILEID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1362,7 +1389,8 @@
                     <p xmlns="http://www.w3.org/1999/xhtml">Each representation div references the representation level METS.xml document, documenting the structure of the package and its constituent representations.</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div</dd>
-                        <dt>Cardinality</dt><dd>0..n</dd>
+                        <dt>Cardinality</dt><dd>0..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>Structural change from CSIP from 0..n to 0..1. The DIP must only contain one representation. The AIP to DIP migration choses which representation to migrate from the AIP to the DIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1373,6 +1401,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@ID</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from AIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1384,6 +1413,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/@LABEL</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from AIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1395,6 +1425,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/mptr/@xlink:title</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from AIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1405,6 +1436,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/mptr</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1415,6 +1447,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/mptr/@xlink:href</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. Possible change in value from AIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1425,6 +1458,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/mptr/@xlink:type</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. No change in value from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
@@ -1435,6 +1469,7 @@
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>structMap/div/div/mptr/@LOCTYPE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
+                        <dt>E-ARK DIP requirement</dt><dd>No structural change from CSIP. No change in value from CSIP</dd>
                     </dl>
                 </description>
             </requirement>
