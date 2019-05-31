@@ -436,7 +436,7 @@ The E-ARK DIP specification does not require that access rights are stored in a 
 can be applied differently to different Content Information Types. See Content Information Types. 
 Since it is possible to have different metadata information in the metadata folder it is recommended to systematically control where access rights metadata are stored. For example access rights metadata can be stored in both EAD and in PREMIS.
 
-The \<accessrestrict> tag is "An element for information about conditions that affect the availability of the materials being described." See [EAD3](http://www.loc.gov/ead/EAD3taglib/index.html\#elem-accessrestrict).
+The \<accessrestrict> tag is "An element for information about conditions that affect the availability of the materials being described." See [EAD3](<http://www.loc.gov/ead/EAD3taglib/EAD3.html#elem-accessrestrict>).
 The Access Rights Information that concerns the end-user has to be available in EAD - not in PREMIS - and \<accessrestrict> is used for this purpose. The reasons being:
 It should be possible to find the Access Rights Information in one place and one place only, namely in the descriptive metadata, which, per default, are the metadata displayed in the Access Software (Finding Aids and different viewers). EAD supports the description of potentially very complex hierarchical levels of an IP and can therefore if necessary differentiate access restrictions all the way down to the individual file level. Descriptive metadata are very often added upon Ingest and Finding Aids can thus immediately be populated with this kind of information.
 The \<p> tag in \<accessrestrict> is repeatable and can be used in the following way:
