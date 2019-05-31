@@ -1,0 +1,35 @@
+---
+title:  'E-ARK Dissemination Information Packages (DIP)'
+abstract: |
+        The DIP format is the last in sequence of the three IP formats defined
+        in the OAIS reference model. As with the two others, the SIP and the AIP
+        format, the E-ARK DIP builds upon the same foundation - the Common
+        Specification for Information Packages. The definition of an E-ARK DIP
+        is led by practical access considerations: a DIP is an Information
+        Package which is ready to be processed by its designated Access
+        Software; if it is not suited for processing and rendering by its
+        designated Access Software, it is not (yet) a DIP.
+        In order to meet the stated access scope, much of the specification
+        deals with scenario descriptions that are associated with specific
+        Content Information Types (Databases, Data warehouses, Electronic
+        Records Managements Systems, Simple File-System Based Records, and Geodata).
+margin-left:    1in
+margin-right:   1in
+
+date: "31.05.2019"
+toc-title:	'Table of contents'
+titlepage: true
+titlepage-color: "186b9e"
+titlepage-text-color: "3adeca"
+titlepage-rule-color: "3adeca"
+titlepage-rule-height: 1
+logo:	../spec-publisher/pandoc/img/DILCISlogo.png
+footer-center:	Version 2.0.0
+footer-left:	31.05.2019
+header-right:	DILCIS Board
+version:	2.0.0
+bibliography:	../pandoc/bibliography.bib
+reference-section-title:	'Bibliography'
+autoSectionLabels: True
+listings-disable-line-numbers:	True
+...
