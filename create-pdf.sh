@@ -28,3 +28,5 @@ pandoc  --from gfm \
         eark-dip-pdf.md \
         --metadata-file ../pandoc/metadata.yaml \
         -o pdf/eark-dip.pdf
+
+cd "$SCRIPT_DIR" || exit
