@@ -10,12 +10,12 @@
     xsi:schemaLocation="http://www.loc.gov/METS_Profile/v2 http://www.loc.gov/standards/mets/profile_docs/mets.profile.v2-0.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd"
     STATUS="provisional"
     REGISTRATION="unregistered"
-    ID="DIPV2.0.0-RC">
+    ID="DIPV2.0.1">
     <URI LOCTYPE="URL" ASSIGNEDBY="local">https://earksip.dilcis.eu/profile/E-ARK-DIP.xml</URI>
-    <title>E-ARK DIP METS Profile 2.0</title>
+    <title>E-ARK DIP METS Profile</title>
     <abstract>This is the extension of the E-ARK CSIP profile for creation of a E-ARK DIP. The profile describes the Dissemination Information Package (DIP) specification and the implementation of METS for packaging OAIS conformant Information Packages. The profile is accompanied with a textuall document explaning the details of use of this profile.
         This will enable repository interoperability and assist in the management of the preservation of digital content.</abstract>
-    <date>2019-05-31T12:00:00</date>
+    <date>2019-09-04T12:00:00</date>
     <contact>
         <institution>DILCIS Board</institution>
         <address>http://dilcis.eu/</address>
@@ -77,7 +77,7 @@
             <requirement ID="DIP2" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1">
                 <description>
                     <head>METS Profile</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The value is set to "https://earksip.dilcis.eu/profile/E-ARK-DIP.xml".</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The value is set to "https://earkdip.dilcis.eu/profile/E-ARK-DIP.xml".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@PROFILE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>

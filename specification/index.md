@@ -25,8 +25,8 @@ The CSIP folder structure and its requirements is visualised in the figure below
 
 ![IP Folder Structure](./media/Fig2DIP.svg)
 
-- Green boxes represent folders
-- Red boxes represent files.
+- Blue boxes represent folders
+- Yellow boxes represent files.
 - Boxes with full lines represent mandatory files/folders
 - Boxes with dotted lines represent optional files/folders.
 
@@ -292,6 +292,18 @@ EAD example of \<chronlist>
  </chronlist>
 </accessrestrict>
 ```
+
+# Appendix A: E-ARK Information Package METS example
+
+!INCLUDE "appendices/examples/examples.md"
+
+# Appendix B: External Schema and Vocabularies
+
+!INCLUDE "appendices/schema/schema.md"
+
+# Appendix C: A Full List of E-ARK DIP Requirements
+
+!INCLUDE "appendices/requirements/requirements.md"
 
 ## Bibliography
 Bredenberg, Karin, Björn Skog, Anders Bo Nielsen, Kathrine Hougaard Edsen Johansen, Alex Thirifays,
