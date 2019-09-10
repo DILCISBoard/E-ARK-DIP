@@ -25,8 +25,8 @@ The CSIP folder structure and its requirements is visualised in the figure below
 
 ![IP Folder Structure](./media/Fig2DIP.svg)
 
-- Green boxes represent folders
-- Red boxes represent files.
+- Blue boxes represent folders
+- Yellow boxes represent files.
 - Boxes with full lines represent mandatory files/folders
 - Boxes with dotted lines represent optional files/folders.
 
@@ -293,6 +293,18 @@ EAD example of \<chronlist>
 </accessrestrict>
 ```
 
+# Appendix A: E-ARK Information Package METS example
+
+!INCLUDE "appendices/examples/examples.md"
+
+# Appendix B: External Schema and Vocabularies
+
+!INCLUDE "appendices/schema/schema.md"
+
+# Appendix C: A Full List of E-ARK DIP Requirements
+
+!INCLUDE "appendices/requirements/requirements.md"
+
 ## Bibliography
 Bredenberg, Karin, Björn Skog, Anders Bo Nielsen, Kathrine Hougaard Edsen Johansen, Alex Thirifays,
 Sven Schlarb, Andrew Wilson, et al. 2018. Common Specification for Information Packages (Csip). ERCIM
@@ -305,33 +317,3 @@ archive/650x0b1.pdf.
 
 PREMIS. 2017. PREMIS Data Dictionary for Preservation Metadata, Version 3.0. The Library of Congress.
 https://www.loc.gov/standards/premis/v3/index.html.
-
-
-# I. Acknowledgements
-The E-ARK Dissemination Information Package (DIP) Specification was first developed within the E-ARK project in 2014 – 2017. E-ARK was an EC-funded pilot action project in the Competitiveness and Innovation Programme 2007- 2013, Grant Agreement no. 620998 under the Policy Support Programme.
-
-Since the scope of the E-ARK 2014-2017 DIP specification was linked to a reference implementation, specific Content Information Types, and product development with pilot actions it was a 100 pages long document. The scope of this E-ARK DIP Specification is not the same, the document has been shortened heavily and therefore we currently only have two authors credited. This does not mean that the current authors are the only ones behind this specification. We rely heavily on the work previously done.
-
-The authors of this specification would like to thank all national archives, tool developers and other stakeholders who provided valuable knowledge about their requirements for information packages and feedback to this and previous versions of the specification.
-
-
-# II. Contact & Feedback
-The E-ARK DIP specification is maintained by the Digital Information LifeCycle Interoperability Standard Board (DILCIS Board). For further information about the DILCIS Board or feedback on the current document please consult the website http://www.dilcis.eu/ or https://github.com/dilcisboard or contact us at <info@dilcis.eu>  
-
-# III. Authors
-
-
-| Name                             | Organisation                                       |
-| -------------------------------- | -------------------------------------------------- |
-| Anders Bo Nielsen                | Danish National Archives                           |
-| Phillip Tømmerholt               | Danish National Archives                           |
-
-
-# IV. Revision History
-
-| Revision No. | Date       | Authors(s)                       | Organisation | Description                                                           |
-|--------------|------------|----------------------------------|--------------|----------------------------|
-| 1.0          | 20.12.2018 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Review version             |
-| 1.0.1        | 20.03.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos            |
-| 1.0.2        | 26.04.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Corrected typos            |
-| 1.1.0        | 27.05.2019 | Phillip Tømmerholt <br/>Anders Bo Nielsen | DNA | Align with CSIP            |
