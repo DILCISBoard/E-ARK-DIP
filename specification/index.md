@@ -292,20 +292,25 @@ EAD example of \<chronlist>
  </chronlist>
 </accessrestrict>
 ```
+# Appendices
 
-# Appendix A: E-ARK Information Package METS example
+## Appendix A: E-ARK Information Package METS example
 
 !INCLUDE "appendices/examples/examples.md"
 
-# Appendix B: External Schema and Vocabularies
+## Appendix B: External Schema
 
 !INCLUDE "appendices/schema/schema.md"
 
-# Appendix C: A Full List of E-ARK DIP Requirements
+## Appendix C: External Vocabularies
+
+!INCLUDE "appendices/vocabs/vocabs.md"
+
+## Appendix D: A Full List of E-ARK DIP Requirements
 
 !INCLUDE "appendices/requirements/requirements.md"
 
-## Bibliography
+# Bibliography
 Bredenberg, Karin, Björn Skog, Anders Bo Nielsen, Kathrine Hougaard Edsen Johansen, Alex Thirifays,
 Sven Schlarb, Andrew Wilson, et al. 2018. Common Specification for Information Packages (Csip). ERCIM
 News. 2.0.0-DRAFT ed. Digital Information LifeCycle Interoperability Standard Board (DILCIS Board).
