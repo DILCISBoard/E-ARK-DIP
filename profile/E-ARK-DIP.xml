@@ -10,12 +10,12 @@
     xsi:schemaLocation="http://www.loc.gov/METS_Profile/v2 http://www.loc.gov/standards/mets/profile_docs/mets.profile.v2-0.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd"
     STATUS="provisional"
     REGISTRATION="unregistered"
-    ID="DIPV2.0.0-RC">
+    ID="DIPV2.0.1">
     <URI LOCTYPE="URL" ASSIGNEDBY="local">https://earksip.dilcis.eu/profile/E-ARK-DIP.xml</URI>
-    <title>E-ARK DIP METS Profile 2.0</title>
+    <title>E-ARK DIP METS Profile</title>
     <abstract>This is the extension of the E-ARK CSIP profile for creation of a E-ARK DIP. The profile describes the Dissemination Information Package (DIP) specification and the implementation of METS for packaging OAIS conformant Information Packages. The profile is accompanied with a textuall document explaning the details of use of this profile.
         This will enable repository interoperability and assist in the management of the preservation of digital content.</abstract>
-    <date>2019-05-31T12:00:00</date>
+    <date>2019-09-09T12:00:00</date>
     <contact>
         <institution>DILCIS Board</institution>
         <address>http://dilcis.eu/</address>
@@ -31,8 +31,12 @@
          </resource_model>
     </profile_context>
     <external_schema>
+        <name>E-ARK SIP METS Extension</name>
+        <URL>http://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd</URL>
+        <context>XML-schema for the attributes added by SIP and reused in the DIP</context>
         <note>
-            <p xmlns="http://www.w3.org/1999/xhtml">No external schemas is used</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">An extension schema with the added attributes for use in this profile.</p>
+            <p xmlns="http://www.w3.org/1999/xhtml">The schema is used with a namespace prefix of sip.</p>
         </note>
     </external_schema>
     <description_rules>
@@ -73,7 +77,7 @@
             <requirement ID="DIP2" REQLEVEL="MUST" EXAMPLES="metsRootElementExample1">
                 <description>
                     <head>METS Profile</head>
-                    <p xmlns="http://www.w3.org/1999/xhtml">The value is set to "https://earksip.dilcis.eu/profile/E-ARK-DIP.xml".</p>
+                    <p xmlns="http://www.w3.org/1999/xhtml">The value is set to "https://earkdip.dilcis.eu/profile/E-ARK-DIP.xml".</p>
                     <dl xmlns="http://www.w3.org/1999/xhtml">
                         <dt>METS XPath</dt><dd>mets/@PROFILE</dd>
                         <dt>Cardinality</dt><dd>1..1</dd>
@@ -254,7 +258,7 @@
             TYPE="OTHER"
             csip:OTHERTYPE="Accounting"
             PROFILE="https://earksip.dilcis.eu/profile/E-ARK-DIP.xml"
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd https://dilcis.eu/XML/METS/SIPExtensionMETS https://dilcis.eu/XML/METS/SIPExtensionMETS/SIPExtensionMETS.xsd">
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS http://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd https://dilcis.eu/XML/METS/SIPExtensionMETS http://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd">
             <mets:metsHdr
                 CREATEDATE="2018-04-24T14:37:49.602+01:00"
                 LASTMODDATE="2018-04-24T14:37:49.602+01:00"
@@ -320,7 +324,7 @@
                         sip:FILEFORMATVERSION="2007 onwards"
                         sip:FORMATREGISTRY="PRONOM"
                         sip:FORMATREGISTRYKEY="fmt/412">
-                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="Documentation/File.docx"/>
+                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File.docx"/>
                     </mets:file>
                     <mets:file
                         ID="uuid-0C0049CA-6DE0-4A6D-8699-7975E4046A82"
@@ -333,7 +337,7 @@
                         sip:FILEFORMATVERSION="2007 onwards"
                         sip:FORMATREGISTRY="PRONOM"
                         sip:FORMATREGISTRYKEY="fmt/412">
-                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="Documentation/File2.docx"/>
+                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="documentation/File2.docx"/>
                     </mets:file>
                 </mets:fileGrp>
                 <mets:fileGrp ID="uuid-4ACDC6F3-8A36-4A00-A85F-84A56415E86F" USE="Schemas">
@@ -366,11 +370,11 @@
                         sip:FILEFORMATVERSION="1.0"
                         sip:FORMATREGISTRY="PRONOM"
                         sip:FORMATREGISTRYKEY="fmt/101">
-                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/Submission/Data/SIARD.xml"/>
+                        <mets:FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="representations/submission/data/SIARD.xml"/>
                     </mets:file>
                 </mets:fileGrp>
             </mets:fileSec>
-            <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP StructMap">
+            <mets:structMap ID="uuid-1465D250-0A24-4714-9555-5C1211722FB8" TYPE="PHYSICAL" LABEL="CSIP">
                 <mets:div ID="uuid-638362BC-65D9-4DA7-9457-5156B3965A18" LABEL="uuid-4422c185-5407-4918-83b1-7abfa77de182">
                     <mets:div
                         ID="uuid-A4E1C5B6-CD9B-43EF-8F0C-3FD3AB688F81"
