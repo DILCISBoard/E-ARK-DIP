@@ -4,14 +4,14 @@
     xmlns="http://www.loc.gov/METS_Profile/v2"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:mets="http://www.loc.gov/METS/"
-    xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
-    xmlns:sip="https://dilcis.eu/XML/METS/SIPExtensionMETS"
+    xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+    xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xsi:schemaLocation="http://www.loc.gov/METS_Profile/v2 http://www.loc.gov/standards/mets/profile_docs/mets.profile.v2-0.xsd http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd"
     STATUS="provisional"
     REGISTRATION="unregistered"
     ID="DIPV2.0.4">
-    <URI LOCTYPE="URL" ASSIGNEDBY="local">https://earksip.dilcis.eu/profile/E-ARK-DIP.xml</URI>
+    <URI LOCTYPE="URL" ASSIGNEDBY="local">https://earkdip.dilcis.eu/profile/E-ARK-DIP.xml</URI>
     <title>E-ARK DIP METS Profile</title>
     <abstract>This is the extension of the E-ARK CSIP profile for creation of a E-ARK DIP. The profile describes the Dissemination Information Package (DIP) specification and the implementation of METS for packaging OAIS conformant Information Packages. The profile is accompanied with a textuall document explaning the details of use of this profile.
         This will enable repository interoperability and assist in the management of the preservation of digital content.</abstract>
@@ -32,7 +32,7 @@
     </profile_context>
     <external_schema>
         <name>E-ARK SIP METS Extension</name>
-        <URL>http://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd</URL>
+        <URL>http://earkdip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd</URL>
         <context>XML-schema for the attributes added by SIP and reused in the DIP</context>
         <note>
             <p xmlns="http://www.w3.org/1999/xhtml">An extension schema with the added attributes for use in this profile.</p>
@@ -211,27 +211,29 @@
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
             OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
             LABEL="Sample E-ARK DIP Information Package"
             TYPE="OTHER"
             csip:OTHERTYPE="Patterns"
-            PROFILE="https://earksip.dilcis.eu/profile/E-ARK-DIP.xml"
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS  https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
+            PROFILE="https://earkdip.dilcis.eu/profile/E-ARK-DIP.xml"
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd https://DILCIS.eu/XML/METS/SIPExtensionMETS  https://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd">
         </mets:mets>
     </Example>
     <Example ID="metsRootElementExample2" LABEL="METS root element illustrating the use of a custom `csip:@OTHERCONTENTINFORMATIONTYPE` attribute value when the correct content type value does note exist in the vocabulary. The `csip:@CONTENTINFORMATIONTYPE` attribute value is set to OTHER.">
         <mets:mets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
             OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
             LABEL="Sample E-ARK DIP Information Package"
             TYPE="Datasets"
             csip:CONTENTINFORMATIONTYPE="OTHER"
             csip:OTHERCONTENTINFORMATIONTYPE="Own defined content information type"
-            PROFILE="https://earksip.dilcis.eu/profile/E-ARK-DIP.xml"
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS  https://dilcis.eu/XML/METS/CSIPExtensionMETS https://dilcis.eu/XML/METS/CSIPExtensionMETS/DILCISExtensionMETS.xsd">
+            PROFILE="https://earkdip.dilcis.eu/profile/E-ARK-DIP.xml"
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS  https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd https://DILCIS.eu/XML/METS/SIPExtensionMETS https://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd">
         </mets:mets>
     </Example>
     <Example ID="metsHdrElementExample1" LABEL="METS agent example of the mandatory agent">
@@ -252,13 +254,14 @@
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xmlns:mets="http://www.loc.gov/METS/"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            xmlns:csip="https://dilcis.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+            xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
             OBJID="uuid-4422c185-5407-4918-83b1-7abfa77de182"
             LABEL="Accounting records of 2017"
             TYPE="OTHER"
             csip:OTHERTYPE="Accounting"
-            PROFILE="https://earksip.dilcis.eu/profile/E-ARK-DIP.xml"
-            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://dilcis.eu/XML/METS/CSIPExtensionMETS http://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd https://dilcis.eu/XML/METS/SIPExtensionMETS  https://dilcis.eu/XML/METS/SIPExtensionMETS/DILCISExtensionMETS.xsd">
+            PROFILE="https://earkdip.dilcis.eu/profile/E-ARK-DIP.xml"
+            xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd http://www.w3.org/1999/xlink http://www.loc.gov/standards/mets/xlink.xsd https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd https://DILCIS.eu/XML/METS/SIPExtensionMETS  https://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd">
             <mets:metsHdr
                 CREATEDATE="2018-04-24T14:37:49.602+01:00"
                 LASTMODDATE="2018-04-24T14:37:49.602+01:00"
@@ -384,17 +387,17 @@
                     <mets:div
                         ID="appdx1.div.doc"
                         LABEL="Documentation">
-                      <mets:fptr FILEID="appdx1.filegrp.doc"/>
+                      <mets:fptr FILEID="appndx1.filegrp.doc"/>
                     </mets:div>
                     <mets:div
                         ID="appdx1.div.schm"
                         LABEL="Schemas">
-                        <mets:fptr FILEID="appdx1.filegrp.schema"/>
+                        <mets:fptr FILEID="appndx1.filegrp.schm"/>
                     </mets:div>
                     <mets:div
                         ID="appdx1.div.reps"
                         LABEL="Representations">
-                        <mets:fptr FILEID="appdx1.filegrp.reps"/>
+                        <mets:fptr FILEID="appndx1.filegrp.reps"/>
                     </mets:div>
                 </mets:div>
             </mets:structMap>
