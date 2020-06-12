@@ -1,7 +1,7 @@
 ---
-title: Archived Versions of the Common Specification
+title: Archived Versions of the DIP Specification
 ---
-Archived Versions of the Common Specification
+Archived Versions of the DIP Specification
 =============================================
 
 - [Version 2.0.4 2020](/pdf/eark-dip.pdf)
