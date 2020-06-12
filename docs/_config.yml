@@ -10,6 +10,6 @@ repository: DILCISBoard/E-ARK-DIP
 plugins:
 - jekyll-github-metadata
 - jekyll-mentions
-- jekyll-redirect-from
 - jekyll-sitemap
+- jekyll-redirect-from
 - jemoji
