@@ -10,5 +10,5 @@ abstract: |
           This will enable repository interoperability and assist in the
           management of the preservation of digital content.
 version: 2.0.4
-date: 11.06.2020
+date: 12.06.2020
 ---
