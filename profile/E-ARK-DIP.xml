@@ -32,7 +32,7 @@
     </profile_context>
     <external_schema>
         <name>E-ARK SIP METS Extension</name>
-        <URL>http://earkdip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd</URL>
+        <URL>http://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd</URL>
         <context>XML-schema for the attributes added by SIP and reused in the DIP</context>
         <note>
             <p xmlns="http://www.w3.org/1999/xhtml">An extension schema with the added attributes for use in this profile.</p>
