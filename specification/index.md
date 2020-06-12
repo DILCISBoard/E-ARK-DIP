@@ -311,7 +311,7 @@ EAD example of \<chronlist>
 !INCLUDE "appendices/requirements/requirements.md"
 
 # Bibliography
-Bredenberg, Karin, Björn Skog, Anders Bo Nielsen, Kathrine Hougaard Edsen Johansen, Alex Thirifays,
+Karin Bredenberg, Björn Skog, Anders Bo Nielsen, Kathrine Hougaard Edsen Johansen, Alex Thirifays,
 Sven Schlarb, Andrew Wilson, et al. 2018. Common Specification for Information Packages (Csip). ERCIM
 News. 2.0.0-DRAFT ed. Digital Information LifeCycle Interoperability Standard Board (DILCIS Board).
 [http://earkcsip.dilcis.eu/](http://earkcsip.dilcis.eu/)
