@@ -82,8 +82,8 @@ markdown-pp SITE.md -o ./docs/index.md
 cp -Rf spec-publisher/site/* docs/
 find ./docs/_* -type f -exec sed -i 's/CSIP/DIP/' {} \;
 find ./docs/_* -type f -exec sed -i 's/csip/dip/' {} \;
-cp -R spec-publisher/res/md/figs docs/
-cp -R specification/media docs/
-cp -R profile docs/
-cp -R archive docs/
-cp -R examples docs/
+cp -Rf spec-publisher/res/md/figs docs/
+cp -Rf specification/media docs/
+cp -Rf profile docs/
+cp -Rf archive docs/
+cp -Rf examples docs/
