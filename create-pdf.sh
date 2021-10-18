@@ -20,7 +20,6 @@ pandoc  --from gfm \
         "../spec-publisher/res/md/common-intro.md" \
         -o ./preface.tex
 echo " - PANDOC: Finished"
-sed -i 's%fig_1_dip.svg%fig_1_dip.png%' ./preface.tex
 sed -i 's%section{%section*{%' ./preface.tex
 
 echo " - PANDOC: Generating Postface from markdown"
@@ -46,8 +45,8 @@ command -v markdown-pp >/dev/null 2>&1 || {
 }
 markdown-pp PDF.md -o docs/eark-dip-pdf.md -e tableofcontents
 
-cp -R specification/media docs/
-cp -R spec-publisher/res/md/figs docs/
+cp -Rf specification/media docs/
+cp -Rf spec-publisher/res/md/figs docs/
 
 cd docs || exit
 
