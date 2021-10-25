@@ -23,6 +23,35 @@ to change the meaning of the specification.
 ### Administrative:
 Standard changes between versions, e.g. version number and release date.
 
+Version 2.1.0
+-------------
+October 18th 2021
+
+### Specification Changes
+Update of specification to version 2.1. Implementation of the latest publication changes.
+
+#### Major
+None
+
+#### Minor
+None
+
+#### Corrections
+- Update of METS profile to version 2.1 [[#57][]]
+
+#### Administrative
+- Version number increment. [[#60][]]
+
+### Web site and PDF presentation
+- Updated with latest layout changes [[#58][]], [[#59][]], [[#61][]] , [[#62][]]
+
+[#62]: https://github.com/DILCISBoard/E-ARK-SIP/pull/62
+[#61]: https://github.com/DILCISBoard/E-ARK-SIP/pull/61
+[#60]: https://github.com/DILCISBoard/E-ARK-SIP/pull/60
+[#59]: https://github.com/DILCISBoard/E-ARK-SIP/pull/59
+[#58]: https://github.com/DILCISBoard/E-ARK-SIP/pull/58
+[#57]: https://github.com/DILCISBoard/E-ARK-SIP/pull/57
+
 Version 2.0.4
 -------------
 June 12th 2020
