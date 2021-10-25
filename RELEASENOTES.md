@@ -45,12 +45,12 @@ None
 ### Web site and PDF presentation
 - Updated with latest layout changes [[#58][]], [[#59][]], [[#61][]] , [[#62][]]
 
-[#62]: https://github.com/DILCISBoard/E-ARK-SIP/pull/62
-[#61]: https://github.com/DILCISBoard/E-ARK-SIP/pull/61
-[#60]: https://github.com/DILCISBoard/E-ARK-SIP/pull/60
-[#59]: https://github.com/DILCISBoard/E-ARK-SIP/pull/59
-[#58]: https://github.com/DILCISBoard/E-ARK-SIP/pull/58
-[#57]: https://github.com/DILCISBoard/E-ARK-SIP/pull/57
+[#62]: https://github.com/DILCISBoard/E-ARK-DIP/pull/62
+[#61]: https://github.com/DILCISBoard/E-ARK-DIP/pull/61
+[#60]: https://github.com/DILCISBoard/E-ARK-DIP/pull/60
+[#59]: https://github.com/DILCISBoard/E-ARK-DIP/pull/59
+[#58]: https://github.com/DILCISBoard/E-ARK-DIP/pull/58
+[#57]: https://github.com/DILCISBoard/E-ARK-DIP/pull/57
 
 Version 2.0.4
 -------------
