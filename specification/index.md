@@ -77,9 +77,7 @@ The use of METS is mandatory if it must comply with CSIP. See CSIP for the gener
 
 The differences between a METS instance for an E-ARK DIP vs an E-ARK AIP are small. Actually, most of the metadata differences between an AIP and a DIP are in the descriptive metadata or preservation metadata such as EAD and PREMIS.
 
-The E-ARK DIP specification is limited to include one and only one representation from an AIP (for which many may exist).
-This limitation is made to reduce the complexity of the DIP. Future, more complex E-ARK DIP specifications awaits implementations and experiences from this current specification.
-The chosen representation is itself an E-ARK IP and therefore follows the same structure. This is reflected in the IP being migrated from an AIP to a DIP. Below is a broad overview of the METS file.
+Below is a broad overview of the METS file.
 
 
 |          |  Elements    |           |           | Values                     |Comments              |
