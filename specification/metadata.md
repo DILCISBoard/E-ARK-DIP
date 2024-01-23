@@ -9,6 +9,6 @@ abstract: |
           a text document explaining the details of use of this profile.
           This will enable repository interoperability and assist in the
           management of the preservation of digital content.
-version: 2.1.0
-date: 15.10.2021
+version: ${RELEASE_VERSION}
+date: ${RELEASE_DATE}
 ---
