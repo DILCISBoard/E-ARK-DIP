@@ -77,7 +77,7 @@ jobs:
       - name: Build with Jekyll docker box
         run: |
           mkdir _site
-          docker run --rm -v "$PWD"/docs:/usr/src/app -v "$PWD"/_site:/_site starefossen/github-pages jekyll build -d /_site
+          docker run --rm -v "$PWD"/site:/usr/src/app -v "$PWD"/_site:/_site starefossen/github-pages jekyll build -d /_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
