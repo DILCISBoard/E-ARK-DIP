@@ -73,7 +73,7 @@ appendices:
     section: vocabulary
 
   - name: mets.metadata.requirments
-    heading: "E-ARK CSIP Metadata Requirements"
+    heading: "E-ARK DIP Metadata Requirements"
     label: "D"
     type: mets
     section: requirements
