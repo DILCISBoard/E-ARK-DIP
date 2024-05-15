@@ -1,54 +1,50 @@
 #!/usr/bin/env bash
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR" || exit
+echo "Generating specification PDF from markdown"
 
-cd "./specification/postface/" || exit
-bash "$SCRIPT_DIR/spec-publisher/utils/create-venv.sh"
+cp -rf "$SCRIPT_DIR/spec-publisher/pandoc/img" "$SCRIPT_DIR/spec-publisher/res/md/figs" "$SCRIPT_DIR/doc/pdf/"
+cp -rf "$SCRIPT_DIR/specification/media" "$SCRIPT_DIR/doc/pdf/"
+
+bash "$SCRIPT_DIR/spec-publisher/scripts/create-venv.sh"
 command -v markdown-pp >/dev/null 2>&1 || {
   tmpdir=$(dirname $"(mktemp -u)")
   source "$tmpdir/.venv-markdown/bin/activate"
 }
 echo " - MARKDOWN-PP: Processing postface markdown"
-markdown-pp postface.md -o "$SCRIPT_DIR/docs/postface.md" -e tableofcontents
+cd "$SCRIPT_DIR/specification/postface/" || exit
+markdown-pp postface.md -o "$SCRIPT_DIR/doc/pdf/postface.md" -e tableofcontents
 
-cd "$SCRIPT_DIR/docs" || exit
+cd "$SCRIPT_DIR/doc/pdf" || exit
 
+# PDF Destinaton
 echo " - PANDOC: Generating Preface from markdown"
 pandoc  --from gfm \
         --to latex \
-        --metadata-file "../spec-publisher/pandoc/metadata.yaml" \
-        "../spec-publisher/res/md/common-intro.md" \
-        -o ./preface.tex
-echo " - PANDOC: Finished"
+        --metadata-file "$SCRIPT_DIR/spec-publisher/pandoc/metadata.yaml" \
+        "./preface.md" \
+        -o "./preface.tex"
 sed -i 's%section{%section*{%' ./preface.tex
 
 echo " - PANDOC: Generating Postface from markdown"
-pandoc  --from gfm \
+pandoc  --from markdown \
         --to latex \
-        --metadata-file "../spec-publisher/pandoc/metadata.yaml" \
-        "$SCRIPT_DIR/docs/postface.md" \
+        --metadata-file "$SCRIPT_DIR/spec-publisher/pandoc/metadata.yaml" \
+        "./postface.md" \
         -o ./postface.tex
 sed -i 's%section{%section*{%' ./postface.tex
-rm "$SCRIPT_DIR/docs/postface.md"
-
-if [ ! -d "$SCRIPT_DIR/docs/pdf" ]
-then
-  mkdir -p "$SCRIPT_DIR/docs/pdf/"
-fi
-
-cd "$SCRIPT_DIR" || exit
 
 echo " - MARKDOWN-PP: Preparing PDF markdown"
-command -v markdown-pp >/dev/null 2>&1 || {
-  tmpdir=$(dirname $"(mktemp -u)")
-  source "$tmpdir/.venv-markdown/bin/activate"
-}
-markdown-pp PDF.md -o docs/eark-dip-pdf.md -e tableofcontents
+cd "$SCRIPT_DIR/doc/pdf" || exit
+markdown-pp PDF.md -o eark-dip-pdf.md -e tableofcontents
+sed -i 's%fig_2_csip_scope.svg%fig_2_csip_scope.png%' eark-dip-pdf.md
 
-cp -Rf specification/media docs/
-cp -Rf spec-publisher/res/md/figs docs/
-
-cd docs || exit
+if [ -d "$SCRIPT_DIR/site/pdf" ]
+then
+  echo " - Removing old site PDF directory"
+  rm -rf "$SCRIPT_DIR/site/pdf"
+fi
+mkdir "$SCRIPT_DIR/site/pdf"
 
 ###
 # Pandoc options:
@@ -60,19 +56,17 @@ cd docs || exit
 # --include-before-body "../spec-publisher/res/md/common-intro.md" \
 # --include-after-body "../specification/postface/postface.md" \
 # --number-sections \                             # Generate Heading Numbers
-# eark-sip-pdf.md \                              # Input Markdown file
+# eark-dip-pdf.md \                              # Input Markdown file
 # -o ./pdf/eark-dip.pdf                          # PDF Destinaton
 echo " - PANDOC: Generating PDF document from markdown"
 pandoc  --from markdown \
-        --template "../spec-publisher/pandoc/templates/eisvogel.latex" \
+        --template "$SCRIPT_DIR/spec-publisher/pandoc/templates/eisvogel.latex" \
         --listings \
         --table-of-contents \
-        --metadata-file "../spec-publisher/pandoc/metadata.yaml" \
+        --metadata-file "$SCRIPT_DIR/spec-publisher/pandoc/metadata.yaml" \
         --include-before-body "./preface.tex" \
         --include-after-body "./postface.tex" \
         --number-sections \
         eark-dip-pdf.md \
-        -o "./pdf/eark-dip.pdf"
+        -o "$SCRIPT_DIR/site/pdf/eark-dip.pdf"
 echo "PANDOC: Finished"
-rm "$SCRIPT_DIR/docs/preface.tex" "$SCRIPT_DIR/docs/postface.tex" "$SCRIPT_DIR/docs/eark-dip-pdf.md"
-cd "$SCRIPT_DIR" || exit

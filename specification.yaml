@@ -1,0 +1,79 @@
+---
+preface:
+  - name: common-intro
+    type: file
+    source: spec-publisher/res/md/common-intro.md
+
+body:
+  - name: introduction
+    type: file
+    source: specification/introduction.md
+
+  - name: metadata-root-requirments
+    heading: "### Node level: mets root"
+    type: requirements
+    section: metsRootElement
+    examples: true
+
+  - name: metadata-metsHdr-requirments
+    heading: "### Node level: metsHdr"
+    type: requirements
+    section: metsHdr
+    examples: true
+
+  - name: metadata-dmdsec-requirements
+    heading: "### Node level: dmdSec"
+    type: requirements
+    section: dmdSec
+    examples: true
+
+  - name: metadata-amdsec-requirements
+    heading: "### Node level: amdSec"
+    type: requirements
+    section: amdSec
+    examples: true
+
+  - name: metadata-filesec-requirements
+    heading: "### Node level: fileSec"
+    type: requirements
+    section: fileSec
+    examples: true
+
+  - name: metadata-stuctmap-requirements
+    heading: "### Node level: structMap"
+    type: requirements
+    section: structMap
+    examples: true
+
+  - name: premis
+    type: file
+    source: specification/premis.md
+
+  - name: bibliography
+    type: file
+    source: specification/bibliography.md
+
+appendices:
+  - name: mets.examples
+    heading: "E-ARK Information Package METS Example"
+    label: "A"
+    type: mets
+    section: Appendix
+
+  - name: mets.schema
+    heading: "External Schema"
+    label: "B"
+    type: mets
+    section: external_schema
+
+  - name: mets.vocabs
+    heading: "External Vocabularies"
+    label: "C"
+    type: mets
+    section: vocabulary
+
+  - name: mets.metadata.requirments
+    heading: "E-ARK CSIP Metadata Requirements"
+    label: "D"
+    type: mets
+    section: requirements
