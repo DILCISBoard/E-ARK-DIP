@@ -64,6 +64,8 @@ pandoc  --from markdown \
         --listings \
         --table-of-contents \
         --metadata-file "$SCRIPT_DIR/spec-publisher/pandoc/metadata.yaml" \
+        --bibliography "$SCRIPT_DIR/pandoc/bibliography.bib" \
+        --filter pandoc-citeproc eark-dip-pdf.md \
         --include-before-body "./preface.tex" \
         --include-after-body "./postface.tex" \
         --number-sections \
