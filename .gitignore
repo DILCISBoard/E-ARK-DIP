@@ -1,6 +1,4 @@
 # Site publication file
-docs/
-site/
 Gemfile.lock
 **/_site
 
@@ -14,3 +12,4 @@ Gemfile.lock
 .vagrant*
 .venv
 vendor
+.vscode

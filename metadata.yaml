@@ -1,4 +1,3 @@
----
 title: E-ARK DIP
 subtitle: Specification for Dissemination Information Packages
 abstract: |
@@ -11,4 +10,3 @@ abstract: |
           management of the preservation of digital content.
 version: ${RELEASE_VERSION}
 date: ${RELEASE_DATE}
----

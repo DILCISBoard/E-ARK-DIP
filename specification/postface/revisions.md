@@ -1,4 +1,3 @@
-
 ## II. Revision History
 
 | Revision No. | Date       | Authors(s)                       | Organisation | Description                                                           |
@@ -11,3 +10,4 @@
 | 2.0.2        | 28.10.2019 | Karin Bredenberg                          | SYD | Fixed schema paths. |
 | 2.0.4        | 12.06.2020 | Carl Wilson <br/>Karin Bredenberg         | OPF <br/>SYD | Examples fixed and site branding. |
 | 2.1.0        | 15.10.2021 | Carl Wilson <br/>Karin Bredenberg         | OPF <br/>SYD | Implementation of the latest publication changes. |
+| 2.2.0        | 15.10.2021 | Carl Wilson <br/>Karin Bredenberg         | OPF <br/>SYD | Version updates and publication changes. |
